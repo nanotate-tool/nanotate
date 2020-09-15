@@ -1,0 +1,3561 @@
+[
+    {
+      "id": "-fV-MMEsEeqFu_9W2-khxA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T15:09:10",
+      "updated": "2020-07-08T15:09:10",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ettesProcedureSTEP 1: Euthanasia",
+      "exact": "When mice have reached their endpoint, euthanize them with a lethal injection of pentobarbital (i.p. 10 mg/kg).",
+      "suffix": " STEP 2: Extraction of bloodThe ",
+      "start": 4442,
+      "end": 4553,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 111,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[2]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[2]"
+            },
+            {
+              "end": 4553,
+              "type": "TextPositionSelector",
+              "start": 4442
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "When mice have reached their endpoint, euthanize them with a lethal injection of pentobarbital (i.p. 10 mg/kg).",
+              "prefix": "ettesProcedureSTEP 1: Euthanasia",
+              "suffix": " STEP 2: Extraction of bloodThe "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "eZy-0MEqEeqHvyP5iBkn1w",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T14:51:16",
+      "updated": "2020-07-13T13:23:09",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ProcedureSTEP 1: EuthanasiaWhen ",
+      "exact": "mice",
+      "suffix": " have reached their endpoint, eu",
+      "start": 4447,
+      "end": 4451,
+      "tags": [
+        "sample",
+        "input"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 9,
+              "startOffset": 5,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[2]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[2]"
+            },
+            {
+              "end": 4451,
+              "type": "TextPositionSelector",
+              "start": 4447
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "mice",
+              "prefix": "ProcedureSTEP 1: EuthanasiaWhen ",
+              "suffix": " have reached their endpoint, eu"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "qqjt0sEqEeq6ZSfvtPiVLA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T14:52:38",
+      "updated": "2020-07-08T14:52:38",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "them with a lethal injection of ",
+      "exact": "pentobarbital (i.p. 10 mg/kg)",
+      "suffix": ". STEP 2: Extraction of bloodThe",
+      "start": 4523,
+      "end": 4552,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 110,
+              "startOffset": 81,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[2]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[2]"
+            },
+            {
+              "end": 4552,
+              "type": "TextPositionSelector",
+              "start": 4523
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "pentobarbital (i.p. 10 mg/kg)",
+              "prefix": "them with a lethal injection of ",
+              "suffix": ". STEP 2: Extraction of bloodThe"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "TrcHYrk2EeqdSvuEff9ILQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-06-28T11:55:48",
+      "updated": "2020-07-01T10:49:35",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "kg). STEP 2: Extraction of blood",
+      "exact": "The extraction of blood is performed via cardiac puncture. Scruff the mouse from the back with the body hanging straight vertically. Insert a 22-25G needle with a 3 mL syringe just under the ribs at the body centerline. The needle should hit the heart approximately at the level of the elbow (Figure 1). Gently, withdraw the syringe plunger until blood starts to come out. If blood doesn’t come out, move the syringe slightly upwards or downwards until blood is readily withdrawn. A volume of 1-2 mL can be extracted with this technique. Do not apply additional back pressure until the blood has filled the syringe1,2.CRITICAL STEP: proper mouse restrain is important to ensure successful blood collection. This step needs to be done as fast as possible to ensure that vessels won’t collapse before the transcardial perfusion. CAUTION: applying too much back pressure can collapse the heart muscle thus interfering with the blood extraction.Rapidly transfer the blood to a vacutainer blood collection tube with EDTA. If the blood will be used for RNA extraction, apply three parts of Trizol LS per one part of blood, and process immediately or snap freeze for later processing. If the blood will sit for more than a minute in the syringe before transferring to a container with EDTA, then it may be advisable to add some EDTA to the syringe to coat the inside.STOP POINT: samples can be stored at -80ºC until further processing or can be processed fresh. Proceed to extract RNA with a preferred method.",
+      "suffix": "STEP 3: Transcardial Perfusion P",
+      "start": 4581,
+      "end": 6083,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 142,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[8]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]"
+            },
+            {
+              "end": 6083,
+              "type": "TextPositionSelector",
+              "start": 4581
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The extraction of blood is performed via cardiac puncture. Scruff the mouse from the back with the body hanging straight vertically. Insert a 22-25G needle with a 3 mL syringe just under the ribs at the body centerline. The needle should hit the heart approximately at the level of the elbow (Figure 1). Gently, withdraw the syringe plunger until blood starts to come out. If blood doesn’t come out, move the syringe slightly upwards or downwards until blood is readily withdrawn. A volume of 1-2 mL can be extracted with this technique. Do not apply additional back pressure until the blood has filled the syringe1,2.CRITICAL STEP: proper mouse restrain is important to ensure successful blood collection. This step needs to be done as fast as possible to ensure that vessels won’t collapse before the transcardial perfusion. CAUTION: applying too much back pressure can collapse the heart muscle thus interfering with the blood extraction.Rapidly transfer the blood to a vacutainer blood collection tube with EDTA. If the blood will be used for RNA extraction, apply three parts of Trizol LS per one part of blood, and process immediately or snap freeze for later processing. If the blood will sit for more than a minute in the syringe before transferring to a container with EDTA, then it may be advisable to add some EDTA to the syringe to coat the inside.STOP POINT: samples can be stored at -80ºC until further processing or can be processed fresh. Proceed to extract RNA with a preferred method.",
+              "prefix": "kg). STEP 2: Extraction of blood",
+              "suffix": "STEP 3: Transcardial Perfusion P"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "n7fihsBgEeq1cAtZEGKzpA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:46:21",
+      "updated": "2020-07-13T13:23:42",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ia cardiac puncture. Scruff the ",
+      "exact": "mouse",
+      "suffix": " from the back with the body han",
+      "start": 4651,
+      "end": 4656,
+      "tags": [
+        "sample",
+        "input"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 75,
+              "startOffset": 70,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]"
+            },
+            {
+              "end": 4656,
+              "type": "TextPositionSelector",
+              "start": 4651
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "mouse",
+              "prefix": "ia cardiac puncture. Scruff the ",
+              "suffix": " from the back with the body han"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "r0BRhMBgEeqqz3dMoegpWQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:46:47",
+      "updated": "2020-07-07T14:46:47",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "g straight vertically. Insert a ",
+      "exact": "22-25G needle",
+      "suffix": " with a 3 mL syringe just under ",
+      "start": 4723,
+      "end": 4736,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 155,
+              "startOffset": 142,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]"
+            },
+            {
+              "end": 4736,
+              "type": "TextPositionSelector",
+              "start": 4723
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "22-25G needle",
+              "prefix": "g straight vertically. Insert a ",
+              "suffix": " with a 3 mL syringe just under "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "uF66lMBgEeqJ15tI7WyXSQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:47:02",
+      "updated": "2020-07-07T14:47:02",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": ". Insert a 22-25G needle with a ",
+      "exact": "3 mL syringe",
+      "suffix": " just under the ribs at the body",
+      "start": 4744,
+      "end": 4756,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 175,
+              "startOffset": 163,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]"
+            },
+            {
+              "end": 4756,
+              "type": "TextPositionSelector",
+              "start": 4744
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3 mL syringe",
+              "prefix": ". Insert a 22-25G needle with a ",
+              "suffix": " just under the ribs at the body"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "23IPpMBgEeq325OXUuXqvA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:48:01",
+      "updated": "2020-07-13T13:24:33",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "hdraw the syringe plunger until ",
+      "exact": "blood",
+      "suffix": " starts to come out. If blood do",
+      "start": 4928,
+      "end": 4933,
+      "tags": [
+        "sample",
+        "output"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 352,
+              "startOffset": 347,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[4]"
+            },
+            {
+              "end": 4933,
+              "type": "TextPositionSelector",
+              "start": 4928
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "blood",
+              "prefix": "hdraw the syringe plunger until ",
+              "suffix": " starts to come out. If blood do"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "-VoZisBgEeq_36NX5HUUQw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:48:51",
+      "updated": "2020-07-07T14:48:51",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "Rapidly transfer the blood to a ",
+      "exact": "vacutainer blood collection tube",
+      "suffix": " with EDTA. If the blood will be",
+      "start": 5554,
+      "end": 5586,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 64,
+              "startOffset": 32,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[7]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[7]"
+            },
+            {
+              "end": 5586,
+              "type": "TextPositionSelector",
+              "start": 5554
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "vacutainer blood collection tube",
+              "prefix": "Rapidly transfer the blood to a ",
+              "suffix": " with EDTA. If the blood will be"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "AOzMYMBhEeqo59vC4Hv0JQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:49:04",
+      "updated": "2020-07-07T14:49:04",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "iner blood collection tube with ",
+      "exact": "EDTA",
+      "suffix": ". If the blood will be used for ",
+      "start": 5592,
+      "end": 5596,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 74,
+              "startOffset": 70,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[7]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[7]"
+            },
+            {
+              "end": 5596,
+              "type": "TextPositionSelector",
+              "start": 5592
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "EDTA",
+              "prefix": "iner blood collection tube with ",
+              "suffix": ". If the blood will be used for "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "DPFECsBhEeqf8j_Ta6DKpw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-07T14:49:24",
+      "updated": "2020-07-07T14:49:24",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "xtraction, apply three parts of ",
+      "exact": "Trizol LS",
+      "suffix": " per one part of blood, and proc",
+      "start": 5665,
+      "end": 5674,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 152,
+              "startOffset": 143,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[7]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[7]"
+            },
+            {
+              "end": 5674,
+              "type": "TextPositionSelector",
+              "start": 5665
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Trizol LS",
+              "prefix": "xtraction, apply three parts of ",
+              "suffix": " per one part of blood, and proc"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "mcpQILuIEeqtqyP9xDf_uw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-01T10:49:55",
+      "updated": "2020-07-01T10:49:55",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": ".STEP 3: Transcardial Perfusion ",
+      "exact": "Place the mouse on its back on a grate sitting on top of the rectangular bucket and tape the forelimbs and hindlimbs firmly to the grate. Perform a cut from below the ribs to the upper chest in order to expose the chest cavity. Attach hemostats to the ribs and retract in order to fully expose the heart. Insert a 21G needle attached to a perfusion pump containing 1X PBS into the left ventricle, and then perform a small cut in the right atrium. Start to pump 1X PBS to the mouse, until the fluid runs clear out of the cut in the right atrium. The liver changing from a deep red to a paler shade is an indicator of a good perfusion.CRITICAL STEP: further perfusion with 4% PFA should be avoided as half of the brain will be used for protein extraction and immunostaining results have shown significant improvement when skipping this step. ",
+      "suffix": " STEP 4: Extraction of brain for",
+      "start": 6114,
+      "end": 6954,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 207,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[11]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]"
+            },
+            {
+              "end": 6954,
+              "type": "TextPositionSelector",
+              "start": 6114
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Place the mouse on its back on a grate sitting on top of the rectangular bucket and tape the forelimbs and hindlimbs firmly to the grate. Perform a cut from below the ribs to the upper chest in order to expose the chest cavity. Attach hemostats to the ribs and retract in order to fully expose the heart. Insert a 21G needle attached to a perfusion pump containing 1X PBS into the left ventricle, and then perform a small cut in the right atrium. Start to pump 1X PBS to the mouse, until the fluid runs clear out of the cut in the right atrium. The liver changing from a deep red to a paler shade is an indicator of a good perfusion.CRITICAL STEP: further perfusion with 4% PFA should be avoided as half of the brain will be used for protein extraction and immunostaining results have shown significant improvement when skipping this step. ",
+              "prefix": ".STEP 3: Transcardial Perfusion ",
+              "suffix": " STEP 4: Extraction of brain for"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "Y5nJasDbEeqjM7du4cQqVQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:25:08",
+      "updated": "2020-07-13T13:24:59",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ranscardial Perfusion Place the ",
+      "exact": "mouse",
+      "suffix": " on its back on a grate sitting ",
+      "start": 6124,
+      "end": 6129,
+      "tags": [
+        "sample",
+        "input"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 15,
+              "startOffset": 10,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]"
+            },
+            {
+              "end": 6129,
+              "type": "TextPositionSelector",
+              "start": 6124
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "mouse",
+              "prefix": "ranscardial Perfusion Place the ",
+              "suffix": " on its back on a grate sitting "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "nr9IlMDbEeqZHosh1XZcQg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:26:48",
+      "updated": "2020-07-08T05:26:48",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "n a grate sitting on top of the ",
+      "exact": "rectangular bucket",
+      "suffix": " and tape the forelimbs and hind",
+      "start": 6175,
+      "end": 6193,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 79,
+              "startOffset": 61,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]"
+            },
+            {
+              "end": 6193,
+              "type": "TextPositionSelector",
+              "start": 6175
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "rectangular bucket",
+              "prefix": "n a grate sitting on top of the ",
+              "suffix": " and tape the forelimbs and hind"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "u7Mb7MDbEeqVMLc_Fi2oBg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:27:36",
+      "updated": "2020-07-08T05:27:36",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ully expose the heart. Insert a ",
+      "exact": "21G needle",
+      "suffix": " attached to a perfusion pump co",
+      "start": 6428,
+      "end": 6438,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 324,
+              "startOffset": 314,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]"
+            },
+            {
+              "end": 6438,
+              "type": "TextPositionSelector",
+              "start": 6428
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "21G needle",
+              "prefix": "ully expose the heart. Insert a ",
+              "suffix": " attached to a perfusion pump co"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "1Y4ohsDbEeqY8YfpuBDbIQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:28:20",
+      "updated": "2020-07-08T05:28:20",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "sert a 21G needle attached to a ",
+      "exact": "perfusion pump",
+      "suffix": " containing 1X PBS into the left",
+      "start": 6453,
+      "end": 6467,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 353,
+              "startOffset": 339,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]"
+            },
+            {
+              "end": 6467,
+              "type": "TextPositionSelector",
+              "start": 6453
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "perfusion pump",
+              "prefix": "sert a 21G needle attached to a ",
+              "suffix": " containing 1X PBS into the left"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "3gbcJMDbEeqmMMsvryRCfw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:28:34",
+      "updated": "2020-07-08T05:28:34",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " to a perfusion pump containing ",
+      "exact": "1X PBS",
+      "suffix": " into the left ventricle, and th",
+      "start": 6479,
+      "end": 6485,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 371,
+              "startOffset": 365,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[10]"
+            },
+            {
+              "end": 6485,
+              "type": "TextPositionSelector",
+              "start": 6479
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1X PBS",
+              "prefix": " to a perfusion pump containing ",
+              "suffix": " into the left ventricle, and th"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "-wXpUMDbEeqxNbsc-PtTkw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:29:22",
+      "updated": "2020-07-08T05:29:22",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "AL STEP: further perfusion with ",
+      "exact": "4% PFA",
+      "suffix": " should be avoided as half of th",
+      "start": 6785,
+      "end": 6791,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 44,
+              "startOffset": 38,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[11]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[11]"
+            },
+            {
+              "end": 6791,
+              "type": "TextPositionSelector",
+              "start": 6785
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "4% PFA",
+              "prefix": "AL STEP: further perfusion with ",
+              "suffix": " should be avoided as half of th"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "puJEyruIEeqaBcsC-9BDsA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-01T10:50:17",
+      "updated": "2020-07-01T10:50:17",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "r immunostaining and protein/RNA",
+      "exact": "After perfusion with 1X PBS, the brain through the cranial window should look pale. Carefully remove the cranial window with forceps. Decapitate with scissors, then cut the muscles of the neck and the skin that covers the cranium. Insert the scissors through the foramen magnum, and gently start cutting the cranial bone, up to the rostral side.CAUTION: Take care to not damage the brain during this process.With forceps, remove the lateral bone flaps and expose the brain completely. Slide curved narrow forceps under the brain and carefully tilt it upward. When the brain is sufficiently loose, slide it out of the cranium with the help of the forceps and add to a clean petri dish sitting in an ice bath and wash the brain with ice cold 1X PBS to remove all hairs or other debris. With a clean razor blade, section the brain in half along the sagittal axis. With the help of curved forceps, carefully separate the cortex from the hippocampus (for more details see5) or dissect other brain regions are desired.Immerse one half (for immunostaining) in a tube containing 4% PFA and fix overnight at 4°C. After 24 hours, transfer the brain to a solution containing 30% sucrose. The other half or remaining brain sections can be snap freeze in liquid nitrogen or processed immediately for RNA or protein extraction.STOP POINT: If samples cannot be immediately processed, we recommend homogenizing the tissue immediately using a Dounce homogenizer (or other methods, such as bead mill) in the appropriate buffer, making sure to add RNAase or protease inhibitors depending on need, and then snap freeze and store at -80ºC.",
+      "suffix": "STEP 5: Sample preparation For R",
+      "start": 7017,
+      "end": 8635,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 305,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[13]"
+            },
+            {
+              "end": 8635,
+              "type": "TextPositionSelector",
+              "start": 7017
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "After perfusion with 1X PBS, the brain through the cranial window should look pale. Carefully remove the cranial window with forceps. Decapitate with scissors, then cut the muscles of the neck and the skin that covers the cranium. Insert the scissors through the foramen magnum, and gently start cutting the cranial bone, up to the rostral side.CAUTION: Take care to not damage the brain during this process.With forceps, remove the lateral bone flaps and expose the brain completely. Slide curved narrow forceps under the brain and carefully tilt it upward. When the brain is sufficiently loose, slide it out of the cranium with the help of the forceps and add to a clean petri dish sitting in an ice bath and wash the brain with ice cold 1X PBS to remove all hairs or other debris. With a clean razor blade, section the brain in half along the sagittal axis. With the help of curved forceps, carefully separate the cortex from the hippocampus (for more details see5) or dissect other brain regions are desired.Immerse one half (for immunostaining) in a tube containing 4% PFA and fix overnight at 4°C. After 24 hours, transfer the brain to a solution containing 30% sucrose. The other half or remaining brain sections can be snap freeze in liquid nitrogen or processed immediately for RNA or protein extraction.STOP POINT: If samples cannot be immediately processed, we recommend homogenizing the tissue immediately using a Dounce homogenizer (or other methods, such as bead mill) in the appropriate buffer, making sure to add RNAase or protease inhibitors depending on need, and then snap freeze and store at -80ºC.",
+              "prefix": "r immunostaining and protein/RNA",
+              "suffix": "STEP 5: Sample preparation For R"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "IE3LdMDcEeqmi2_sL9zTzA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:30:25",
+      "updated": "2020-07-08T05:30:25",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "y remove the cranial window with",
+      "exact": " forceps",
+      "suffix": ". Decapitate with scissors, then",
+      "start": 7141,
+      "end": 7149,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 132,
+              "startOffset": 124,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[13]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[13]"
+            },
+            {
+              "end": 7149,
+              "type": "TextPositionSelector",
+              "start": 7141
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " forceps",
+              "prefix": "y remove the cranial window with",
+              "suffix": ". Decapitate with scissors, then"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "K0S0osDcEeqmRf8ut0ZKVQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:30:43",
+      "updated": "2020-07-08T05:30:43",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "w with forceps. Decapitate with ",
+      "exact": "scissors",
+      "suffix": ", then cut the muscles of the ne",
+      "start": 7167,
+      "end": 7175,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 158,
+              "startOffset": 150,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[13]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[13]"
+            },
+            {
+              "end": 7175,
+              "type": "TextPositionSelector",
+              "start": 7167
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "scissors",
+              "prefix": "w with forceps. Decapitate with ",
+              "suffix": ", then cut the muscles of the ne"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "gb2P_MDcEeqM5WO_RYtKwg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:33:08",
+      "updated": "2020-07-08T05:33:08",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " the forceps and add to a clean ",
+      "exact": "petri dish",
+      "suffix": " sitting in an ice bath and wash",
+      "start": 7690,
+      "end": 7700,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 275,
+              "startOffset": 265,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]"
+            },
+            {
+              "end": 7700,
+              "type": "TextPositionSelector",
+              "start": 7690
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "petri dish",
+              "prefix": " the forceps and add to a clean ",
+              "suffix": " sitting in an ice bath and wash"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "xUwXjsDcEeqXJ0P2cLGwuA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:35:02",
+      "updated": "2020-07-08T05:35:02",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " clean petri dish sitting in an ",
+      "exact": "ice bath",
+      "suffix": " and wash the brain with ice col",
+      "start": 7715,
+      "end": 7723,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 298,
+              "startOffset": 290,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]"
+            },
+            {
+              "end": 7723,
+              "type": "TextPositionSelector",
+              "start": 7715
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ice bath",
+              "prefix": " clean petri dish sitting in an ",
+              "suffix": " and wash the brain with ice col"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "0nPz8MDcEeq_KiP64ZFAXw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:35:24",
+      "updated": "2020-07-08T05:35:24",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "nd wash the brain with ice cold ",
+      "exact": "1X PBS",
+      "suffix": " to remove all hairs or other de",
+      "start": 7757,
+      "end": 7763,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 338,
+              "startOffset": 332,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]"
+            },
+            {
+              "end": 7763,
+              "type": "TextPositionSelector",
+              "start": 7757
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1X PBS",
+              "prefix": "nd wash the brain with ice cold ",
+              "suffix": " to remove all hairs or other de"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "4dH5ZMDcEeq_K_uH9Nf47w",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:35:50",
+      "updated": "2020-07-08T05:35:50",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "s or other debris. With a clean ",
+      "exact": "razor blade",
+      "suffix": ", section the brain in half alon",
+      "start": 7814,
+      "end": 7825,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 400,
+              "startOffset": 389,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]"
+            },
+            {
+              "end": 7825,
+              "type": "TextPositionSelector",
+              "start": 7814
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "razor blade",
+              "prefix": "s or other debris. With a clean ",
+              "suffix": ", section the brain in half alon"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "A-mGAsDdEeqjj7vZjVEnBQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:36:47",
+      "updated": "2020-07-08T05:36:47",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "sagittal axis. With the help of ",
+      "exact": "curved forceps",
+      "suffix": ", carefully separate the cortex ",
+      "start": 7895,
+      "end": 7909,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 484,
+              "startOffset": 470,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[15]"
+            },
+            {
+              "end": 7909,
+              "type": "TextPositionSelector",
+              "start": 7895
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "curved forceps",
+              "prefix": "sagittal axis. With the help of ",
+              "suffix": ", carefully separate the cortex "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "FlvFmMDdEeqmjPsSzHKoxw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:37:18",
+      "updated": "2020-07-08T05:37:18",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " half (for immunostaining) in a ",
+      "exact": "tube",
+      "suffix": " containing 4% PFA and fix overn",
+      "start": 8072,
+      "end": 8076,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 47,
+              "startOffset": 43,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]"
+            },
+            {
+              "end": 8076,
+              "type": "TextPositionSelector",
+              "start": 8072
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "tube",
+              "prefix": " half (for immunostaining) in a ",
+              "suffix": " containing 4% PFA and fix overn"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "IHBv6MDdEeqM5ltJysYhAQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:37:35",
+      "updated": "2020-07-08T05:37:35",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ostaining) in a tube containing ",
+      "exact": "4% PFA",
+      "suffix": " and fix overnight at 4°C. After",
+      "start": 8088,
+      "end": 8094,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 65,
+              "startOffset": 59,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]"
+            },
+            {
+              "end": 8094,
+              "type": "TextPositionSelector",
+              "start": 8088
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "4% PFA",
+              "prefix": "ostaining) in a tube containing ",
+              "suffix": " and fix overnight at 4°C. After"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "A0XvNsUNEeqcVeusj0eq9Q",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:30:26",
+      "updated": "2020-07-13T13:30:26",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "C. After 24 hours, transfer the ",
+      "exact": "brain",
+      "suffix": " to a solution containing 30% su",
+      "start": 8150,
+      "end": 8155,
+      "tags": [
+        "sample",
+        "output"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 126,
+              "startOffset": 121,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]"
+            },
+            {
+              "end": 8155,
+              "type": "TextPositionSelector",
+              "start": 8150
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "brain",
+              "prefix": "C. After 24 hours, transfer the ",
+              "suffix": " to a solution containing 30% su"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "KxmInsDdEeqhrjvef-qdHw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:37:52",
+      "updated": "2020-07-08T05:37:52",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " brain to a solution containing ",
+      "exact": "30% sucrose",
+      "suffix": ". The other half or remaining br",
+      "start": 8181,
+      "end": 8192,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 163,
+              "startOffset": 152,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]"
+            },
+            {
+              "end": 8192,
+              "type": "TextPositionSelector",
+              "start": 8181
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "30% sucrose",
+              "prefix": " brain to a solution containing ",
+              "suffix": ". The other half or remaining br"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "ORwR0sDdEeqVMWth2QncTg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:38:16",
+      "updated": "2020-07-08T05:38:16",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " sections can be snap freeze in ",
+      "exact": "liquid nitrogen",
+      "suffix": " or processed immediately for RN",
+      "start": 8259,
+      "end": 8274,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 245,
+              "startOffset": 230,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[16]"
+            },
+            {
+              "end": 8274,
+              "type": "TextPositionSelector",
+              "start": 8259
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "liquid nitrogen",
+              "prefix": " sections can be snap freeze in ",
+              "suffix": " or processed immediately for RN"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "VbBJqMDdEeq0oB-e1woBcw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:39:04",
+      "updated": "2020-07-08T05:39:04",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " the tissue immediately using a ",
+      "exact": "Dounce homogenizer",
+      "suffix": " (or other methods, such as bead",
+      "start": 8443,
+      "end": 8461,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 131,
+              "startOffset": 113,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]"
+            },
+            {
+              "end": 8461,
+              "type": "TextPositionSelector",
+              "start": 8443
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Dounce homogenizer",
+              "prefix": " the tissue immediately using a ",
+              "suffix": " (or other methods, such as bead"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "Y3YuGMDdEeqqih-ynzbR7Q",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:39:27",
+      "updated": "2020-07-08T05:39:27",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "izer (or other methods, such as ",
+      "exact": "bead mill",
+      "suffix": ") in the appropriate buffer, mak",
+      "start": 8489,
+      "end": 8498,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 168,
+              "startOffset": 159,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]"
+            },
+            {
+              "end": 8498,
+              "type": "TextPositionSelector",
+              "start": 8489
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "bead mill",
+              "prefix": "izer (or other methods, such as ",
+              "suffix": ") in the appropriate buffer, mak"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "bpkgcMDdEeqDKZ-ti9XaXg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:39:46",
+      "updated": "2020-07-08T05:39:46",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "iate buffer, making sure to add ",
+      "exact": "RNAase",
+      "suffix": " or protease inhibitors dependin",
+      "start": 8546,
+      "end": 8552,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 222,
+              "startOffset": 216,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[17]"
+            },
+            {
+              "end": 8552,
+              "type": "TextPositionSelector",
+              "start": 8546
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RNAase",
+              "prefix": "iate buffer, making sure to add ",
+              "suffix": " or protease inhibitors dependin"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "s7WkxruIEeqi7IPY0ZHXHg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-01T10:50:39",
+      "updated": "2020-07-01T10:50:39",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "80ºC.STEP 5: Sample preparation ",
+      "exact": "For RNA analysis, prepare a tube containing Trizol or a lysis buffer with an RNAase inhibitor of preference3.For protein extraction, prepare extraction buffer in a 50 mL conical tube containing 1 mM AESBF (or other appropriate proteinase inhibitors), 1 tablet of cOmplete and 2 mL of RIPA buffer and dilute 1:25 with 1X PBS.Place half brain inside a clean Dounce homogenizer and homogenize the brain with 500 uL of extraction buffer. Use small strokes to avoid bubbles. A total of 20-30 strokes should be enough to homogenize the tissue. With a pipette, transfer the homogenized tissue to an Eppendorf and keep on ice. Wash the homogenizer with MiliQ water between samples. Sonicate tubes on water for 10 minutes. Transfer samples to a 4ºC centrifuge, and centrifuge at 14000 rpm (table top centrifuge) for 30 min. Transfer the supernatant to a new tube and if desired, the pellet can be stored for further processing. If extracting protein or RNA from cerebral microvessels is of interest, follow this detailed protocol on extracting cerebral microvessels from cortex4 .After sample preparation:·     Proceed with preferred protocol for protein measurement (Figure 2). We use Pierce BCA Protein Assay Kit (ThermoFisher CAT No. 23225)·     If performing RNA extraction, process samples as quickly as possible and clean all surfaces with RNAzap (ThermoFisher, CAT No. AM9780). Proceed with preferred protocol for RNA extraction. (Figure 3) CRITICAL STEP: The extraction and sectioning of the brain has to be performed as quickly as possible in order to ensure the least amount of RNA or protein degradation.",
+      "suffix": " STEP 5: Brain processing and sl",
+      "start": 8662,
+      "end": 10268,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 168,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[25]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]"
+            },
+            {
+              "end": 10268,
+              "type": "TextPositionSelector",
+              "start": 8662
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For RNA analysis, prepare a tube containing Trizol or a lysis buffer with an RNAase inhibitor of preference3.For protein extraction, prepare extraction buffer in a 50 mL conical tube containing 1 mM AESBF (or other appropriate proteinase inhibitors), 1 tablet of cOmplete and 2 mL of RIPA buffer and dilute 1:25 with 1X PBS.Place half brain inside a clean Dounce homogenizer and homogenize the brain with 500 uL of extraction buffer. Use small strokes to avoid bubbles. A total of 20-30 strokes should be enough to homogenize the tissue. With a pipette, transfer the homogenized tissue to an Eppendorf and keep on ice. Wash the homogenizer with MiliQ water between samples. Sonicate tubes on water for 10 minutes. Transfer samples to a 4ºC centrifuge, and centrifuge at 14000 rpm (table top centrifuge) for 30 min. Transfer the supernatant to a new tube and if desired, the pellet can be stored for further processing. If extracting protein or RNA from cerebral microvessels is of interest, follow this detailed protocol on extracting cerebral microvessels from cortex4 .After sample preparation:·     Proceed with preferred protocol for protein measurement (Figure 2). We use Pierce BCA Protein Assay Kit (ThermoFisher CAT No. 23225)·     If performing RNA extraction, process samples as quickly as possible and clean all surfaces with RNAzap (ThermoFisher, CAT No. AM9780). Proceed with preferred protocol for RNA extraction. (Figure 3) CRITICAL STEP: The extraction and sectioning of the brain has to be performed as quickly as possible in order to ensure the least amount of RNA or protein degradation.",
+              "prefix": "80ºC.STEP 5: Sample preparation ",
+              "suffix": " STEP 5: Brain processing and sl"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "gCxsysDdEeqjNDcrQ5FNkg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:40:15",
+      "updated": "2020-07-08T05:40:15",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ion For RNA analysis, prepare a ",
+      "exact": "tube",
+      "suffix": " containing Trizol or a lysis bu",
+      "start": 8690,
+      "end": 8694,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 32,
+              "startOffset": 28,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]"
+            },
+            {
+              "end": 8694,
+              "type": "TextPositionSelector",
+              "start": 8690
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "tube",
+              "prefix": "ion For RNA analysis, prepare a ",
+              "suffix": " containing Trizol or a lysis bu"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "iIv8eMDdEeqtkr-TX1D71g",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:40:29",
+      "updated": "2020-07-08T05:40:29",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ysis, prepare a tube containing ",
+      "exact": "Trizol",
+      "suffix": " or a lysis buffer with an RNAas",
+      "start": 8706,
+      "end": 8712,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 50,
+              "startOffset": 44,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]"
+            },
+            {
+              "end": 8712,
+              "type": "TextPositionSelector",
+              "start": 8706
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Trizol",
+              "prefix": "ysis, prepare a tube containing ",
+              "suffix": " or a lysis buffer with an RNAas"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "oblJEsDdEeqJkcd1zrIXHQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:41:12",
+      "updated": "2020-07-08T05:41:12",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "e a tube containing Trizol or a ",
+      "exact": "lysis buffer",
+      "suffix": " with an RNAase inhibitor of pre",
+      "start": 8718,
+      "end": 8730,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 68,
+              "startOffset": 56,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[19]"
+            },
+            {
+              "end": 8730,
+              "type": "TextPositionSelector",
+              "start": 8718
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "lysis buffer",
+              "prefix": "e a tube containing Trizol or a ",
+              "suffix": " with an RNAase inhibitor of pre"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "yzTbCMDdEeq2LAM7S7Didw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:42:21",
+      "updated": "2020-07-08T05:42:21",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "For protein extraction, prepare ",
+      "exact": "extraction buffer",
+      "suffix": " in a 50 mL conical tube contain",
+      "start": 8803,
+      "end": 8820,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 49,
+              "startOffset": 32,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]"
+            },
+            {
+              "end": 8820,
+              "type": "TextPositionSelector",
+              "start": 8803
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "extraction buffer",
+              "prefix": "For protein extraction, prepare ",
+              "suffix": " in a 50 mL conical tube contain"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "1PQ4-sDdEeqk86-H_WBHnQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:42:38",
+      "updated": "2020-07-08T05:42:38",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " prepare extraction buffer in a ",
+      "exact": "50 mL conical tube",
+      "suffix": " containing 1 mM AESBF (or other",
+      "start": 8826,
+      "end": 8844,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 73,
+              "startOffset": 55,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]"
+            },
+            {
+              "end": 8844,
+              "type": "TextPositionSelector",
+              "start": 8826
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "50 mL conical tube",
+              "prefix": " prepare extraction buffer in a ",
+              "suffix": " containing 1 mM AESBF (or other"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "3eKCFMDdEeqlCeuqmOSrfQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:42:52",
+      "updated": "2020-07-08T05:42:52",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "a 50 mL conical tube containing ",
+      "exact": "1 mM AESBF",
+      "suffix": " (or other appropriate proteinas",
+      "start": 8856,
+      "end": 8866,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 95,
+              "startOffset": 85,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]"
+            },
+            {
+              "end": 8866,
+              "type": "TextPositionSelector",
+              "start": 8856
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1 mM AESBF",
+              "prefix": "a 50 mL conical tube containing ",
+              "suffix": " (or other appropriate proteinas"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "7QEcYMDdEeqVMkPb9lB2LQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:43:18",
+      "updated": "2020-07-08T05:43:18",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " tablet of cOmplete and 2 mL of ",
+      "exact": "RIPA buffer",
+      "suffix": " and dilute 1:25 with 1X PBS.Pla",
+      "start": 8946,
+      "end": 8957,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 186,
+              "startOffset": 175,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]"
+            },
+            {
+              "end": 8957,
+              "type": "TextPositionSelector",
+              "start": 8946
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RIPA buffer",
+              "prefix": " tablet of cOmplete and 2 mL of ",
+              "suffix": " and dilute 1:25 with 1X PBS.Pla"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "9b1vwMDdEeqFnAc0VMPwqA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:43:32",
+      "updated": "2020-07-08T05:43:32",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "IPA buffer and dilute 1:25 with ",
+      "exact": "1X PBS",
+      "suffix": ".Place half brain inside a clean",
+      "start": 8979,
+      "end": 8985,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 214,
+              "startOffset": 208,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[20]"
+            },
+            {
+              "end": 8985,
+              "type": "TextPositionSelector",
+              "start": 8979
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1X PBS",
+              "prefix": "IPA buffer and dilute 1:25 with ",
+              "suffix": ".Place half brain inside a clean"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "Bzu66sDeEeqY8-e2tsDebg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:44:02",
+      "updated": "2020-07-08T05:44:02",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "Place half brain inside a clean ",
+      "exact": "Dounce homogenizer",
+      "suffix": " and homogenize the brain with 5",
+      "start": 9018,
+      "end": 9036,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 50,
+              "startOffset": 32,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9036,
+              "type": "TextPositionSelector",
+              "start": 9018
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Dounce homogenizer",
+              "prefix": "Place half brain inside a clean ",
+              "suffix": " and homogenize the brain with 5"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "fYgTpsDeEeqMiadvyBww7Q",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:47:20",
+      "updated": "2020-07-13T13:31:44",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "e homogenizer and homogenize the",
+      "exact": " brain",
+      "suffix": " with 500 uL of extraction buffe",
+      "start": 9055,
+      "end": 9061,
+      "tags": [
+        "sample",
+        "input"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 75,
+              "startOffset": 69,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9061,
+              "type": "TextPositionSelector",
+              "start": 9055
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " brain",
+              "prefix": "e homogenizer and homogenize the",
+              "suffix": " with 500 uL of extraction buffe"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "EtbvbsDeEeqLl-u9Hq0JhA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:44:21",
+      "updated": "2020-07-08T05:44:21",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "genize the brain with 500 uL of ",
+      "exact": "extraction buffer",
+      "suffix": ". Use small strokes to avoid bub",
+      "start": 9077,
+      "end": 9094,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 108,
+              "startOffset": 91,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9094,
+              "type": "TextPositionSelector",
+              "start": 9077
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "extraction buffer",
+              "prefix": "genize the brain with 500 uL of ",
+              "suffix": ". Use small strokes to avoid bub"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "Si7hnMDeEeq7dZvAG3c_-Q",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:45:54",
+      "updated": "2020-07-08T05:45:54",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "to homogenize the tissue. With a",
+      "exact": " pipette",
+      "suffix": ", transfer the homogenized tissu",
+      "start": 9206,
+      "end": 9214,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 228,
+              "startOffset": 220,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9214,
+              "type": "TextPositionSelector",
+              "start": 9206
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " pipette",
+              "prefix": "to homogenize the tissue. With a",
+              "suffix": ", transfer the homogenized tissu"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "cwIsgsDeEeqyv7PYGdcQMA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:47:03",
+      "updated": "2020-07-13T13:33:28",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "e. With a pipette, transfer the ",
+      "exact": "homogenized tissue",
+      "suffix": " to an Eppendorf and keep on ice",
+      "start": 9229,
+      "end": 9247,
+      "tags": [
+        "sample",
+        "output"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 261,
+              "startOffset": 243,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9247,
+              "type": "TextPositionSelector",
+              "start": 9229
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "homogenized tissue",
+              "prefix": "e. With a pipette, transfer the ",
+              "suffix": " to an Eppendorf and keep on ice"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "hzTJHMDeEeqOM4fJaJcU1g",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:47:37",
+      "updated": "2020-07-08T05:47:37",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "er the homogenized tissue to an ",
+      "exact": "Eppendorf",
+      "suffix": " and keep on ice. Wash the homog",
+      "start": 9254,
+      "end": 9263,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 277,
+              "startOffset": 268,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9263,
+              "type": "TextPositionSelector",
+              "start": 9254
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Eppendorf",
+              "prefix": "er the homogenized tissue to an ",
+              "suffix": " and keep on ice. Wash the homog"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "mC6krsDeEeqgpcvdt0Mt2g",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:48:05",
+      "updated": "2020-07-08T05:48:05",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " ice. Wash the homogenizer with ",
+      "exact": "MiliQ water",
+      "suffix": " between samples. Sonicate tubes",
+      "start": 9307,
+      "end": 9318,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 332,
+              "startOffset": 321,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9318,
+              "type": "TextPositionSelector",
+              "start": 9307
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "MiliQ water",
+              "prefix": " ice. Wash the homogenizer with ",
+              "suffix": " between samples. Sonicate tubes"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "uodtOMDeEeq-NvcHLqmvNg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:49:03",
+      "updated": "2020-07-08T05:49:03",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " minutes. Transfer samples to a ",
+      "exact": "4ºC centrifuge",
+      "suffix": ", and centrifuge at 14000 rpm (t",
+      "start": 9398,
+      "end": 9412,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 426,
+              "startOffset": 412,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9412,
+              "type": "TextPositionSelector",
+              "start": 9398
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "4ºC centrifuge",
+              "prefix": " minutes. Transfer samples to a ",
+              "suffix": ", and centrifuge at 14000 rpm (t"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "-z739sDeEeqGug8iK-Fo-Q",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:50:51",
+      "updated": "2020-07-08T05:50:51",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "rther processing. If extracting ",
+      "exact": "protein",
+      "suffix": " or RNA from cerebral microvesse",
+      "start": 9595,
+      "end": 9602,
+      "tags": [
+        "sample"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 616,
+              "startOffset": 609,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9602,
+              "type": "TextPositionSelector",
+              "start": 9595
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "protein",
+              "prefix": "rther processing. If extracting ",
+              "suffix": " or RNA from cerebral microvesse"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "A2ijlsDfEeqVbRuF9Dibng",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:51:05",
+      "updated": "2020-07-08T05:51:05",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "essing. If extracting protein or",
+      "exact": " RNA",
+      "suffix": " from cerebral microvessels is o",
+      "start": 9605,
+      "end": 9609,
+      "tags": [
+        "sample"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 623,
+              "startOffset": 619,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9609,
+              "type": "TextPositionSelector",
+              "start": 9605
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " RNA",
+              "prefix": "essing. If extracting protein or",
+              "suffix": " from cerebral microvessels is o"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "4LrpCMDeEeqSvWfN7s3CgA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:50:07",
+      "updated": "2020-07-08T05:50:07",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " extracting protein or RNA from ",
+      "exact": "cerebral microvessels",
+      "suffix": " is of interest, follow this det",
+      "start": 9615,
+      "end": 9636,
+      "tags": [
+        "sample"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 650,
+              "startOffset": 629,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[21]"
+            },
+            {
+              "end": 9636,
+              "type": "TextPositionSelector",
+              "start": 9615
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cerebral microvessels",
+              "prefix": " extracting protein or RNA from ",
+              "suffix": " is of interest, follow this det"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "E2zCVMDfEeqwK_OZs4ff-A",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:51:32",
+      "updated": "2020-07-08T05:51:32",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " measurement (Figure 2). We use ",
+      "exact": "Pierce BCA Protein Assay Kit (ThermoFisher CAT No. 23225)",
+      "suffix": "·     If performing RNA extracti",
+      "start": 9839,
+      "end": 9896,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 138,
+              "startOffset": 81,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[23]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[23]"
+            },
+            {
+              "end": 9896,
+              "type": "TextPositionSelector",
+              "start": 9839
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Pierce BCA Protein Assay Kit (ThermoFisher CAT No. 23225)",
+              "prefix": " measurement (Figure 2). We use ",
+              "suffix": "·     If performing RNA extracti"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "ILvIasDfEeqPxBPO5wxWTA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-08T05:51:54",
+      "updated": "2020-07-08T05:51:54",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ble and clean all surfaces with ",
+      "exact": "RNAzap (ThermoFisher, CAT No. AM9780)",
+      "suffix": ". Proceed with preferred protoco",
+      "start": 9999,
+      "end": 10036,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 140,
+              "startOffset": 103,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[24]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[24]"
+            },
+            {
+              "end": 10036,
+              "type": "TextPositionSelector",
+              "start": 9999
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RNAzap (ThermoFisher, CAT No. AM9780)",
+              "prefix": "ble and clean all surfaces with ",
+              "suffix": ". Proceed with preferred protoco"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "xU7O7LuIEeqKGJugpmlnsQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-01T10:51:08",
+      "updated": "2020-07-01T10:51:08",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " and slicing for immunostaining ",
+      "exact": "The half brain stored in sucrose will be used for immunostaining. Extract the brain from the sucrose solution and add to a petri dish. Place the brain in a coronal or sagittal position inside the metallic cryotome holder with OCT compound as an adhesive. Let freeze inside the cryotome.CRITICAL STEP: the brain should be oriented straight and parallel to the blade in order to ensure correct slicing.If sections are used as serial sections prepare six tubes for a half brain, or if they will be stored as regions of interest label the tubes accordingly and fill them up with 1.7 mL of cryoprotection solution. Prepare cryoprotection solution by mixing 150 g of sucrose, 200 mL of 1X PBS, 150 mL of ethylene glycol, and complete to a final volume of 500 mL with 1X PBS. Store at 4ºC.Position the metallic holder into the cryotome. Start trimming the OCT adhesive until the brain appears. Start slicing the brain with a thickness of 30 µm, or as desired. Select each slice, submerge in PBS and alternate the storage of each slice into different tubes. This will ensure that a representation of the whole brain is stored on each tube.STOP POINT: Slices can be stored at 4ºC for as long as needed before mounting.",
+      "suffix": " STEP 6: Immunostaining for astr",
+      "start": 10325,
+      "end": 11534,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 78,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[31]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]"
+            },
+            {
+              "end": 11534,
+              "type": "TextPositionSelector",
+              "start": 10325
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The half brain stored in sucrose will be used for immunostaining. Extract the brain from the sucrose solution and add to a petri dish. Place the brain in a coronal or sagittal position inside the metallic cryotome holder with OCT compound as an adhesive. Let freeze inside the cryotome.CRITICAL STEP: the brain should be oriented straight and parallel to the blade in order to ensure correct slicing.If sections are used as serial sections prepare six tubes for a half brain, or if they will be stored as regions of interest label the tubes accordingly and fill them up with 1.7 mL of cryoprotection solution. Prepare cryoprotection solution by mixing 150 g of sucrose, 200 mL of 1X PBS, 150 mL of ethylene glycol, and complete to a final volume of 500 mL with 1X PBS. Store at 4ºC.Position the metallic holder into the cryotome. Start trimming the OCT adhesive until the brain appears. Start slicing the brain with a thickness of 30 µm, or as desired. Select each slice, submerge in PBS and alternate the storage of each slice into different tubes. This will ensure that a representation of the whole brain is stored on each tube.STOP POINT: Slices can be stored at 4ºC for as long as needed before mounting.",
+              "prefix": " and slicing for immunostaining ",
+              "suffix": " STEP 6: Immunostaining for astr"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "quCPYsUNEeqAxDs5HYofuA",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:35:07",
+      "updated": "2020-07-13T13:35:07",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ing for immunostaining The half ",
+      "exact": "brain",
+      "suffix": " stored in sucrose will be used ",
+      "start": 10334,
+      "end": 10339,
+      "tags": [
+        "sample",
+        "input"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 14,
+              "startOffset": 9,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]"
+            },
+            {
+              "end": 10339,
+              "type": "TextPositionSelector",
+              "start": 10334
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "brain",
+              "prefix": "ing for immunostaining The half ",
+              "suffix": " stored in sucrose will be used "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "wZsJWMUNEeq9jvPU1liNSg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:35:45",
+      "updated": "2020-07-13T13:35:45",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ing. Extract the brain from the ",
+      "exact": "sucrose solution",
+      "suffix": " and add to a petri dish. Place ",
+      "start": 10418,
+      "end": 10434,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 109,
+              "startOffset": 93,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]"
+            },
+            {
+              "end": 10434,
+              "type": "TextPositionSelector",
+              "start": 10418
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sucrose solution",
+              "prefix": "ing. Extract the brain from the ",
+              "suffix": " and add to a petri dish. Place "
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "RY0nFMUOEeq63sP5qQPhPQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:39:27",
+      "updated": "2020-07-13T13:39:27",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "e sucrose solution and add to a ",
+      "exact": "petri dish",
+      "suffix": ". Place the brain in a coronal o",
+      "start": 10448,
+      "end": 10458,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 133,
+              "startOffset": 123,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]"
+            },
+            {
+              "end": 10458,
+              "type": "TextPositionSelector",
+              "start": 10448
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "petri dish",
+              "prefix": "e sucrose solution and add to a ",
+              "suffix": ". Place the brain in a coronal o"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "8bBA_sUNEeqiN0tuNYI7jQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:37:06",
+      "updated": "2020-07-13T13:37:06",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "or sagittal position inside the ",
+      "exact": "metallic cryotome holder",
+      "suffix": " with OCT compound as an adhesiv",
+      "start": 10521,
+      "end": 10545,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 220,
+              "startOffset": 196,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[27]"
+            },
+            {
+              "end": 10545,
+              "type": "TextPositionSelector",
+              "start": 10521
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "metallic cryotome holder",
+              "prefix": "or sagittal position inside the ",
+              "suffix": " with OCT compound as an adhesiv"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "H-1XQMUOEeqPAuMIi9Snaw",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:38:24",
+      "updated": "2020-07-13T13:38:24",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": " as serial sections prepare six ",
+      "exact": "tubes",
+      "suffix": " for a half brain, or if they wi",
+      "start": 10777,
+      "end": 10782,
+      "tags": [
+        "equipment"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 57,
+              "startOffset": 52,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]"
+            },
+            {
+              "end": 10782,
+              "type": "TextPositionSelector",
+              "start": 10777
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "tubes",
+              "prefix": " as serial sections prepare six ",
+              "suffix": " for a half brain, or if they wi"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "LEs3HsUOEeqMzxOPuDDG-Q",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:38:45",
+      "updated": "2020-07-13T13:38:45",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "and fill them up with 1.7 mL of ",
+      "exact": "cryoprotection solution",
+      "suffix": ". Prepare cryoprotection solutio",
+      "start": 10910,
+      "end": 10933,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 208,
+              "startOffset": 185,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]"
+            },
+            {
+              "end": 10933,
+              "type": "TextPositionSelector",
+              "start": 10910
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cryoprotection solution",
+              "prefix": "and fill them up with 1.7 mL of ",
+              "suffix": ". Prepare cryoprotection solutio"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "OlI39MUOEeqYug-1qZCOyg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:39:08",
+      "updated": "2020-07-13T13:39:08",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ion solution by mixing 150 g of ",
+      "exact": "sucrose",
+      "suffix": ", 200 mL of 1X PBS, 150 mL of et",
+      "start": 10986,
+      "end": 10993,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 268,
+              "startOffset": 261,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]"
+            },
+            {
+              "end": 10993,
+              "type": "TextPositionSelector",
+              "start": 10986
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sucrose",
+              "prefix": "ion solution by mixing 150 g of ",
+              "suffix": ", 200 mL of 1X PBS, 150 mL of et"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "QsLzJMUOEeq43LfQa-GlNQ",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:39:22",
+      "updated": "2020-07-13T13:39:22",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "ing 150 g of sucrose, 200 mL of ",
+      "exact": "1X PBS",
+      "suffix": ", 150 mL of ethylene glycol, and",
+      "start": 11005,
+      "end": 11011,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 286,
+              "startOffset": 280,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]"
+            },
+            {
+              "end": 11011,
+              "type": "TextPositionSelector",
+              "start": 11005
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1X PBS",
+              "prefix": "ing 150 g of sucrose, 200 mL of ",
+              "suffix": ", 150 mL of ethylene glycol, and"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "Uzz5cMUOEeqHsPOAVG29gg",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-13T13:39:50",
+      "updated": "2020-07-13T13:39:50",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "se, 200 mL of 1X PBS, 150 mL of ",
+      "exact": "ethylene glycol",
+      "suffix": ", and complete to a final volume",
+      "start": 11023,
+      "end": 11038,
+      "tags": [
+        "reagent"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 313,
+              "startOffset": 298,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[29]"
+            },
+            {
+              "end": 11038,
+              "type": "TextPositionSelector",
+              "start": 11023
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ethylene glycol",
+              "prefix": "se, 200 mL of 1X PBS, 150 mL of ",
+              "suffix": ", and complete to a final volume"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    },
+    {
+      "id": "1VqHVLuIEeqPhGOu_a-y_w",
+      "authority": "hypothes.is",
+      "url": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+      "created": "2020-07-01T10:51:35",
+      "updated": "2020-07-01T10:51:35",
+      "title": "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿.",
+      "refs": [],
+      "isReply": false,
+      "isPagenote": false,
+      "user": "iannotate",
+      "displayName": null,
+      "text": "",
+      "prefix": "s, microglia and amyloid plaques",
+      "exact": " Take one of the tubes stored at 4ºC and place the brain slices on a petri dish with 1X PBS. Mount the slices on a glass slide with a brush. A total of 3-6 slices can be mounted on a glass slide, depending on the size of the slices. Ensure that the slices are completely straight and not folded. Make sure to leave enough spaces in the edges for the liquid blocker marker. Allow to thoroughly dry.After slices have dried, draw a rectangle with liquid blocking marker to prevent leakage of solutions. Wash slices 6 times with PBS for 5 minutes. Prepare a blocking solution by adding 250 µL of goat serum, 50 µL of 10% Triton X and complete to a 5 mL volume using 1X PBS. Block slides for 30 min with the blocking solution. Aspirate the blocking solution and apply primary antibody (1:500 dilution, or the appropriate dilution for the antibody, in blocking solution). Let incubate overnight at 4ºC (or as appropriate for the antibody) with a wet paper towel to avoid desiccation.The following day aspirate the primary antibody. Wash slides three times with for 5 min with 1X PBS.CRITICAL STEP: once the slices are thoroughly adhered after the first drying step, do not allow slides to completely dry again because this can compromise the integrity of the tissue and the quality of the staining. Make sure to cover slides completely with the solution.Apply secondary antibody (1:500 dilution, or as appropriate, in blocking solution) and incubate for 2 hours at room temperature (or as appropriate) in a light shielded area with a wet paper towel to avoid desiccation.Aspirate the secondary antibody and wash three times with 1X PBS. This would be an appropriate time to apply DAPI or other water-soluble counterstains. For example, if this was an Alzheimer’s disease mouse model and labeling of amyloid plaques was desired, apply Methoxy-X04 diluted 1:250 in 1X PBS and incubate at room temperature for 15 minutes. Wash 2 times with 80% ethanol. Then, allow slides to thoroughly dry before mounting. Use a mounting medium of preference (we recommend Prolong Gold). Our images were acquired with a Zeiss LSM 710 Confocal, using fluorescently-labeled secondary antibodies (Figure 4).",
+      "suffix": "Troubleshooting·     The syringe",
+      "start": 11603,
+      "end": 13782,
+      "tags": [
+        "step"
+      ],
+      "group": "__world__",
+      "target": [
+        {
+          "source": "https://protocolexchange.researchsquare.com/article/pex-838/v1",
+          "selector": [
+            {
+              "type": "RangeSelector",
+              "endOffset": 614,
+              "startOffset": 0,
+              "endContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[38]",
+              "startContainer": "/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[12]/div[2]/span[1]/p[33]"
+            },
+            {
+              "end": 13782,
+              "type": "TextPositionSelector",
+              "start": 11603
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Take one of the tubes stored at 4ºC and place the brain slices on a petri dish with 1X PBS. Mount the slices on a glass slide with a brush. A total of 3-6 slices can be mounted on a glass slide, depending on the size of the slices. Ensure that the slices are completely straight and not folded. Make sure to leave enough spaces in the edges for the liquid blocker marker. Allow to thoroughly dry.After slices have dried, draw a rectangle with liquid blocking marker to prevent leakage of solutions. Wash slices 6 times with PBS for 5 minutes. Prepare a blocking solution by adding 250 µL of goat serum, 50 µL of 10% Triton X and complete to a 5 mL volume using 1X PBS. Block slides for 30 min with the blocking solution. Aspirate the blocking solution and apply primary antibody (1:500 dilution, or the appropriate dilution for the antibody, in blocking solution). Let incubate overnight at 4ºC (or as appropriate for the antibody) with a wet paper towel to avoid desiccation.The following day aspirate the primary antibody. Wash slides three times with for 5 min with 1X PBS.CRITICAL STEP: once the slices are thoroughly adhered after the first drying step, do not allow slides to completely dry again because this can compromise the integrity of the tissue and the quality of the staining. Make sure to cover slides completely with the solution.Apply secondary antibody (1:500 dilution, or as appropriate, in blocking solution) and incubate for 2 hours at room temperature (or as appropriate) in a light shielded area with a wet paper towel to avoid desiccation.Aspirate the secondary antibody and wash three times with 1X PBS. This would be an appropriate time to apply DAPI or other water-soluble counterstains. For example, if this was an Alzheimer’s disease mouse model and labeling of amyloid plaques was desired, apply Methoxy-X04 diluted 1:250 in 1X PBS and incubate at room temperature for 15 minutes. Wash 2 times with 80% ethanol. Then, allow slides to thoroughly dry before mounting. Use a mounting medium of preference (we recommend Prolong Gold). Our images were acquired with a Zeiss LSM 710 Confocal, using fluorescently-labeled secondary antibodies (Figure 4).",
+              "prefix": "s, microglia and amyloid plaques",
+              "suffix": "Troubleshooting·     The syringe"
+            }
+          ]
+        }
+      ],
+      "document": {
+        "title": [
+          "Brain and blood extraction for immunostaining, protein, and RNA measurements after long-term two photon imaging in mice﻿."
+        ]
+      }
+    }
+  ]
