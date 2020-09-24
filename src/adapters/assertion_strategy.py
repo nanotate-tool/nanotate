@@ -50,3 +50,5 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
                         (nanoPub.step, tagConfig['ref'], id_iri))
                     nanoPub.assertion.add(
                         (id_iri, RDFS.label, rdflib.Literal(annotation.exact)))
+            else:
+                super().add(nanoPub, tagConfig, annotation)
