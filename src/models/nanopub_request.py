@@ -29,18 +29,29 @@ class NanopubRequest:
 
     @property
     def step(self) -> Annotation:
-        """ anotacion asociada al tag 'step' """
-        return self.annotationOf(AnnotationTag.step)
+        """ retorna la anotacion asociada al tag 'step' """
+        stepAnnotations = self.annotationsOf(AnnotationTag.step)
+        return stepAnnotations[0] if len(stepAnnotations) > 0 else None
 
-    def annotationOf(self, tag: AnnotationTag) -> Annotation:
-        """ retorna la annotacion relacionada al tag pasado """
-        for annotation in self.annotations:
-            try:
-                if annotation.tags and annotation.tags.index(tag.value) >= 0:
-                    return annotation
-            except:
-                pass
-        return None
+    def annotationsOf(self, tag: AnnotationTag) -> list:
+        """ retorna las annotaciones relacionada al tag pasado """
+        filtered = list(
+            filter((lambda annotation: self.tagInAnnotation(
+                tag, annotation)), self.annotations)
+        )
+        return filtered
+
+    @staticmethod
+    def tagInAnnotation(tag: AnnotationTag, annotation: Annotation):
+        """
+            realiza el proceso de verificacion de si el tag pasado se encuentra presente en
+            las tags de la anotacion
+        """
+        try:
+            return annotation.tags and annotation.tags.index(tag.value) >= 0
+        except:
+            pass
+        return False
 
     @staticmethod
     def splitAnnotations(args: list) -> list:
@@ -48,7 +59,7 @@ class NanopubRequest:
         request = []
         for annotation in args:
             try:
-                if annotation.tags.index(AnnotationTag.step.value) >= 0:
+                if NanopubRequest.tagInAnnotation(AnnotationTag.step, annotation):
                     request.append(NanopubRequest.splitDeep(annotation, args))
             except:
                 pass

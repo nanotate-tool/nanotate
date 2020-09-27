@@ -129,11 +129,12 @@ class Nanopublication:
         if self.assertion != None:
             for tag_config in Nanopublication.TAGS_CONFIG:
                 # procesando todas las anotaciones configuradas
-                annotation_of_tag = self.request.annotationOf(
+                annotations_of_tag = self.request.annotationsOf(
                     tag_config['tag'])
-                if annotation_of_tag:
-                    self.assertionStrategy.add(
-                        self, tag_config, annotation_of_tag,)
+                if annotations_of_tag and len(annotations_of_tag) > 0:
+                    for annotation in annotations_of_tag:
+                        self.assertionStrategy.add(
+                            self, tag_config, annotation)
 
     def serialize(self, _format):
         """ realiza el proceso de serializacion de los datos de la nanopublicacion"""
