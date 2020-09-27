@@ -169,4 +169,5 @@ class Nanopublication:
             '@provenance': format_text_to_html(provenance.group(0)),
             '@pubInfo': format_text_to_html(pubInfo.group(0)),
             '@Head': format_text_to_html(Head.group(0)),
+            'exact': nanopubTrig
         }
