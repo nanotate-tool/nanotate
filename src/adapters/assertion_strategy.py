@@ -41,14 +41,16 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
         else:
             ontologies = annotation.ontologies if len(
                 annotation.ontologies) > 0 else self.DEFAULT_ONTOLOGIES
-            api_annotations = self.api.annotator(annotation.exact, ontologies)
-            if api_annotations != None and len(api_annotations) > 0:
-                for api_annotation in api_annotations:
-                    id_iri = rdflib.URIRef(
-                        api_annotation['annotatedClass']['@id'])
+            bio_annotations = self.api.annotator(annotation.exact, ontologies)
+            bio_annotations = list(filter((lambda bio_annotation: annotation.varIncludes(
+                'bio_annotations', bio_annotation['annotatedClass']['@id'])), bio_annotations))
+            if len(bio_annotations) > 0:
+                for bio_annotation in bio_annotations:
+                    annotation_id = bio_annotation['annotatedClass']['@id']
+                    annotation_id_iri = rdflib.URIRef(annotation_id)
                     nanoPub.assertion.add(
-                        (nanoPub.step, tagConfig['ref'], id_iri))
+                        (nanoPub.step, tagConfig['ref'], annotation_id_iri))
                     nanoPub.assertion.add(
-                        (id_iri, RDFS.label, rdflib.Literal(annotation.exact)))
+                        (annotation_id_iri, RDFS.label, rdflib.Literal(annotation.exact)))
             else:
                 super().add(nanoPub, tagConfig, annotation)

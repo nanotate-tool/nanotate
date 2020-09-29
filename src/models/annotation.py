@@ -11,7 +11,7 @@ class Annotation(object):
 
     def __init__(self, id: str, authority: str, url: str, created: datetime, updated: datetime, title: str, refs: list, isReply: bool, isPagenote: bool,
                  user: str, displayName: str, text: str, prefix: str, exact: str, suffix: str, start: int, end: int, tags: list, group: str,
-                 ontologies: list = [], *args, **kwargs):
+                 settings: object = None, ontologies: list = [], *args, **kwargs):
         self.id = id  # : "lB7Z3rbsEeqZMm96UVPfMg"
         self.authority = authority  # ": "hypothes.is",
         self.url = url  # : "https:#protocolexchange.researchsquare.com/article/pex-838/v1",
@@ -32,6 +32,18 @@ class Annotation(object):
         self.tags = tags  # : [ "sample" ],
         self.group = group  # ": "__world__",
         self.ontologies = ontologies
+        self.settings = settings
+
+    def var(self, var_key: str) -> list:
+        """ retorna el array de valores asociado a la variable pasada en el settings del annotation request """
+        return self.settings[var_key] if self.settings else None
+
+    def varIncludes(self, var_key: str, value: str):
+        """ true si el valor buscado se encuentra en el array de valores del var_key en el settings del annotation request
+            false de lo contrario
+        """
+        _var = self.var(var_key)
+        return _var == None or value in _var
 
     @staticmethod
     def parseJson(data) -> Annotation:
