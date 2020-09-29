@@ -1,11 +1,13 @@
 from flask import Flask
 from src.controllers.api.nanopubs_controller import api_nanopubs_controllers
+from src.controllers.api.bioportal_controller import api_bioportal_controllers
 
 # inicialize flask app
 app = Flask(__name__)
 
 # registro del controlador de 'registro de annotaciones'
 app.register_blueprint(api_nanopubs_controllers)
+app.register_blueprint(api_bioportal_controllers)
 
 
 def dev():
