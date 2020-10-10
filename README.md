@@ -4,12 +4,12 @@ Herramienta para laa generacion de nanopublicaciones basada en annotaciones real
 
 # Instalacion
 
-para ejecutar esta aplicacion necesitamos instalar las dependencias de `requeriments.txt`, para ello necesitamos un virtual enviroment de python. 
+para ejecutar esta aplicacion necesitamos instalar las dependencias de `requirements.txt`, para ello necesitamos un virtual enviroment de python. 
 
 ```
 $ python -m venv venv
 $ . venv/bin/activate
-$ pip install -r requeriments.txt
+$ pip install -r requirements.txt
 ```
 
 # Tests
