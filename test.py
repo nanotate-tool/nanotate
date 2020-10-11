@@ -1,6 +1,6 @@
 from src.models.annotation import Annotation
 from src.models.nanopub_request import NanopubRequest
-from src.adapters.nanopublication import Nanopublication
+from src.adapters.annotation_nanopublication import AnnotationNanopublication
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
 from src.adapters.bioportal_api import BioPortalApi
 from src.injector import Injector
@@ -83,7 +83,7 @@ def test(inputfile, outputFormat="print", rdfFormat="trig", outputdir=None):
             os.makedirs(outputdir)
 
         for request in requests:
-            nanopublication = Nanopublication(request, ASSERTION_STRATEGY)
+            nanopublication = AnnotationNanopublication(request, ASSERTION_STRATEGY)
             filename = "nanopublication-" + request.id + ".trig"
             if outputFormat == "file":
                 filepath = outputdir + filename
