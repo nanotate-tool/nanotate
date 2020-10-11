@@ -1,3 +1,9 @@
 bioportal:
     url: http://data.bioontology.org
     key: 8b5b7825-538d-40e0-9e9e-5ab9274a9aeb
+neo4j:
+    http_url: http://localhost:7474
+    uri: bolt://localhost:7687
+    db: neo4j
+    user: neo4j
+    password: '123456'
