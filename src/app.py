@@ -1,21 +1,35 @@
 from flask import Flask
-from src.controllers.api.nanopubs_controller import api_nanopubs_controllers
-from src.controllers.api.bioportal_controller import api_bioportal_controllers
-
-# inicialize flask app
-app = Flask(__name__)
-
-# registro del controlador de 'registro de annotaciones'
-app.register_blueprint(api_nanopubs_controllers)
-app.register_blueprint(api_bioportal_controllers)
+from src.injector import Injector
+from . import controllers
 
 
-def dev():
-    """DEV entry point of the app."""
+def application(
+    dev: bool = True, config_path: str = "environment/environment_dev.yml"
+) -> Flask:
+    """
+    realiza la creacion de la aplicacion flask
+    """
+    # inicialize app env
+    injector = Injector()
+    injector.env.from_yaml(config_path)
+
+    # inicialize flask app
+    app = Flask(__name__)
+    app.injector = injector
+    # regiter controllers
+    controllers.register(app, injector)
+
+    if dev:
+        runDev(app)
+
+    return app
+
+
+def runDev(app: Flask):
+    """Run Flask App in DEV settings."""
     try:
         # logging.basicConfig(filename='error.log',level=logging.DEBUG)
-        app.run(host='0.0.0.0', debug=True, port=8080,
-                use_reloader=True, threaded=True)
+        app.run(host="0.0.0.0", debug=True, port=8080, use_reloader=True, threaded=True)
     except Exception as exc:
         print(exc.message)
     finally:

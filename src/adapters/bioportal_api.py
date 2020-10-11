@@ -6,10 +6,10 @@ import string
 
 class BioPortalApi:
     """ Implementacion simple de la api de bioportal http://data.bioontology.org/documentation """
-    REST_URL = "http://data.bioontology.org"
 
-    def __init__(self, apikey: str):
-        self.API_KEY = apikey
+    def __init__(self, settings):
+        self.REST_URL = settings['url']
+        self.API_KEY = settings['key']
 
     def annotator(self, text: str, ontologies: list = []):
         """examina el texto pasado y retorna las classes relevantes asociadas al termino see http://data.bioontology.org/documentation#nav_annotator"""
@@ -24,4 +24,4 @@ class BioPortalApi:
         """
         opener = urllib.request.build_opener()
         opener.addheaders = [('Authorization', 'apikey token=' + self.API_KEY)]
-        return json.loads(opener.open(BioPortalApi.REST_URL + url).read())
+        return json.loads(opener.open(self.REST_URL + url).read())
