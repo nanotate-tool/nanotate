@@ -18,7 +18,7 @@ def application(
     app.injector = injector
     # regiter controllers
     controllers.register(app, injector)
-
+    injector.nanopubsService().registerTest()
     if dev:
         runDev(app)
 
