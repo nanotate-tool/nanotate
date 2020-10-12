@@ -16,6 +16,8 @@ def application(
     # inicialize flask app
     app = Flask(__name__)
     app.injector = injector
+    # manual database connection
+    injector.mongoDb().connect()
     # regiter controllers
     controllers.register(app, injector)
 

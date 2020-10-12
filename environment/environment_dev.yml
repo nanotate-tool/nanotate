@@ -1,3 +1,7 @@
 bioportal:
     url: http://data.bioontology.org
     key: 8b5b7825-538d-40e0-9e9e-5ab9274a9aeb
+mongo:
+    host: localhost
+    database: nanopubs
+    port: 27017

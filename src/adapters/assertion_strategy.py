@@ -18,39 +18,78 @@ class LiteralAssertionStrategy(AssertionStrategy):
 
     def add(self, nanoPub, tagConfig, annotation: Annotation):
         nanoPub.assertion.add(
-            (nanoPub.step, tagConfig['ref'], rdflib.Literal(annotation.exact)))
+            (nanoPub.step, tagConfig["ref"], rdflib.Literal(annotation.exact))
+        )
 
 
 class BioportalAssertionStrategy(LiteralAssertionStrategy):
-    """ estrategia de 'assertion' en el cual la propiedad 'exact' de la 'anotacion' se busca en la
-        api de bioportal para relacionarla a una(s) ontologias\n
+    """estrategia de 'assertion' en el cual la propiedad 'exact' de la 'anotacion' se busca en la
+    api de bioportal para relacionarla a una(s) ontologias\n
 
-        la 'anotacion' con tag 'step' sera ignorada de esta busqueda y se usara la estrategia Literal (LiteralAssertionStrategy)
-        para el 'assertion' de esta
+    la 'anotacion' con tag 'step' sera ignorada de esta busqueda y se usara la estrategia Literal (LiteralAssertionStrategy)
+    para el 'assertion' de esta
     """
 
-    DEFAULT_ONTOLOGIES = ['ERO', 'SP', 'CHEBI',
-                          'OBI', 'BAO', 'NCBITAXON', 'UBERON', 'EFO']
+    DEFAULT_ONTOLOGIES = [
+        "ERO",
+        "SP",
+        "CHEBI",
+        "OBI",
+        "BAO",
+        "NCBITAXON",
+        "UBERON",
+        "EFO",
+    ]
 
     def __init__(self, api: BioPortalApi):
         self.api = api
 
     def add(self, nanoPub, tagConfig, annotation: Annotation):
-        if tagConfig['tag'] == AnnotationTag.step:
+        if tagConfig["tag"] == AnnotationTag.step:
             super().add(nanoPub, tagConfig, annotation)
         else:
-            ontologies = annotation.ontologies if len(
-                annotation.ontologies) > 0 else self.DEFAULT_ONTOLOGIES
-            bio_annotations = self.api.annotator(annotation.exact, ontologies)
-            bio_annotations = list(filter((lambda bio_annotation: annotation.varIncludes(
-                'bio_annotations', bio_annotation['annotatedClass']['@id'])), bio_annotations))
+            bio_annotations = self.bioAnnotations(annotation)
             if len(bio_annotations) > 0:
                 for bio_annotation in bio_annotations:
-                    annotation_id = bio_annotation['annotatedClass']['@id']
-                    annotation_id_iri = rdflib.URIRef(annotation_id)
+                    bio_annotation_iri = rdflib.URIRef(bio_annotation)
                     nanoPub.assertion.add(
-                        (nanoPub.step, tagConfig['ref'], annotation_id_iri))
+                        (nanoPub.step, tagConfig["ref"], bio_annotation_iri)
+                    )
                     nanoPub.assertion.add(
-                        (annotation_id_iri, RDFS.label, rdflib.Literal(annotation.exact)))
+                        (
+                            bio_annotation_iri,
+                            RDFS.label,
+                            rdflib.Literal(annotation.exact),
+                        )
+                    )
             else:
                 super().add(nanoPub, tagConfig, annotation)
+
+    def bioAnnotations(self, annotation: Annotation) -> list:
+        """
+        retorna una lista de las anotaciones relacionadas a la anotacion
+        """
+        # prevents step annotation calculate bio_annotations
+        if AnnotationTag.step.value in annotation.tags:
+            return []
+
+        ontologies = (
+            annotation.ontologies
+            if len(annotation.ontologies) > 0
+            else self.DEFAULT_ONTOLOGIES
+        )
+        bio_annotations = self.api.annotator(annotation.exact, ontologies)
+        bio_annotations = list(
+            map(
+                lambda bio_annotation: bio_annotation["annotatedClass"]["@id"],
+                filter(
+                    (
+                        lambda bio_annotation: annotation.varIncludes(
+                            "bio_annotations", bio_annotation["annotatedClass"]["@id"]
+                        )
+                    ),
+                    bio_annotations,
+                ),
+            )
+        )
+        return bio_annotations

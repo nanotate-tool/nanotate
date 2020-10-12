@@ -22,7 +22,9 @@ def api_nanopubs_controller(
     @controller.route("/api/nanopub/rgs", methods=["POST"])
     def annotations_register():
         """registro de anotaciones para su transformacion a nanopublicaciones"""
-        data = request.get_json()
+        data = service.registerFromAnnotations(
+            Annotation.parseJsonArr(request.get_json())
+        )
         return jsonify(data)
 
     @controller.route("/api/nanopub/preview", methods=["POST"])
