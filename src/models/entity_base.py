@@ -26,7 +26,7 @@ class EntityBase(Document):
     def to_json_map(self):
         base_json = json.loads(self.to_json(use_db_field=False))
         base_json["created_at"] = self.created_at.strftime(EntityBase.dateTimeFormat)
-        base_json["updated_at"] = self.created_at.strftime(EntityBase.dateTimeFormat)
+        base_json["updated_at"] = self.updated_at.strftime(EntityBase.dateTimeFormat)
         if "_id" in base_json:
             base_json.pop("_id")
         return base_json
