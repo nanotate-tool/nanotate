@@ -10,62 +10,23 @@ class AnnotationNanopublication(Nanopublication):
     """
     Representa una nanopublicacion generada desde un NanopubRequest pasado
     """
-    # configuracion de cada tag para el assertion
-    TAGS_CONFIG = [
-        {"tag": AnnotationTag.step, "ref": DC.description},
-        {"tag": AnnotationTag.sample, "ref": Nanopublication.BS.bioSampleUsed},
-        {"tag": AnnotationTag.equipment, "ref": Nanopublication.BS.labEquipmentUsed},
-        {"tag": AnnotationTag.reagent, "ref": Nanopublication.BS.reagentUsed},
-        {"tag": AnnotationTag.input, "ref": Nanopublication.SP.hasExperimentalInput},
-        {"tag": AnnotationTag.output, "ref": Nanopublication.SP.hasExperimentalOutput},
-    ]
 
     def __init__(self, request: NanopubRequest, strategy: AssertionStrategy = None):
-        url = request.step.url
-        self.np = rdflib.Namespace(url + "#")
-        super(AnnotationNanopublication, self).__init__(self.np)
-        
+        self.request = request
         self.assertionStrategy = (
             strategy if strategy != None else LiteralAssertionStrategy()
         )
-        self.request = request
-        
-        self.step = rdflib.term.URIRef(url + "#step")
-        self.creationtime = rdflib.Literal(request.step.created, datatype=XSD.dateTime)
-        # head
-        self.__initHead()
-        # assertion
-        self.__initAssertion()
-        # provenance
-        self.__initProvenance()
-        # pubinfo
-        self.__initPubinfo()
+        super(AnnotationNanopublication, self).__init__(
+            url=request.step.url,
+            author=self.request.user,
+            created=self.request.step.created,
+        )
         # calc values
         self.__calcAssertion()
 
-    def __initHead(self):
-        """ inicializa la cabezera ':Head' de la nanopublicacion"""
-        self.head = rdflib.Graph(self.np_rdf.store, self.np.Head)
-        self.head.add((self.np[""], RDF.type, Nanopublication.NP.Nanopublication))
-        self.head.add((self.np[""], Nanopublication.NP.hasAssertion, self.np.assertion))
-        self.head.add(
-            (self.np[""], Nanopublication.NP.hasProvenance, self.np.provenance)
-        )
-        self.head.add(
-            (self.np[""], Nanopublication.NP.hasPublicationInfo, self.np.pubInfo)
-        )
-        self.head.add((self.np.assertion, RDFS.member, self.step))
-
-    def __initAssertion(self):
-        """ inicializa la cabezera ':assertion' de la nanopublicacion"""
-        self.assertion = rdflib.Graph(self.np_rdf.store, self.np.assertion)
-
-    def __initProvenance(self):
+    def _initProvenance(self):
         """ inicializa la cabezera ':provenance' de la nanopublicacion"""
-        self.provenance = rdflib.Graph(self.np_rdf.store, self.np.provenance)
-        self.provenance.add(
-            (self.np.assertion, Nanopublication.PROV.generatedAtTime, self.creationtime)
-        )
+        super()._initProvenance()
         # insertando annotations
         for annotation in self.request.annotations:
             self.provenance.add(
@@ -76,22 +37,9 @@ class AnnotationNanopublication(Nanopublication):
                 )
             )
 
-    def __initPubinfo(self):
-        """ inicializa la cabezera ':pubInfo' de la nanopublicacion"""
-        self.pubInfo = rdflib.Graph(self.np_rdf.store, self.np.pubInfo)
-        self.pubInfo.add(
-            (
-                self.np[""],
-                Nanopublication.PROV.wasAttributedTo,
-                Nanopublication.AUT[self.request.user],
-            )
-        )
-        self.pubInfo.add(
-            (self.np[""], Nanopublication.PROV.generatedAtTime, self.creationtime)
-        )
-
     def __calcAssertion(self):
-        """realiza el proceso de calculo del area 'assertion' de la nanopublicacion a partir de los datos
+        """
+        realiza el proceso de calculo del area 'assertion' de la nanopublicacion a partir de los datos
         de las annotaciones del request de la instancia actual 'self.request.annotations'
         """
         if self.assertion != None:

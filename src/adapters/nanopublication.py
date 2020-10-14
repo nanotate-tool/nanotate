@@ -6,6 +6,7 @@ import rdflib
 import re
 import functools
 from rdflib.namespace import RDF, DC, XSD, RDFS
+from datetime import datetime
 
 
 class Nanopublication:
@@ -29,18 +30,43 @@ class Nanopublication:
         "https://bioschemas.org/profiles/LabProtocol/0.4-DRAFT-2020_07_23/#"
     )
 
+    # configuracion de cada tag para el assertion
+    TAGS_CONFIG = [
+        {"tag": AnnotationTag.step, "ref": DC.description},
+        {"tag": AnnotationTag.sample, "ref": BS.bioSampleUsed},
+        {"tag": AnnotationTag.equipment, "ref": BS.labEquipmentUsed},
+        {"tag": AnnotationTag.reagent, "ref": BS.reagentUsed},
+        {"tag": AnnotationTag.input, "ref": SP.hasExperimentalInput},
+        {"tag": AnnotationTag.output, "ref": SP.hasExperimentalOutput},
+    ]
+
     def __init__(
-        self, npNamespace: rdflib.Namespace, rdf_base: rdflib.ConjunctiveGraph = None
+        self,
+        url: str,
+        created: datetime,
+        author: str,
+        rdf_base: rdflib.ConjunctiveGraph = None,
     ):
-        self.np = npNamespace
+        self.np = rdflib.Namespace(url + "#")
+        self.step = rdflib.term.URIRef(url + "#step")
+        self.creationtime = rdflib.Literal(created, datatype=XSD.dateTime)
+        self.author = author
         if rdf_base == None:
             self.np_rdf = rdflib.ConjunctiveGraph()
             # initial namespaces
-            self.__initInitialNamespaces()
+            self._initInitialNamespaces()
+            # head
+            self._initHead()
+            # assertion
+            self._initAssertion()
+            # provenance
+            self._initProvenance()
+            # pubinfo
+            self._initPubinfo()
         else:
             self.np_rdf = rdf_base
 
-    def __initInitialNamespaces(self):
+    def _initInitialNamespaces(self):
         """ inicializa los namespaces base de la nanopublicaciones"""
         self.np_rdf.bind("", self.np)
         self.np_rdf.bind("np", Nanopublication.NP)
@@ -54,6 +80,44 @@ class Nanopublication:
         self.np_rdf.bind("plex", Nanopublication.PLEX)
         self.np_rdf.bind("sp", Nanopublication.SP)
         self.np_rdf.bind("bs", Nanopublication.BS)
+
+    def _initHead(self):
+        """ inicializa la cabezera ':Head' de la nanopublicacion"""
+        self.head = rdflib.Graph(self.np_rdf.store, self.np.Head)
+        self.head.add((self.np[""], RDF.type, Nanopublication.NP.Nanopublication))
+        self.head.add((self.np[""], Nanopublication.NP.hasAssertion, self.np.assertion))
+        self.head.add(
+            (self.np[""], Nanopublication.NP.hasProvenance, self.np.provenance)
+        )
+        self.head.add(
+            (self.np[""], Nanopublication.NP.hasPublicationInfo, self.np.pubInfo)
+        )
+        self.head.add((self.np.assertion, RDFS.member, self.step))
+
+    def _initAssertion(self):
+        """ inicializa la cabezera ':assertion' de la nanopublicacion"""
+        self.assertion = rdflib.Graph(self.np_rdf.store, self.np.assertion)
+
+    def _initProvenance(self):
+        """ inicializa la cabezera ':provenance' de la nanopublicacion"""
+        self.provenance = rdflib.Graph(self.np_rdf.store, self.np.provenance)
+        self.provenance.add(
+            (self.np.assertion, Nanopublication.PROV.generatedAtTime, self.creationtime)
+        )
+
+    def _initPubinfo(self):
+        """ inicializa la cabezera ':pubInfo' de la nanopublicacion"""
+        self.pubInfo = rdflib.Graph(self.np_rdf.store, self.np.pubInfo)
+        self.pubInfo.add(
+            (
+                self.np[""],
+                Nanopublication.PROV.wasAttributedTo,
+                Nanopublication.AUT[self.author],
+            )
+        )
+        self.pubInfo.add(
+            (self.np[""], Nanopublication.PROV.generatedAtTime, self.creationtime)
+        )
 
     def serialize(self, _format):
         """ realiza el proceso de serializacion de los datos de la nanopublicacion"""
