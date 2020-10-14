@@ -14,12 +14,21 @@ class NanopublicationRepository:
         return None
 
     def getNanopub(
-        self, protocol, id: str, default: Nanopublication = None
+        self, id: str, protocol=None, default: Nanopublication = None
     ) -> Nanopublication:
         """
         Realiza la consulta de la nanopublicacion asociada a los filtros pasados.
         en caso de la consulta no retornar un valor se retornara el default pasado
         """
-        dbNanopub = Nanopublication.objects(protocol=protocol, id=id).first()
+        query = {"id": id}
+        if protocol != None:
+            query["protocol"] = protocol
+        dbNanopub = Nanopublication.objects(**query).first()
         dbNanopub = dbNanopub if dbNanopub != None else default
         return dbNanopub
+
+    def getNanopubsByProtocol(self, protocol: str) -> list:
+        """
+        retorna la lista de nanopublicaciones asociadas a la uri del protocolo pasado
+        """
+        return Nanopublication.objects(protocol=protocol)

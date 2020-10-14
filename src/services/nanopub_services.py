@@ -3,10 +3,13 @@ from src.adapters.annotation_nanopublication import (
     AnnotationNanopublication,
     NanopubRequest,
 )
+from src.adapters.db_nanopublication import DBNanopublication
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
+from src.adapters.db_nanopublication import DBNanopublication
 from src.adapters.bioportal_api import BioPortalApi
 from src.models import Protocol, Nanopublication, NanopublicationComponent
 from src.repositories import NanopublicationRepository, ProtocolsRepository
+import json
 
 
 class NanoPubServices:
@@ -24,6 +27,34 @@ class NanoPubServices:
         self.assertion_strategy = BioportalAssertionStrategy(self.bioPortal_API)
         self.protocolsRepo = protocolsRepo
         self.nanopubsRepo = nanopubsRepo
+
+    def nanopubsByProtocol(
+        self, protocol, json: bool = False, rdf_format: str = "trig"
+    ) -> list:
+        """
+        retorna las nanopublicaciones realacionadas al protocolo pasado
+        """
+        nanopubs = self.nanopubsRepo.getNanopubsByProtocol(protocol=protocol)
+        if rdf_format != None and rdf_format != "trig":
+            for nanopub in nanopubs:
+                nanopub.rdf_raw = DBNanopublication(nanopub).serialize(rdf_format)
+        return (
+            list(map(lambda nanopub: nanopub.to_json_map(), nanopubs))
+            if json
+            else nanopubs
+        )
+
+    def nanopubById(self, id: str, json: bool = False, rdf_format: str = "trig"):
+        """
+        retorna la nanopublicacion relacionada al identificador pasado
+        """
+        nanopub = self.nanopubsRepo.getNanopub(id=id)
+        if nanopub != None:
+            if rdf_format != None and rdf_format != "trig":
+                nanopub.rdf_raw = DBNanopublication(nanopub).serialize(rdf_format)
+            return nanopub.to_json_map() if json else nanopub
+        else:
+            return {"error": "not-found"}
 
     def registerFromAnnotations(self, annotations: list):
         """

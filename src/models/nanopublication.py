@@ -9,6 +9,8 @@ from mongoengine import (
 )
 from .entity_base import EntityBase
 from .annotation import Annotation
+from .annotation_tag import AnnotationTag
+import functools
 
 
 class NanopublicationComponent(EmbeddedDocument):
@@ -72,3 +74,29 @@ class Nanopublication(EntityBase):
     components = EmbeddedDocumentListField(NanopublicationComponent)
     # raw del rdf en formato trig
     rdf_raw = StringField(required=True)
+
+    def componentsByTag(self, tag: str) -> list:
+        """
+        retorna los componentes de la nanopublicacion que tengan la etiqueta pasada
+        """
+        return list(
+            filter(
+                (lambda component: tag in component.tags),
+                self.components,
+            )
+        )
+
+    @property
+    def title(self):
+        step = self.componentsByTag(AnnotationTag.step.value)
+        if step != None and len(step) > 0:
+            return functools.reduce(
+                (lambda a, component: a + component.term + " "), step, ""
+            )
+        else:
+            return "Nanopublication " + self.id
+
+    def to_json_map(self):
+        base = super().to_json_map()
+        base['title'] = self.title
+        return base

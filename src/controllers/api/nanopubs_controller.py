@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, abort
 from flask_cors import CORS
 from src.services.nanopub_services import NanoPubServices
 from src.models.annotation import Annotation
@@ -34,6 +34,30 @@ def api_nanopubs_controller(
         data = service.previewAnnotations(
             Annotation.parseJsonArr(request.get_json()), format
         )
+        return jsonify(data)
+
+    @controller.route("/api/nanopub", methods=["GET"])
+    def nanopubs():
+        protocol = (
+            request.args["uri"]
+            if "uri" in request.args
+            else abort(400, "uri parameter is required")
+        )
+        rdf_format = (
+            request.args["rdf_format"] if "rdf_format" in request.args else None
+        )
+        """ visualizacion de las nanopublicaciones para una uri"""
+        data = service.nanopubsByProtocol(
+            protocol=protocol, json=True, rdf_format=rdf_format
+        )
+        return jsonify(data)
+
+    @controller.route("/api/nanopub/<nanopub>", methods=["GET"])
+    def nanopub(nanopub: str):
+        rdf_format = (
+            request.args["rdf_format"] if "rdf_format" in request.args else None
+        )
+        data = service.nanopubById(id=nanopub, json=True, rdf_format=rdf_format)
         return jsonify(data)
 
     return controller
