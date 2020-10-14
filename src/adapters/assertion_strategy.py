@@ -12,14 +12,29 @@ class AssertionStrategy:
         """realiza el 'assertion' en la nanopublication pasada"""
         raise NotImplementedError
 
+    @staticmethod
+    def addLiteral(nanoPub, ref, exact: str):
+        nanoPub.assertion.add((nanoPub.step, ref, rdflib.Literal(exact)))
+
+    @staticmethod
+    def addRelUris(nanoPub, ref, exact: str, uris: list):
+        for uri in uris:
+            uri_iri = rdflib.URIRef(uri)
+            nanoPub.assertion.add((nanoPub.step, ref, uri_iri))
+            nanoPub.assertion.add(
+                (
+                    uri_iri,
+                    RDFS.label,
+                    rdflib.Literal(exact),
+                )
+            )
+
 
 class LiteralAssertionStrategy(AssertionStrategy):
     """ estrategia de 'assertion' en el cual la propiedad 'exact' de la 'anotacion' se inserta como literal """
 
     def add(self, nanoPub, tagConfig, annotation: Annotation):
-        nanoPub.assertion.add(
-            (nanoPub.step, tagConfig["ref"], rdflib.Literal(annotation.exact))
-        )
+        AssertionStrategy.addLiteral(nanoPub, tagConfig["ref"], annotation.exact)
 
 
 class BioportalAssertionStrategy(LiteralAssertionStrategy):
@@ -50,18 +65,9 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
         else:
             bio_annotations = self.bioAnnotations(annotation)
             if len(bio_annotations) > 0:
-                for bio_annotation in bio_annotations:
-                    bio_annotation_iri = rdflib.URIRef(bio_annotation)
-                    nanoPub.assertion.add(
-                        (nanoPub.step, tagConfig["ref"], bio_annotation_iri)
-                    )
-                    nanoPub.assertion.add(
-                        (
-                            bio_annotation_iri,
-                            RDFS.label,
-                            rdflib.Literal(annotation.exact),
-                        )
-                    )
+                AssertionStrategy.addRelUris(
+                    nanoPub, tagConfig["ref"], annotation.exact, bio_annotations
+                )
             else:
                 super().add(nanoPub, tagConfig, annotation)
 
