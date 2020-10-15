@@ -16,7 +16,11 @@ class Injector(containers.DeclarativeContainer):
     # components
     bioportalApi = providers.Singleton(BioPortalApi, settings=env.bioportal)
     mongoDb = providers.Singleton(
-        MongoDb, host=env.mongo.host, database=env.mongo.database, port=env.mongo.port
+        MongoDb,
+        host=env.mongo.host,
+        database=env.mongo.database,
+        port=env.mongo.port,
+        auth=env.mongo.auth,
     )
     # respos
     protocolsRepository = providers.Singleton(ProtocolsRepository)
