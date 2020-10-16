@@ -74,6 +74,8 @@ class Nanopublication(EntityBase):
     components = EmbeddedDocumentListField(NanopublicationComponent)
     # raw del rdf en formato trig
     rdf_raw = StringField(required=True)
+    # determina el generate at de la nanopublicacion
+    generatedAtTime = StringField()
 
     def componentsByTag(self, tag: str) -> list:
         """
@@ -98,5 +100,5 @@ class Nanopublication(EntityBase):
 
     def to_json_map(self):
         base = super().to_json_map()
-        base['title'] = self.title
+        base["title"] = self.title
         return base

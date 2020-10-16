@@ -135,7 +135,10 @@ class NanoPubServices:
             protocol=protocol,
             id=request.id,
             default=Nanopublication(
-                id=request.id, protocol=protocol, author=request.user
+                id=request.id,
+                protocol=protocol,
+                author=request.user,
+                generatedAtTime=request.step.created,
             ),
         )
         # iterator for load bio_annotations
