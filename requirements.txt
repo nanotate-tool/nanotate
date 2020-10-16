@@ -1,5 +1,6 @@
 Flask==1.1.2
 Flask-Cors==3.0.9
+Flask-Compress==1.7.0
 rdflib==5.0.0
 rdflib-jsonld==0.5.0
 dependency-injector==4.0.0

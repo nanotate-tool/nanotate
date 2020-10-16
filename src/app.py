@@ -1,7 +1,9 @@
 from flask import Flask
+from flask_compress import Compress
 from src.injector import Injector
 from . import controllers
 
+compress = Compress()
 
 def application(
     dev: bool = True, config_path: str = "environment/environment_dev.yml"
@@ -15,6 +17,8 @@ def application(
 
     # inicialize flask app
     app = Flask(__name__)
+    # compress init
+    compress.init_app(app)
     app.injector = injector
     # manual database connection
     injector.mongoDb().connect()
