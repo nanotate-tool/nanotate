@@ -21,7 +21,12 @@ class MongoDb:
         Realiza el proceso de conexion a la base de datos
         """
         if not self.connection:
-            settings = {"db": self.database, "host": self.host, "port": self.port}
+            settings = {
+                "db": self.database,
+                "host": self.host,
+                "port": self.port,
+                "connect": False,
+            }
             if self.auth != None and type(self.auth) is dict:
                 settings["username"] = self.auth["user"]
                 settings["password"] = self.auth["password"]
