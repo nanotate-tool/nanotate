@@ -5,7 +5,6 @@ from src.adapters.annotation_nanopublication import (
 )
 from src.adapters.db_nanopublication import DBNanopublication
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
-from src.adapters.db_nanopublication import DBNanopublication
 from src.adapters.bioportal_api import BioPortalApi
 from src.models import Protocol, Nanopublication, NanopublicationComponent
 from src.repositories import NanopublicationRepository, ProtocolsRepository
@@ -150,6 +149,6 @@ class NanoPubServices:
         nanopublication.components = NanopublicationComponent.fromAnnotations(
             annotations=request.annotations, iterator=componentsIterator
         )
-        rdf_nanopub = AnnotationNanopublication(request, self.assertion_strategy)
+        rdf_nanopub = DBNanopublication(nanopublication)
         nanopublication.rdf_raw = rdf_nanopub.serialize("trig")
         return (protocol, nanopublication)
