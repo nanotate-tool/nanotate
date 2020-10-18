@@ -8,6 +8,8 @@ class SiteMetada:
     Contiene la metadata de un sitio web
     """
 
+    # uri del sitio
+    uri: str
     # titulo del sitio
     title: str
     # descripcion del sitio
@@ -23,7 +25,7 @@ class SiteMetada:
     # fecha de creacion
     creation_date: str
     # tipo del sitio
-    _type:str
+    _type: str
 
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
@@ -44,6 +46,7 @@ def pull_site_metadata(url: str) -> SiteMetada:
         authors = authors + page.get_metadatas("citation_author")
 
     site_metada = SiteMetada(
+        uri=url,
         title=joinArray_in_str(page.get_metadatas("title")),
         description=joinArray_in_str(page.get_metadatas("description")),
         image=get_first_appearance(page, "image"),
