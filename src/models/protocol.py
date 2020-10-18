@@ -20,6 +20,8 @@ class Protocol(EntityBase):
     nanopublications = LazyReferenceField(
         "Nanopublication", reverse_delete_rule=CASCADE
     )
+    #site data
+    site_data = {}
 
     @staticmethod
     def fromAnnotation(annotation: Annotation):
@@ -31,4 +33,5 @@ class Protocol(EntityBase):
 
     def to_json_map(self):
         base = super().to_json_map()
+        base['site_data'] = self.site_data
         return base
