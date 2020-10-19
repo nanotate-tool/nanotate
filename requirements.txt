@@ -6,3 +6,4 @@ rdflib-jsonld==0.5.0
 dependency-injector==4.0.0
 PyYAML==5.3.1
 mongoengine==0.20.0
+metadata-parser==0.10.0
