@@ -26,7 +26,7 @@ class NanopublicationRepository:
     TERM_USED = [
         {"$group": {"_id": "$components.term", "count": {"$sum": 1}}},
         {"$sort": {"count": -1}},
-        {"$project": {"_id": 0, "term": "$_id", "count": "$count"}},
+        {"$project": {"_id": 0, "label": "$_id", "count": "$count"}},
     ]
     TERM_RELATED = [
         {"$unwind": "$components.rel_uris"},
@@ -43,7 +43,7 @@ class NanopublicationRepository:
         {
             "$group": {
                 "_id": "$_id.term",
-                "uris": {"$addToSet": {"uri": "$_id.uri", "count": "$count"}},
+                "uris": {"$addToSet": {"label": "$_id.uri", "count": "$count"}},
             }
         },
         {"$project": {"_id": 0, "term": "$_id", "uris": 1}},
@@ -91,9 +91,9 @@ class NanopublicationRepository:
                 "tags": [{ "label":<tag>, "count":<number of use> }],
                 "terms": {
                     "related":[
-                        { "term":<term>, "uris":[ {"uri":<uri>,"count":<use> } ] }
+                        { "term":<term>, "uris":[ {"label":<uri>,"count":<use> } ] }
                     ],
-                    "used": [{ "term":<term>, "count":<number of use> }]
+                    "used": [{ "label":<term>, "count":<number of use> }]
                 }
             }
         \n]
@@ -127,7 +127,10 @@ class NanopublicationRepository:
         retorna las estadisticas de uso de de las terminos para el protocolo si este se envia,
         (en caso de no enviarlo se calcula de forma global)
         [\n
-            { "label":<tag>, "count":<number of use> }
+            "related":[
+                { "term":<term>, "uris":[ {"label":<uri>,"count":<use> } ] }
+            ],
+            "used": [{ "label":<term>, "count":<number of use> }]
         \n]
         """
         not_step_tag_filter = [NanopublicationRepository.TAG_FILTER("step", False)]
