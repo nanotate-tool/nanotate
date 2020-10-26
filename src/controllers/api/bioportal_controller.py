@@ -24,7 +24,7 @@ def api_bioportal_controller(
     def annotations():
         """registro de anotaciones para su transformacion a nanopublicaciones"""
         ontologies = (
-            request.args.get("ontologies")
+            request.args.getlist("ontologies")
             if "ontologies" in request.args
             else abort(400, "ontologies parameter is required")
         )
