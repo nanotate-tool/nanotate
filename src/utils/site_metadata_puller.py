@@ -60,7 +60,7 @@ def pull_site_metadata(url: str) -> SiteMetada:
             ),
         )
         return site_metada
-    finally:
+    except:
         return SiteMetada(uri=url, title="Site Meta data Not Found")
 
 
