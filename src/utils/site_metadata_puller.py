@@ -38,25 +38,30 @@ def pull_site_metadata(url: str) -> SiteMetada:
     """
     extrae la metadata del sitio asociado a la url pasada
     """
-    page = metadata_parser.MetadataParser(url, search_head_only=True)
-    # authors
-    authors = page.get_metadatas("author")
-    authors = authors if type(authors) is list else []
-    if type(page.get_metadatas("citation_author")) is list:
-        authors = authors + page.get_metadatas("citation_author")
+    try:
+        page = metadata_parser.MetadataParser(url, search_head_only=True)
+        # authors
+        authors = page.get_metadatas("author")
+        authors = authors if type(authors) is list else []
+        if type(page.get_metadatas("citation_author")) is list:
+            authors = authors + page.get_metadatas("citation_author")
 
-    site_metada = SiteMetada(
-        uri=url,
-        title=joinArray_in_str(page.get_metadatas("title")),
-        description=joinArray_in_str(page.get_metadatas("description")),
-        image=get_first_appearance(page, "image"),
-        _type=joinArray_in_str(page.get_metadatas("type")),
-        authors=authors,
-        pdf=get_first_appearance(page, "citation_pdf_url"),
-        keywords=page.get_metadatas("keywords"),
-        creation_date=joinArray_in_str(page.get_metadatas("citation_publication_date")),
-    )
-    return site_metada
+        site_metada = SiteMetada(
+            uri=url,
+            title=joinArray_in_str(page.get_metadatas("title")),
+            description=joinArray_in_str(page.get_metadatas("description")),
+            image=get_first_appearance(page, "image"),
+            _type=joinArray_in_str(page.get_metadatas("type")),
+            authors=authors,
+            pdf=get_first_appearance(page, "citation_pdf_url"),
+            keywords=page.get_metadatas("keywords"),
+            creation_date=joinArray_in_str(
+                page.get_metadatas("citation_publication_date")
+            ),
+        )
+        return site_metada
+    finally:
+        return SiteMetada(uri=url, title="Site Meta data Not Found")
 
 
 def get_first_appearance(page: metadata_parser.MetadataParser, prop: str) -> str:
