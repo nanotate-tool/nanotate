@@ -45,17 +45,6 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
     para el 'assertion' de esta
     """
 
-    DEFAULT_ONTOLOGIES = [
-        "ERO",
-        "SP",
-        "CHEBI",
-        "OBI",
-        "BAO",
-        "NCBITAXON",
-        "UBERON",
-        "EFO",
-    ]
-
     def __init__(self, api: BioPortalApi):
         self.api = api
 
@@ -78,12 +67,11 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
         # prevents step annotation calculate bio_annotations
         if AnnotationTag.step.value in annotation.tags:
             return []
+        # empty ontologies array 
+        if len(annotation.ontologies) > 0:
+            return []
 
-        ontologies = (
-            annotation.ontologies
-            if len(annotation.ontologies) > 0
-            else self.DEFAULT_ONTOLOGIES
-        )
+        ontologies = annotation.ontologies
         bio_annotations = self.api.annotator(annotation.exact, ontologies)
         bio_annotations = list(
             map(
