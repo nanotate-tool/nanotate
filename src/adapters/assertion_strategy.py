@@ -68,7 +68,7 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
         if AnnotationTag.step.value in annotation.tags:
             return []
         # empty ontologies array 
-        if len(annotation.ontologies) > 0:
+        if len(annotation.ontologies) <= 0:
             return []
 
         ontologies = annotation.ontologies
