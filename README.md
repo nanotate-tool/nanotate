@@ -1,4 +1,4 @@
-# A2NP
+# Nanotate
 
 Herramienta para laa generacion de nanopublicaciones basada en annotaciones realizadas en la plataforma de [hypothesis](https://hypothes.is/).
 
@@ -78,6 +78,14 @@ $ python test.py -i <ruta del archivo>
 y nos imprimira en pantalla las `nanopublicaciones` que de este se puedan generar
 
 para mas opciones del `test` ejecutar :
+
+```
+$ python test.py -h
+```
+
+# Development server
+
+Ejecutar el archivo `run.py` este inicializa un Flask App
 
 ```
 $ python test.py -h
