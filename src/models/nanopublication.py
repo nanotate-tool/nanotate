@@ -58,6 +58,17 @@ class NanopublicationComponent(EmbeddedDocument):
         return components
 
 
+class PublicationInfo(EmbeddedDocument):
+    """
+    contiene datos relacionados de la publicacion de la nanopublicacion de forma remota
+    """
+
+    nanopub_uri = StringField()
+    artifact_code = StringField()
+    published_at = StringField()
+    canonical_url = StringField()
+
+
 class Nanopublication(EntityBase):
     """
     Contiene los datos de las nanopublicaciones
@@ -76,6 +87,8 @@ class Nanopublication(EntityBase):
     rdf_raw = StringField(required=True)
     # determina el generate at de la nanopublicacion
     generatedAtTime = StringField()
+    # informacion de la publicacion remota de la nanopublicacion
+    publication_info = EmbeddedDocumentField(PublicationInfo)
 
     def componentsByTag(self, tag: str) -> list:
         """

@@ -7,6 +7,7 @@ from src.adapters.bioportal_api import BioPortalApi
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
 from .db_mongo import MongoDb
 from .repositories import NanopublicationRepository, ProtocolsRepository
+from nanopub import NanopubClient
 
 
 class Injector(containers.DeclarativeContainer):
@@ -24,6 +25,7 @@ class Injector(containers.DeclarativeContainer):
         port=env.mongo.port,
         auth=env.mongo.auth,
     )
+    nanopubClient = providers.Singleton(NanopubClient)
     # respos
     protocolsRepository = providers.Singleton(ProtocolsRepository)
     nanopubsRepository = providers.Singleton(NanopublicationRepository)
@@ -34,10 +36,9 @@ class Injector(containers.DeclarativeContainer):
         bioportal_api=bioportalApi,
         nanopubsRepo=nanopubsRepository,
         protocolsRepo=protocolsRepository,
+        nanopubremote=nanopubClient,
     )
     protocolsService = providers.Factory(
         ProtocolsService, protocolsRepo=protocolsRepository
     )
-    statsService = providers.Factory(
-        StatsService, nanopubsRepo = nanopubsRepository
-    )
+    statsService = providers.Factory(StatsService, nanopubsRepo=nanopubsRepository)

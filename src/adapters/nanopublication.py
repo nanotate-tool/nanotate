@@ -7,6 +7,7 @@ import re
 import functools
 from rdflib.namespace import RDF, DC, XSD, RDFS
 from datetime import datetime
+from nanopub import Nanopub
 
 
 class Nanopublication:
@@ -125,6 +126,9 @@ class Nanopublication:
             return self.__json_html()
         else:
             return self.np_rdf.serialize(format=_format).decode("utf-8")
+
+    def fairWorkflowsNanopub(self):
+        return Nanopub(rdf=self.np_rdf)
 
     def __json_html(self):
         """realiza el proceso de serializacion de la nanopublicacion en un formato 'json-html'

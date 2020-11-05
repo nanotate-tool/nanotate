@@ -6,8 +6,14 @@ from src.adapters.annotation_nanopublication import (
 from src.adapters.db_nanopublication import DBNanopublication
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
 from src.adapters.bioportal_api import BioPortalApi
-from src.models import Protocol, Nanopublication, NanopublicationComponent
+from src.models import (
+    Protocol,
+    Nanopublication,
+    NanopublicationComponent,
+    PublicationInfo,
+)
 from src.repositories import NanopublicationRepository, ProtocolsRepository
+from nanopub import NanopubClient
 import json
 
 
@@ -21,11 +27,13 @@ class NanoPubServices:
         bioportal_api: BioPortalApi,
         protocolsRepo: ProtocolsRepository,
         nanopubsRepo: NanopublicationRepository,
+        nanopubremote: NanopubClient,
     ):
         self.bioPortal_API = bioportal_api
         self.assertion_strategy = BioportalAssertionStrategy(self.bioPortal_API)
         self.protocolsRepo = protocolsRepo
         self.nanopubsRepo = nanopubsRepo
+        self.nanopubremote = nanopubremote
 
     def nanopubsByProtocol(
         self, protocol, json: bool = False, rdf_format: str = "trig"
@@ -150,5 +158,34 @@ class NanoPubServices:
             annotations=request.annotations, iterator=componentsIterator
         )
         rdf_nanopub = DBNanopublication(nanopublication)
+        # remote fairflows remote registration
+        nanopublication.publication_info = self._publish_fairWorksFlowsNanopub(
+            rdf_nanopub
+        )
+        print(nanopublication.publication_info)
         nanopublication.rdf_raw = rdf_nanopub.serialize("trig")
         return (protocol, nanopublication)
+
+    def _publish_fairWorksFlowsNanopub(
+        self, graph_nanopub: DBNanopublication
+    ) -> PublicationInfo:
+        """
+        registra la nanopublicacion pasada de forma remota utilizando la libreria ['nanopub'](https://github.com/fair-workflows/nanopub)
+        """
+        try:
+            # remote fairflows remote registration
+            publication_info = self.nanopubremote.publish(
+                graph_nanopub.fairWorkflowsNanopub()
+            )
+            nanopub_uri: str = publication_info["nanopub_uri"]
+            artifact_code = nanopub_uri.replace(graph_nanopub.np, "")
+            published_at = "http://server.nanopubs.lod.labs.vu.nl"
+            return PublicationInfo(
+                nanopub_uri=nanopub_uri,
+                artifact_code=artifact_code,
+                published_at=published_at,
+                canonical_url=published_at + "/" + artifact_code,
+            )
+        except Exception as e:
+            print("have error on remote publish", e.__class__, e)
+            return None
