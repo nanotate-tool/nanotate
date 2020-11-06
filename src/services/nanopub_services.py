@@ -42,13 +42,13 @@ class NanoPubServices:
         retorna las nanopublicaciones realacionadas al protocolo pasado
         """
         nanopubs = self.nanopubsRepo.getNanopubsByProtocol(protocol=protocol)
-        if rdf_format != None and rdf_format != "trig":
-            for nanopub in nanopubs:
-                nanopub.rdf_raw = DBNanopublication(nanopub).serialize(rdf_format)
-        return (
-            list(map(lambda nanopub: nanopub.to_json_map(), nanopubs))
-            if json
-            else nanopubs
+        return list(
+            map(
+                lambda nanopub: self.__exportNanopublication(
+                    nanopub=nanopub, json=json, rdf_format=rdf_format
+                ),
+                nanopubs,
+            )
         )
 
     def nanopubById(self, id: str, json: bool = False, rdf_format: str = "trig"):
@@ -56,12 +56,22 @@ class NanoPubServices:
         retorna la nanopublicacion relacionada al identificador pasado
         """
         nanopub = self.nanopubsRepo.getNanopub(id=id)
-        if nanopub != None:
-            if rdf_format != None and rdf_format != "trig":
-                nanopub.rdf_raw = DBNanopublication(nanopub).serialize(rdf_format)
-            return nanopub.to_json_map() if json else nanopub
-        else:
-            return {"error": "not-found"}
+        return self.__exportNanopublication(
+            nanopub=nanopub, json=json, rdf_format=rdf_format
+        )
+
+    def nanopubByArtifactCode(
+        self, artifact_code: str, json: bool = False, rdf_format: str = "trig"
+    ):
+        """
+        retorna la nanopublicacion relacionada al artifact_code pasado
+        """
+        nanopub = self.nanopubsRepo.getNanopubByArtifactCode(
+            artifact_code=artifact_code
+        )
+        return self.__exportNanopublication(
+            nanopub=nanopub, json=json, rdf_format=rdf_format
+        )
 
     def registerFromAnnotations(self, annotations: list):
         """
@@ -189,3 +199,13 @@ class NanoPubServices:
         except Exception as e:
             print("have error on remote publish", e.__class__, e)
             return None
+
+    def __exportNanopublication(
+        self, nanopub: Nanopublication, json: bool = False, rdf_format: str = None
+    ):
+        if nanopub != None:
+            if rdf_format != None and rdf_format != "trig":
+                nanopub.rdf_raw = DBNanopublication(nanopub).serialize(rdf_format)
+            return nanopub.to_json_map() if json else nanopub
+        else:
+            return {"error": "not-found"}

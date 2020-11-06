@@ -80,6 +80,16 @@ class NanopublicationRepository:
         """
         return Nanopublication.objects(protocol=protocol)
 
+    def getNanopubByArtifactCode(self, artifact_code: str)->Nanopublication:
+        """
+        retorna la primera Nanopublication relacionada al artifact_code pasado, este se relaciona
+        con el PublicationInfo.artifact_code de la misma
+        """
+        dbNanopub = Nanopublication.objects(
+            publication_info__artifact_code=artifact_code
+        ).first()
+        return dbNanopub
+
     def getEssentialStats(self, protocol: str = None):
         """
         retorna las estadisticas esenciales del protocolo si este se envia.
