@@ -1,0 +1,1 @@
+from .nanopubs_controller import home_nanopubs_controller
