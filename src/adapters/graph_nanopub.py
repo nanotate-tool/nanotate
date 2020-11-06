@@ -10,7 +10,7 @@ from datetime import datetime
 from nanopub import Nanopub
 
 
-class Nanopublication:
+class GraphNanopub:
     """
     Clase Base para la representación de las nanopublicaciones
     """
@@ -70,28 +70,28 @@ class Nanopublication:
     def _initInitialNamespaces(self):
         """ inicializa los namespaces base de la nanopublicaciones"""
         self.np_rdf.bind("", self.np)
-        self.np_rdf.bind("np", Nanopublication.NP)
-        self.np_rdf.bind("p-plan", Nanopublication.PPLAN)
-        self.np_rdf.bind("authority", Nanopublication.AUT)
-        self.np_rdf.bind("prov", Nanopublication.PROV)
-        self.np_rdf.bind("dul", Nanopublication.DUL)
-        self.np_rdf.bind("bpmn", Nanopublication.BPMN)
-        self.np_rdf.bind("pwo", Nanopublication.PWO)
+        self.np_rdf.bind("np", GraphNanopub.NP)
+        self.np_rdf.bind("p-plan", GraphNanopub.PPLAN)
+        self.np_rdf.bind("authority", GraphNanopub.AUT)
+        self.np_rdf.bind("prov", GraphNanopub.PROV)
+        self.np_rdf.bind("dul", GraphNanopub.DUL)
+        self.np_rdf.bind("bpmn", GraphNanopub.BPMN)
+        self.np_rdf.bind("pwo", GraphNanopub.PWO)
         self.np_rdf.bind("dc", DC)
-        self.np_rdf.bind("plex", Nanopublication.PLEX)
-        self.np_rdf.bind("sp", Nanopublication.SP)
-        self.np_rdf.bind("bs", Nanopublication.BS)
+        self.np_rdf.bind("plex", GraphNanopub.PLEX)
+        self.np_rdf.bind("sp", GraphNanopub.SP)
+        self.np_rdf.bind("bs", GraphNanopub.BS)
 
     def _initHead(self):
         """ inicializa la cabezera ':Head' de la nanopublicacion"""
         self.head = rdflib.Graph(self.np_rdf.store, self.np.Head)
-        self.head.add((self.np[""], RDF.type, Nanopublication.NP.Nanopublication))
-        self.head.add((self.np[""], Nanopublication.NP.hasAssertion, self.np.assertion))
+        self.head.add((self.np[""], RDF.type, GraphNanopub.NP.Nanopublication))
+        self.head.add((self.np[""], GraphNanopub.NP.hasAssertion, self.np.assertion))
         self.head.add(
-            (self.np[""], Nanopublication.NP.hasProvenance, self.np.provenance)
+            (self.np[""], GraphNanopub.NP.hasProvenance, self.np.provenance)
         )
         self.head.add(
-            (self.np[""], Nanopublication.NP.hasPublicationInfo, self.np.pubInfo)
+            (self.np[""], GraphNanopub.NP.hasPublicationInfo, self.np.pubInfo)
         )
         self.head.add((self.np.assertion, RDFS.member, self.step))
 
@@ -103,7 +103,7 @@ class Nanopublication:
         """ inicializa la cabezera ':provenance' de la nanopublicacion"""
         self.provenance = rdflib.Graph(self.np_rdf.store, self.np.provenance)
         self.provenance.add(
-            (self.np.assertion, Nanopublication.PROV.generatedAtTime, self.creationtime)
+            (self.np.assertion, GraphNanopub.PROV.generatedAtTime, self.creationtime)
         )
 
     def _initPubinfo(self):
@@ -112,12 +112,12 @@ class Nanopublication:
         self.pubInfo.add(
             (
                 self.np[""],
-                Nanopublication.PROV.wasAttributedTo,
-                Nanopublication.AUT[self.author],
+                GraphNanopub.PROV.wasAttributedTo,
+                GraphNanopub.AUT[self.author],
             )
         )
         self.pubInfo.add(
-            (self.np[""], Nanopublication.PROV.generatedAtTime, self.creationtime)
+            (self.np[""], GraphNanopub.PROV.generatedAtTime, self.creationtime)
         )
 
     def serialize(self, _format):

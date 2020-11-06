@@ -1,12 +1,12 @@
 from src.models import Nanopublication
-from .nanopublication import Nanopublication as GraphNanopublication
+from .graph_nanopub import GraphNanopub
 from .assertion_strategy import AssertionStrategy
 from rdflib.namespace import RDFS
 import rdflib
 import io
 
 
-class DBNanopublication(GraphNanopublication):
+class DBNanopub(GraphNanopub):
     """
     Nanopublicacion generada desde el contenido de una nanopublicacion que
     fue almacenada en una base de datos
@@ -36,7 +36,7 @@ class DBNanopublication(GraphNanopublication):
             self.provenance.add(
                 (
                     self.np.assertion,
-                    GraphNanopublication.PROV.wasDerivedFrom,
+                    GraphNanopub.PROV.wasDerivedFrom,
                     rdflib.URIRef("https://hypothes.is/a/" + component.id),
                 )
             )

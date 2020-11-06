@@ -1,12 +1,12 @@
 from src.models.nanopub_request import NanopubRequest
 from src.models.annotation_tag import AnnotationTag
-from .nanopublication import Nanopublication
+from .graph_nanopub import GraphNanopub
 import rdflib
 from rdflib.namespace import RDF, DC, XSD, RDFS
 from .assertion_strategy import AssertionStrategy, LiteralAssertionStrategy
 
 
-class AnnotationNanopublication(Nanopublication):
+class AnnotationNanopub(GraphNanopub):
     """
     Representa una nanopublicacion generada desde un NanopubRequest pasado
     """
@@ -16,7 +16,7 @@ class AnnotationNanopublication(Nanopublication):
         self.assertionStrategy = (
             strategy if strategy != None else LiteralAssertionStrategy()
         )
-        super(AnnotationNanopublication, self).__init__(
+        super(AnnotationNanopub, self).__init__(
             url=request.step.url,
             author=self.request.user,
             created=self.request.step.created,
@@ -32,7 +32,7 @@ class AnnotationNanopublication(Nanopublication):
             self.provenance.add(
                 (
                     self.np.assertion,
-                    Nanopublication.PROV.wasDerivedFrom,
+                    GraphNanopub.PROV.wasDerivedFrom,
                     rdflib.URIRef("https://hypothes.is/a/" + annotation.id),
                 )
             )

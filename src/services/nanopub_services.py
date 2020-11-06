@@ -1,9 +1,7 @@
 from src.models.annotation import Annotation
-from src.adapters.annotation_nanopublication import (
-    AnnotationNanopublication,
-    NanopubRequest,
-)
-from src.adapters.db_nanopublication import DBNanopublication
+from src.models.nanopub_request import NanopubRequest
+from src.adapters.annotation_nanopub import AnnotationNanopub
+from src.adapters.db_nanopub import DBNanopub
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
 from src.adapters.bioportal_api import BioPortalApi
 from src.models import (
@@ -128,7 +126,7 @@ class NanoPubServices:
         }
         """
         format = format if format != None else "trig"
-        nanoPub = AnnotationNanopublication(nanoPubRequest, self.assertion_strategy)
+        nanoPub = AnnotationNanopub(nanoPubRequest, self.assertion_strategy)
         return {
             "id": nanoPubRequest.id,
             "user": nanoPubRequest.user,
@@ -167,7 +165,7 @@ class NanoPubServices:
         nanopublication.components = NanopublicationComponent.fromAnnotations(
             annotations=request.annotations, iterator=componentsIterator
         )
-        rdf_nanopub = DBNanopublication(nanopublication)
+        rdf_nanopub = DBNanopub(nanopublication)
         # remote fairflows remote registration
         nanopublication.publication_info = self._publish_fairWorksFlowsNanopub(
             rdf_nanopub
@@ -177,7 +175,7 @@ class NanoPubServices:
         return (protocol, nanopublication)
 
     def _publish_fairWorksFlowsNanopub(
-        self, graph_nanopub: DBNanopublication
+        self, graph_nanopub: DBNanopub
     ) -> PublicationInfo:
         """
         registra la nanopublicacion pasada de forma remota utilizando la libreria ['nanopub'](https://github.com/fair-workflows/nanopub)
@@ -205,7 +203,7 @@ class NanoPubServices:
     ):
         if nanopub != None:
             if rdf_format != None and rdf_format != "trig":
-                nanopub.rdf_raw = DBNanopublication(nanopub).serialize(rdf_format)
+                nanopub.rdf_raw = DBNanopub(nanopub).serialize(rdf_format)
             return nanopub.to_json_map() if json else nanopub
         else:
             return {"error": "not-found"}
