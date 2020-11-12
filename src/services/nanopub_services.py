@@ -85,6 +85,17 @@ class NanoPubServices:
             mapped[request.id] = result
         return mapped
 
+    def deleteNanopublication(self, nanopublication_key: str):
+        """
+        realiza la eliminacion de la nanopublicacion relacionada al identificador pasado
+        """
+        nanoPublication = self.nanopubsRepo.getNanopub(nanopublication_key)
+        if nanoPublication != None:
+            result = self.nanopubsRepo.delete(nanoPublication)
+            return result
+        else:
+            return {"status": "error", "message": "Nanopublication not found"}
+
     def registerFromNanopubRequest(self, request: NanopubRequest):
         """
         Realiza el registro de la nanopublicacion contenida en el NanopubRequest pasado

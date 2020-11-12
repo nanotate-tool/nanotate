@@ -60,6 +60,16 @@ class NanopublicationRepository:
             return nanopub.save()
         return None
 
+    def delete(self, nanopub: Nanopublication):
+        """
+        Realiza la eliminacion de la nanopublicacion pasada
+        """
+        if nanopub != None:
+            nanopub.delete()
+            return {"status": "ok"}
+
+        return None
+
     def getNanopub(
         self, id: str, protocol=None, default: Nanopublication = None
     ) -> Nanopublication:
@@ -80,7 +90,7 @@ class NanopublicationRepository:
         """
         return Nanopublication.objects(protocol=protocol)
 
-    def getNanopubByArtifactCode(self, artifact_code: str)->Nanopublication:
+    def getNanopubByArtifactCode(self, artifact_code: str) -> Nanopublication:
         """
         retorna la primera Nanopublication relacionada al artifact_code pasado, este se relaciona
         con el PublicationInfo.artifact_code de la misma

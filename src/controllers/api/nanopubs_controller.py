@@ -60,4 +60,9 @@ def api_nanopubs_controller(
         data = service.nanopubById(id=nanopub, json=True, rdf_format=rdf_format)
         return jsonify(data)
 
+    @controller.route("/api/nanopub/<nanopub>", methods=["DELETE"])
+    def delete(nanopub: str):
+        data = service.deleteNanopublication(nanopublication_key=nanopub)
+        return jsonify(data)
+
     return controller
