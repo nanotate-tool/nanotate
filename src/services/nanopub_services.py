@@ -12,6 +12,7 @@ from src.models import (
 )
 from src.repositories import NanopublicationRepository, ProtocolsRepository
 from nanopub import NanopubClient
+from urllib.parse import urlparse
 import json
 
 
@@ -198,12 +199,10 @@ class NanoPubServices:
             )
             nanopub_uri: str = publication_info["nanopub_uri"]
             artifact_code = nanopub_uri.replace(graph_nanopub.np, "")
-            published_at = "http://server.nanopubs.lod.labs.vu.nl"
+            nanopub_uri_p = urlparse(nanopub_uri)
             return PublicationInfo(
                 nanopub_uri=nanopub_uri,
-                artifact_code=artifact_code,
-                published_at=published_at,
-                canonical_url=published_at + "/" + artifact_code,
+                artifact_code=nanopub_uri_p.path.rsplit("/", 1)[-1],
             )
         except Exception as e:
             print("have error on remote publish", e.__class__, e)
