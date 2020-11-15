@@ -23,12 +23,11 @@ def home_nanopubs_controller(
     def remote_nanopublication_forward(artifact):
         """redirige los artifacts de nanopublicaciones locales a su publicacion remota"""
         nanopublication = service.nanopubByArtifactCode(artifact_code=artifact)
-        print(nanopublication)
         if (
             type(nanopublication) is Nanopublication
             and nanopublication.publication_info != None
         ):
-            return redirect(nanopublication.publication_info.canonical_url)
+            return redirect(nanopublication.publication_info.nanopub_uri)
         else:
             return abort(404, "Nanopublication not found")
 

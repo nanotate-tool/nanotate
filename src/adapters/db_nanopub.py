@@ -25,35 +25,38 @@ class DBNanopub(GraphNanopub):
             url=self.nanopub.protocol.uri,
             created=created,
             author=self.nanopub.author,
+            derived_from=self.derived_from,
         )
-        self.__computeAssertion()
 
-    def _initProvenance(self):
-        """ inicializa la cabezera ':provenance' de la nanopublicacion"""
-        super()._initProvenance()
-        # insertando components
-        for component in self.nanopub.components:
-            self.provenance.add(
-                (
-                    self.np.assertion,
-                    GraphNanopub.PROV.wasDerivedFrom,
-                    rdflib.URIRef("https://hypothes.is/a/" + component.id),
-                )
+    @property
+    def derived_from(self) -> list:
+        return list(
+            map(
+                lambda component: rdflib.URIRef(
+                    "https://hypothes.is/a/" + component.id
+                ),
+                self.nanopub.components,
             )
+        )
 
-    def __computeAssertion(self):
-        if self.assertion != None:
-            for tag_config in self.TAGS_CONFIG:
-                components = self.nanopub.componentsByTag(tag_config["tag"].value)
-                for component in components:
-                    if len(component.rel_uris) > 0:
-                        AssertionStrategy.addRelUris(
-                            nanoPub=self,
-                            ref=tag_config["ref"],
-                            exact=component.term,
-                            uris=component.rel_uris,
-                        )
-                    else:
-                        AssertionStrategy.addLiteral(
-                            nanoPub=self, ref=tag_config["ref"], exact=component.term
-                        )
+    def _computeAssertion(self) -> rdflib.ConjunctiveGraph:
+        assertion = rdflib.ConjunctiveGraph()
+        for tag_config in self.TAGS_CONFIG:
+            components = self.nanopub.componentsByTag(tag_config["tag"].value)
+            for component in components:
+                if len(component.rel_uris) > 0:
+                    AssertionStrategy.addRelUris(
+                        nanoPub=self,
+                        assertion=assertion,
+                        ref=tag_config["ref"],
+                        exact=component.term,
+                        uris=component.rel_uris,
+                    )
+                else:
+                    AssertionStrategy.addLiteral(
+                        nanoPub=self,
+                        assertion=assertion,
+                        ref=tag_config["ref"],
+                        exact=component.term,
+                    )
+        return assertion

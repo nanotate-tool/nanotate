@@ -65,8 +65,8 @@ class PublicationInfo(EmbeddedDocument):
 
     nanopub_uri = StringField()
     artifact_code = StringField()
-    published_at = StringField()
-    canonical_url = StringField()
+
+    meta = {"strict": False}
 
 
 class Nanopublication(EntityBase):

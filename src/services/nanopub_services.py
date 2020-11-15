@@ -12,6 +12,7 @@ from src.models import (
 )
 from src.repositories import NanopublicationRepository, ProtocolsRepository
 from nanopub import NanopubClient
+from urllib.parse import urlparse
 import json
 
 
@@ -181,7 +182,6 @@ class NanoPubServices:
         nanopublication.publication_info = self._publish_fairWorksFlowsNanopub(
             rdf_nanopub
         )
-        print(nanopublication.publication_info)
         nanopublication.rdf_raw = rdf_nanopub.serialize("trig")
         return (protocol, nanopublication)
 
@@ -193,17 +193,13 @@ class NanoPubServices:
         """
         try:
             # remote fairflows remote registration
-            publication_info = self.nanopubremote.publish(
-                graph_nanopub.fairWorkflowsNanopub()
-            )
+            publication_info = self.nanopubremote.publish(graph_nanopub.nanopub)
             nanopub_uri: str = publication_info["nanopub_uri"]
-            artifact_code = nanopub_uri.replace(graph_nanopub.np, "")
-            published_at = "http://server.nanopubs.lod.labs.vu.nl"
+            nanopub_uri_p = urlparse(nanopub_uri)
+            artifact_code = nanopub_uri_p.path.rsplit("/", 1)[-1]
             return PublicationInfo(
                 nanopub_uri=nanopub_uri,
                 artifact_code=artifact_code,
-                published_at=published_at,
-                canonical_url=published_at + "/" + artifact_code,
             )
         except Exception as e:
             print("have error on remote publish", e.__class__, e)
