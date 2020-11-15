@@ -25,7 +25,9 @@ class Injector(containers.DeclarativeContainer):
         port=env.mongo.port,
         auth=env.mongo.auth,
     )
-    nanopubClient = providers.Singleton(NanopubClient)
+    nanopubClient = providers.Singleton(
+        NanopubClient, use_test_server=(not env.production())
+    )
     # respos
     protocolsRepository = providers.Singleton(ProtocolsRepository)
     nanopubsRepository = providers.Singleton(NanopublicationRepository)

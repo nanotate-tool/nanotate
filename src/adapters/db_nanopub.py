@@ -27,7 +27,6 @@ class DBNanopub(GraphNanopub):
             author=self.nanopub.author,
             derived_from=self.derived_from,
         )
-        # self.__computeAssertion()
 
     @property
     def derived_from(self) -> list:

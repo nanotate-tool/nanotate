@@ -5,9 +5,9 @@ from src.utils.html_utils import format_text_to_html
 import rdflib
 import re
 import functools
-from rdflib.namespace import RDF, DC, XSD, RDFS
+from rdflib.namespace import DC, XSD
 from datetime import datetime
-from nanopub import Nanopub
+from nanopub import Publication
 
 
 class GraphNanopub:
@@ -16,7 +16,6 @@ class GraphNanopub:
     """
 
     # inicial namespaces
-    PROV = rdflib.Namespace("http://www.w3.org/ns/prov#")
     AUT = rdflib.Namespace("https://hypothes.is/a/")
     SP = rdflib.Namespace("http://purl.org/net/SMARTprotocol#")
     BS = rdflib.Namespace(
@@ -43,10 +42,12 @@ class GraphNanopub:
         self.step = rdflib.term.URIRef(url + "#step")
         self.creationtime = rdflib.Literal(created, datatype=XSD.dateTime)
         self.author = self.AUT[author]
-        self.nanopub = Nanopub.from_assertion(
-            assertion_rdf=self._computeAssertion(), nanopub_author=author
+        self.nanopub = Publication.from_assertion(
+            assertion_rdf=self._computeAssertion(),
+            nanopub_author=self.author,
+            derived_from=derived_from,
         )
-        self._computeProvenance(derived_from)
+        self.__addNamespaces()
 
     @property
     def assertion(self):
@@ -66,19 +67,14 @@ class GraphNanopub:
             if namespace[0] == "" or namespace[0] == "this":
                 return rdflib.Namespace(namespace[1])
 
-    def _computeProvenance(self, derived_from: list):
+    def __addNamespaces(self):
         """
-        computes wasDeriveFrom for many
+        add custom namespaces to Publication rdf
         """
-        assertion_uri = self.np.assertion
-        for derived_from_item in derived_from:
-            self.provenance.add(
-                (
-                    assertion_uri,
-                    GraphNanopub.PROV.wasDerivedFrom,
-                    rdflib.URIRef(derived_from_item),
-                )
-            )
+        self.nanopub.rdf.bind("authority", GraphNanopub.AUT)
+        self.nanopub.rdf.bind("sp", GraphNanopub.SP)
+        self.nanopub.rdf.bind("bs", GraphNanopub.BS)
+        self.nanopub.rdf.bind("dc", DC)
 
     def _computeAssertion(self) -> rdflib.ConjunctiveGraph:
         """
@@ -92,9 +88,6 @@ class GraphNanopub:
             return self.__json_html()
         else:
             return self.nanopub.rdf.serialize(format=_format).decode("utf-8")
-
-    def fairWorkflowsNanopub(self):
-        return self.nanopub
 
     def __json_html(self):
         """realiza el proceso de serializacion de la nanopublicacion en un formato 'json-html'
