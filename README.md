@@ -88,5 +88,5 @@ $ python test.py -h
 Ejecutar el archivo `run.py` este inicializa un Flask App
 
 ```
-$ python test.py -h
+$ python run.py
 ```
