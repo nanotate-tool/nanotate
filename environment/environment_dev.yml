@@ -1,5 +1,21 @@
 settings:
     production : False
+    ontologies: 
+        - 'ERO'
+        - 'SP'
+        - 'CHEBI'
+        - 'OBI'
+        - 'BAO'
+        - 'NCBITAXON'
+        - 'UBERON'
+        - 'EFO'
+    tags: 
+        - 'step'
+        - 'sample'
+        - 'reagent'
+        - 'equipment'
+        - 'input'
+        - 'output'
     client-url: http://localhost:4200
 bioportal:
     url: http://data.bioontology.org

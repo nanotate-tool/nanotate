@@ -1,1 +1,2 @@
 from .nanopubs_controller import home_nanopubs_controller
+from .settings_controller import home_settings_and_vars_controller

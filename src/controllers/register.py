@@ -16,6 +16,7 @@ def register(app: Flask, injector: Injector) -> Flask:
     # root controllers
     injector.wire(modules=[home])
     app.register_blueprint(home.home_nanopubs_controller())
+    app.register_blueprint(home.home_settings_and_vars_controller())
 
     # api controllers
     injector.wire(

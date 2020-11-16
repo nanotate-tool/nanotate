@@ -5,6 +5,7 @@ from .constants import (
     nanopub_key,
     test_annotations_json_path,
     empty_protocol_uri,
+    is_slice_in_list,
 )
 from src.app import application
 from flask import url_for, Response
@@ -30,6 +31,15 @@ def client():
 
 # nanopub_controller for api
 
+
+def test_settings(client: FlaskClient):
+    response: Response = client.get("/settings", follow_redirects=True)
+    assert (
+        response != None
+        and response.status_code == 200
+        and isinstance(response.get_json(), dict)
+        and is_slice_in_list(["tags", "ontologies"], response.get_json())
+    )
 
 def test_api_annotations_preview(client: FlaskClient, annotations_json):
     response: Response = client.post(
