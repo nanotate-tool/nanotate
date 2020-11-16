@@ -2,7 +2,7 @@ import rdflib
 from src.models.annotation import Annotation
 from src.models.annotation_tag import AnnotationTag
 from .bioportal_api import BioPortalApi
-from rdflib.namespace import RDFS
+from rdflib.namespace import RDFS, RDF
 
 
 class AssertionStrategy:
@@ -13,8 +13,13 @@ class AssertionStrategy:
         raise NotImplementedError
 
     @staticmethod
-    def addLiteral(nanoPub, assertion, ref, exact: str):
-        assertion.add((nanoPub.step, ref, rdflib.Literal(exact)))
+    def addLiteral(nanoPub, assertion, ref, exact: str, with_node: bool = False):
+        if with_node:
+            node = rdflib.BNode()
+            assertion.add((nanoPub.step, ref, node))
+            assertion.add((node, RDFS.label, rdflib.Literal(exact)))
+        else:
+            assertion.add((nanoPub.step, ref, rdflib.Literal(exact)))
 
     @staticmethod
     def addRelUris(nanoPub, assertion, ref, exact: str, uris: list):
@@ -35,7 +40,11 @@ class LiteralAssertionStrategy(AssertionStrategy):
 
     def add(self, nanoPub, assertion, tagConfig, annotation: Annotation):
         AssertionStrategy.addLiteral(
-            nanoPub, assertion, tagConfig["ref"], annotation.exact
+            nanoPub,
+            assertion,
+            tagConfig["ref"],
+            annotation.exact,
+            not (tagConfig["tag"] == AnnotationTag.step),
         )
 
 
@@ -57,7 +66,11 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
             bio_annotations = self.bioAnnotations(annotation)
             if len(bio_annotations) > 0:
                 AssertionStrategy.addRelUris(
-                    nanoPub, assertion,  tagConfig["ref"], annotation.exact, bio_annotations
+                    nanoPub,
+                    assertion,
+                    tagConfig["ref"],
+                    annotation.exact,
+                    bio_annotations,
                 )
             else:
                 super().add(nanoPub, assertion, tagConfig, annotation)

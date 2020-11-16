@@ -14,18 +14,19 @@ class DBNanopub(GraphNanopub):
 
     dateTimeFormat = "%Y-%m-%dT%H:%M:%S.%f%z"
 
-    def __init__(self, nanopub: Nanopublication):
-        self.nanopub = nanopub
+    def __init__(self, nanopub: Nanopublication, settings: dict = None):
+        self.dbnanopub = nanopub
         created = (
-            self.nanopub.generatedAtTime
-            if self.nanopub.generatedAtTime != None
-            else self.nanopub.created_at.strftime(self.dateTimeFormat)
+            self.dbnanopub.generatedAtTime
+            if self.dbnanopub.generatedAtTime != None
+            else self.dbnanopub.created_at.strftime(self.dateTimeFormat)
         )
         super().__init__(
-            url=self.nanopub.protocol.uri,
+            url=self.dbnanopub.protocol.uri,
             created=created,
-            author=self.nanopub.author,
+            author=self.dbnanopub.author,
             derived_from=self.derived_from,
+            settings=settings,
         )
 
     @property
@@ -35,14 +36,14 @@ class DBNanopub(GraphNanopub):
                 lambda component: rdflib.URIRef(
                     "https://hypothes.is/a/" + component.id
                 ),
-                self.nanopub.components,
+                self.dbnanopub.components,
             )
         )
 
-    def _computeAssertion(self) -> rdflib.ConjunctiveGraph:
-        assertion = rdflib.ConjunctiveGraph()
+    def _computeAssertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
+        assertion = assertion if assertion != None else rdflib.Graph()
         for tag_config in self.TAGS_CONFIG:
-            components = self.nanopub.componentsByTag(tag_config["tag"].value)
+            components = self.dbnanopub.componentsByTag(tag_config["tag"].value)
             for component in components:
                 if len(component.rel_uris) > 0:
                     AssertionStrategy.addRelUris(

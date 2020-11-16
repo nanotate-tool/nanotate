@@ -11,7 +11,12 @@ class AnnotationNanopub(GraphNanopub):
     Representa una nanopublicacion generada desde un NanopubRequest pasado
     """
 
-    def __init__(self, request: NanopubRequest, strategy: AssertionStrategy = None):
+    def __init__(
+        self,
+        request: NanopubRequest,
+        strategy: AssertionStrategy = None,
+        settings: dict = None,
+    ):
         self.request = request
         self.assertionStrategy = (
             strategy if strategy != None else LiteralAssertionStrategy()
@@ -21,6 +26,7 @@ class AnnotationNanopub(GraphNanopub):
             author=self.request.user,
             created=self.request.step.created,
             derived_from=self.derived_from,
+            settings=settings,
         )
 
     @property
@@ -34,13 +40,12 @@ class AnnotationNanopub(GraphNanopub):
             )
         )
 
-    def _computeAssertion(self) -> rdflib.ConjunctiveGraph:
-        assertion = rdflib.ConjunctiveGraph()
+    def _computeAssertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
+        assertion = assertion if assertion != None else rdflib.Graph()
         for tag_config in self.TAGS_CONFIG:
             # procesando todas las anotaciones configuradas
             annotations_of_tag = self.request.annotationsOf(tag_config["tag"])
             if annotations_of_tag and len(annotations_of_tag) > 0:
                 for annotation in annotations_of_tag:
                     self.assertionStrategy.add(self, assertion, tag_config, annotation)
-
         return assertion

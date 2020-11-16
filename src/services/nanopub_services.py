@@ -27,12 +27,14 @@ class NanoPubServices:
         protocolsRepo: ProtocolsRepository,
         nanopubsRepo: NanopublicationRepository,
         nanopubremote: NanopubClient,
+        settings: dict,
     ):
         self.bioPortal_API = bioportal_api
         self.assertion_strategy = BioportalAssertionStrategy(self.bioPortal_API)
         self.protocolsRepo = protocolsRepo
         self.nanopubsRepo = nanopubsRepo
         self.nanopubremote = nanopubremote
+        self.settings = settings
 
     def nanopubsByProtocol(
         self, protocol, json: bool = False, rdf_format: str = "trig"
@@ -138,7 +140,9 @@ class NanoPubServices:
         }
         """
         format = format if format != None else "trig"
-        nanoPub = AnnotationNanopub(nanoPubRequest, self.assertion_strategy)
+        nanoPub = AnnotationNanopub(
+            nanoPubRequest, self.assertion_strategy, self.settings
+        )
         return {
             "id": nanoPubRequest.id,
             "user": nanoPubRequest.user,
@@ -177,7 +181,7 @@ class NanoPubServices:
         nanopublication.components = NanopublicationComponent.fromAnnotations(
             annotations=request.annotations, iterator=componentsIterator
         )
-        rdf_nanopub = DBNanopub(nanopublication)
+        rdf_nanopub = DBNanopub(nanopublication, self.settings)
         # remote fairflows remote registration
         nanopublication.publication_info = self._publish_fairWorksFlowsNanopub(
             rdf_nanopub
@@ -210,7 +214,9 @@ class NanoPubServices:
     ):
         if nanopub != None:
             if rdf_format != None and rdf_format != "trig":
-                nanopub.rdf_raw = DBNanopub(nanopub).serialize(rdf_format)
+                nanopub.rdf_raw = DBNanopub(nanopub, self.settings).serialize(
+                    rdf_format
+                )
             return nanopub.to_json_map() if json else nanopub
         else:
             return {"error": "not-found"}

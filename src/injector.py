@@ -26,7 +26,7 @@ class Injector(containers.DeclarativeContainer):
         auth=env.mongo.auth,
     )
     nanopubClient = providers.Singleton(
-        NanopubClient, use_test_server=(not env.production())
+        NanopubClient, use_test_server=(not env.settings.production())
     )
     # respos
     protocolsRepository = providers.Singleton(ProtocolsRepository)
@@ -39,6 +39,7 @@ class Injector(containers.DeclarativeContainer):
         nanopubsRepo=nanopubsRepository,
         protocolsRepo=protocolsRepository,
         nanopubremote=nanopubClient,
+        settings=env.settings,
     )
     protocolsService = providers.Factory(
         ProtocolsService, protocolsRepo=protocolsRepository

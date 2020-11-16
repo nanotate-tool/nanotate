@@ -17,6 +17,7 @@ class GraphNanopub:
 
     # inicial namespaces
     AUT = rdflib.Namespace("https://hypothes.is/a/")
+    PAV = rdflib.Namespace("http://purl.org/pav/")
     SP = rdflib.Namespace("http://purl.org/net/SMARTprotocol#")
     BS = rdflib.Namespace(
         "https://bioschemas.org/profiles/LabProtocol/0.4-DRAFT-2020_07_23/#"
@@ -38,16 +39,31 @@ class GraphNanopub:
         created: datetime,
         author: str,
         derived_from: list,
+        settings: dict = None,
     ):
+        self.settings = settings
+        self.url = rdflib.URIRef(url)
         self.step = rdflib.term.URIRef(url + "#step")
         self.creationtime = rdflib.Literal(created, datatype=XSD.dateTime)
         self.author = self.AUT[author]
+        # initial_triple added for skip validation for empty assertion graph for nanopub
+        # this is made with purpose of remove identifier in BNodes added in assertion graph,
+        # this only occurs when merge initial assertion graph in nanopub with sended assertion graph via 'from_assertion' method
+        # so the assertion graph construction is let after of nanopub build
+        initial_assertion = rdflib.Graph()
+        initial_triple = (self.step, DC.initial, rdflib.Literal("initial"))
+        initial_assertion.add(initial_triple)
         self.nanopub = Publication.from_assertion(
-            assertion_rdf=self._computeAssertion(),
+            assertion_rdf=initial_assertion,
             nanopub_author=self.author,
             derived_from=derived_from,
         )
+        # remove initial_triple added in assertion graph
+        self.nanopub.rdf.remove(initial_triple)
+        # compute assertion graph after of nanopub build
+        self._computeAssertion(self.assertion)
         self.__addNamespaces()
+        self._computeProvenance()
 
     @property
     def assertion(self):
@@ -67,6 +83,14 @@ class GraphNanopub:
             if namespace[0] == "" or namespace[0] == "this":
                 return rdflib.Namespace(namespace[1])
 
+    @property
+    def createdWhit(self):
+        return (
+            rdflib.URIRef(self.settings["client-url"])
+            if self.settings != None and "client-url" in self.settings
+            else self.url
+        )
+
     def __addNamespaces(self):
         """
         add custom namespaces to Publication rdf
@@ -75,10 +99,21 @@ class GraphNanopub:
         self.nanopub.rdf.bind("sp", GraphNanopub.SP)
         self.nanopub.rdf.bind("bs", GraphNanopub.BS)
         self.nanopub.rdf.bind("dc", DC)
+        self.nanopub.rdf.bind("pav", GraphNanopub.PAV)
 
-    def _computeAssertion(self) -> rdflib.ConjunctiveGraph:
+    def _computeProvenance(self):
+        """
+        compute custom properties for provenance subgraph
+        """
+        assertion_uri = self.np.assertion
+        self.provenance.add((assertion_uri, self.PAV.createdWith, self.createdWhit))
+
+    def _computeAssertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
         """
         build the assertion subgraph
+        \n
+        Args:
+            assertion : graph base for assertion
         """
         raise NotImplementedError
 
