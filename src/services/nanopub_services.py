@@ -103,12 +103,12 @@ class NanoPubServices:
         """
         Realiza el registro de la nanopublicacion contenida en el NanopubRequest pasado
         """
-        data_updated = self.__updateNanopubAndProtocol(request)
-        for data in data_updated:
-            data.save()
+        (nanopub, protocol) = self.__updateNanopubAndProtocol(request)
+        self.nanopubsRepo.save(nanopub=nanopub)
+        self.protocolsRepo.save(protocol=protocol)
         return {
-            "protocol": data_updated[0].to_json_map(),
-            "nanopub": data_updated[1].to_json_map(),
+            "protocol": protocol.to_json_map(),
+            "nanopub": nanopub.to_json_map(),
             "status": "ok",
         }
 
