@@ -102,6 +102,17 @@ class Nanopublication(EntityBase):
         )
 
     @property
+    def permissions(self) -> dict:
+        """
+        returns the security actions and who can do
+        """
+        return {
+            "read": [self.author, "any"],
+            "update": [self.author],
+            "delete": [self.author],
+        }
+
+    @property
     def title(self):
         step = self.componentsByTag(AnnotationTag.step.value)
         if step != None and len(step) > 0:
@@ -114,4 +125,5 @@ class Nanopublication(EntityBase):
     def to_json_map(self):
         base = super().to_json_map()
         base["title"] = self.title
+        base["permissions"] = self.permissions
         return base
