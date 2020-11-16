@@ -5,23 +5,27 @@ from . import controllers
 
 compress = Compress()
 
+
 def application(
-    dev: bool = True, config_path: str = "environment/environment_dev.yml"
+    dev: bool = True,
+    config_path: str = "environment/environment_dev.yml",
+    injector: Injector = None,
 ) -> Flask:
     """
     realiza la creacion de la aplicacion flask
     """
     # inicialize app env
-    injector = Injector()
-    injector.env.from_yaml(config_path)
+    if injector is None:
+        injector = Injector()
+        injector.env.from_yaml(config_path)
+        # manual database connection
+        injector.mongoDb().connect()
 
     # inicialize flask app
     app = Flask(__name__)
     # compress init
     compress.init_app(app)
     app.injector = injector
-    # manual database connection
-    injector.mongoDb().connect()
     # regiter controllers
     controllers.register(app, injector)
 

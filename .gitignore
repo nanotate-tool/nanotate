@@ -3,3 +3,4 @@ dist/*
 !.keep
 .vscode
 venv
+tmp

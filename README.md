@@ -83,6 +83,12 @@ para mas opciones del `test` ejecutar :
 $ python test.py -h
 ```
 
+Para ejecutar pruebas unitarias ejecutar:
+
+```
+$ pytest
+```
+
 # Development server
 
 Ejecutar el archivo `run.py` este inicializa un Flask App

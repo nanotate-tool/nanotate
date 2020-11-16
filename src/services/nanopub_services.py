@@ -103,7 +103,7 @@ class NanoPubServices:
         """
         Realiza el registro de la nanopublicacion contenida en el NanopubRequest pasado
         """
-        (nanopub, protocol) = self.__updateNanopubAndProtocol(request)
+        (protocol, nanopub) = self.__updateNanopubAndProtocol(request)
         self.nanopubsRepo.save(nanopub=nanopub)
         self.protocolsRepo.save(protocol=protocol)
         return {
