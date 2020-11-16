@@ -1,4 +1,5 @@
 from src.models import Nanopublication
+from src.models.annotation_tag import AnnotationTag
 from .graph_nanopub import GraphNanopub
 from .assertion_strategy import AssertionStrategy
 from rdflib.namespace import RDFS
@@ -59,5 +60,6 @@ class DBNanopub(GraphNanopub):
                         assertion=assertion,
                         ref=tag_config["ref"],
                         exact=component.term,
+                        with_node=not (tag_config["tag"] == AnnotationTag.step),
                     )
         return assertion
