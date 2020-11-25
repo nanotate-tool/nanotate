@@ -33,6 +33,11 @@ class DBNanopub(GraphNanopub):
             nanopub_rdf.parse(data=self.dbnanopub.rdf_raw, format="trig")
             nanopub = Publication(rdf=nanopub_rdf)
 
+        if nanopub != None and self.dbnanopub.publication_info != None:
+            nanopub.rdf.bind(
+                "", rdflib.Namespace(self.dbnanopub.publication_info.nanopub_uri + "#")
+            )
+
         super().__init__(
             url=self.dbnanopub.protocol.uri,
             author=self.dbnanopub.author,
