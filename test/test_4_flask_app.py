@@ -106,6 +106,9 @@ def test_api_get_nanopub(client: FlaskClient):
     response_other_format: Response = client.get(
         uri, query_string={"rdf_format": "xml"}
     )
+    response_to_compare: Response = client.get(
+        uri, query_string={"rdf_format": "xml", "fcompare" : "1"}
+    )
     response_not_found: Response = client.get("/api/nanopub/not-exist")
     assert (
         response != None
@@ -123,6 +126,13 @@ def test_api_get_nanopub(client: FlaskClient):
         and isinstance(response_other_format.get_json(), dict)
         and response_other_format.get_json()["rdf_raw"]
         != response.get_json()["rdf_raw"]
+    )
+    assert (
+        response_to_compare != None
+        and response_to_compare.status_code == 200
+        and isinstance(response_to_compare.get_json(), dict)
+        and response_to_compare.get_json()["rdf_raw"]
+        != response_other_format.get_json()["rdf_raw"]
     )
 
 

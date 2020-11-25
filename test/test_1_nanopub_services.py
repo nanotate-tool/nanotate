@@ -55,7 +55,6 @@ def test_preview_annotations(annotations):
 
 def test_registration_nanopub(annotations):
     data = service_instance.registerFromAnnotations(annotations=annotations)
-    print(data[nanopub_key])
     assert data["status"] == "ok"
     assert (
         data[nanopub_key]["status"] == "ok"
@@ -72,6 +71,7 @@ def test_get_nanopub_by_id():
     data = service_instance.nanopubById(id=nanopub_key)
     data_json = service_instance.nanopubById(id=nanopub_key, json=True)
     data_any_format = service_instance.nanopubById(id=nanopub_key, rdf_format="turtle")
+    data_for_compare = service_instance.nanopubById(id=nanopub_key, rdf_format="turtle", for_compare= True)
     assert data != None and isinstance(data, Nanopublication) and data.id == nanopub_key
     assert (
         data_json != None
@@ -83,6 +83,12 @@ def test_get_nanopub_by_id():
         and isinstance(data_any_format, Nanopublication)
         and data_any_format.id == nanopub_key
         and data_any_format.rdf_raw != data.rdf_raw
+    )
+    assert (
+        data_for_compare != None
+        and isinstance(data_for_compare, Nanopublication)
+        and data_for_compare.id == nanopub_key
+        and data_for_compare.rdf_raw != data_any_format.rdf_raw
     )
     assert isinstance(not_exist, dict) and not_exist["error"] == "not-found"
     assert isinstance(not_exist_json, dict) and not_exist_json["error"] == "not-found"

@@ -36,34 +36,36 @@ class GraphNanopub:
     def __init__(
         self,
         url: str,
-        created: datetime,
         author: str,
         derived_from: list,
         settings: dict = None,
+        nanopub: Publication = None,
     ):
         self.settings = settings
         self.url = rdflib.URIRef(url)
         self.step = rdflib.term.URIRef(url + "#step")
-        self.creationtime = rdflib.Literal(created, datatype=XSD.dateTime)
         self.author = self.AUT[author]
-        # initial_triple added for skip validation for empty assertion graph for nanopub
-        # this is made with purpose of remove identifier in BNodes added in assertion graph,
-        # this only occurs when merge initial assertion graph in nanopub with sended assertion graph via 'from_assertion' method
-        # so the assertion graph construction is let after of nanopub build
-        initial_assertion = rdflib.Graph()
-        initial_triple = (self.step, DC.initial, rdflib.Literal("initial"))
-        initial_assertion.add(initial_triple)
-        self.nanopub = Publication.from_assertion(
-            assertion_rdf=initial_assertion,
-            nanopub_author=self.author,
-            derived_from=derived_from,
-        )
-        # remove initial_triple added in assertion graph
-        self.nanopub.rdf.remove(initial_triple)
-        # compute assertion graph after of nanopub build
-        self._computeAssertion(self.assertion)
-        self.__addNamespaces()
-        self._computeProvenance()
+        if nanopub == None:
+            # initial_triple added for skip validation for empty assertion graph for nanopub
+            # this is made with purpose of remove identifier in BNodes added in assertion graph,
+            # this only occurs when merge initial assertion graph in nanopub with sended assertion graph via 'from_assertion' method
+            # so the assertion graph construction is let after of nanopub build
+            initial_assertion = rdflib.Graph()
+            initial_triple = (self.step, DC.initial, rdflib.Literal("initial"))
+            initial_assertion.add(initial_triple)
+            self.nanopub = Publication.from_assertion(
+                assertion_rdf=initial_assertion,
+                assertion_attributed_to=self.author,
+                derived_from=derived_from,
+            )
+            # remove initial_triple added in assertion graph
+            self.nanopub.rdf.remove(initial_triple)
+            # compute assertion graph after of nanopub build
+            self._computeAssertion(self.assertion)
+            self.__addNamespaces()
+            self._computeProvenance()
+        else:
+            self.nanopub = nanopub
 
     @property
     def assertion(self):

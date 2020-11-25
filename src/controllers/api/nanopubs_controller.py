@@ -57,7 +57,10 @@ def api_nanopubs_controller(
         rdf_format = (
             request.args["rdf_format"] if "rdf_format" in request.args else None
         )
-        data = service.nanopubById(id=nanopub, json=True, rdf_format=rdf_format)
+        for_comparator = "fcompare" in request.args
+        data = service.nanopubById(
+            id=nanopub, json=True, rdf_format=rdf_format, for_compare=for_comparator
+        )
         return jsonify(data)
 
     @controller.route("/api/nanopub/<nanopub>", methods=["DELETE"])

@@ -1,0 +1,38 @@
+@prefix : <http://purl.org/np/RAdG9VXVOBq-7Ju5H085CgynfrVlwpajLb02B-W0ss8Zc#> .
+@prefix authority: <https://hypothes.is/a/> .
+@prefix bs: <https://bioschemas.org/profiles/LabProtocol/0.4-DRAFT-2020_07_23/#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Head {
+    : a np:Nanopublication ;
+        np:hasAssertion :assertion ;
+        np:hasProvenance :provenance ;
+        np:hasPublicationInfo :pubInfo .
+}
+
+:assertion {
+    <https://protocolexchange.researchsquare.com/article/pex-1069/v1#step> dc:description "Add imaging buffer with desired ratios of Buffer C (500 mM), ethylene carbonate, and IS-CF660R at 1-2 nM final concentration. The exact concentration of IS may need to be adjusted depending on the target and based on the imaging kinetics." ;
+        bs:reagentUsed [ rdfs:label "ethylene carbonate" ],
+            <http://purl.obolibrary.org/obo/CHEBI_35225> .
+
+    <http://purl.obolibrary.org/obo/CHEBI_35225> rdfs:label "imaging buffer" .
+}
+
+:pubInfo {
+    : prov:generatedAtTime "2020-11-24T21:59:34.295501"^^xsd:dateTime ;
+        prov:wasAttributedTo <https://orcid.org/0000-0002-7241-7089> .
+}
+
+:provenance {
+    :assertion pav:createdWith <https://protocolexchange.researchsquare.com/article/pex-1069/v1> ;
+        prov:generatedAtTime "2020-11-24T21:59:34.295501"^^xsd:dateTime ;
+        prov:wasAttributedTo <https://hypothes.is/a/acct:miguel.ruano@hypothes.is> ;
+        prov:wasDerivedFrom authority:7Z1sugBbEeu9_wtvk1iAjw,
+            authority:FrhgjABcEeu5B4dnXgvb_A,
+            authority:d5JrdABbEeuatj9X3vvoXw .
+}

@@ -24,7 +24,6 @@ class AnnotationNanopub(GraphNanopub):
         super(AnnotationNanopub, self).__init__(
             url=request.step.url,
             author=self.request.user,
-            created=self.request.step.created,
             derived_from=self.derived_from,
             settings=settings,
         )

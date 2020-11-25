@@ -52,17 +52,27 @@ class NanoPubServices:
             )
         )
 
-    def nanopubById(self, id: str, json: bool = False, rdf_format: str = "trig"):
+    def nanopubById(
+        self,
+        id: str,
+        json: bool = False,
+        rdf_format: str = "trig",
+        for_compare: bool = False,
+    ):
         """
         retorna la nanopublicacion relacionada al identificador pasado
         """
         nanopub = self.nanopubsRepo.getNanopub(id=id)
         return self.__exportNanopublication(
-            nanopub=nanopub, json=json, rdf_format=rdf_format
+            nanopub=nanopub, json=json, rdf_format=rdf_format, tempRdf=for_compare
         )
 
     def nanopubByArtifactCode(
-        self, artifact_code: str, json: bool = False, rdf_format: str = "trig"
+        self,
+        artifact_code: str,
+        json: bool = False,
+        rdf_format: str = "trig",
+        for_compare: bool = False,
     ):
         """
         retorna la nanopublicacion relacionada al artifact_code pasado
@@ -71,7 +81,7 @@ class NanoPubServices:
             artifact_code=artifact_code
         )
         return self.__exportNanopublication(
-            nanopub=nanopub, json=json, rdf_format=rdf_format
+            nanopub=nanopub, json=json, rdf_format=rdf_format, tempRdf=for_compare
         )
 
     def registerFromAnnotations(self, annotations: list):
@@ -95,6 +105,9 @@ class NanoPubServices:
         nanoPublication = self.nanopubsRepo.getNanopub(nanopublication_key)
         if nanoPublication != None:
             result = self.nanopubsRepo.delete(nanoPublication)
+            if result is dict and result["status"] == "ok":
+                self._retract_fairWorksFlowsNanopub(nanopublication=nanoPublication)
+
             return result
         else:
             return {"status": "error", "message": "Nanopublication not found"}
@@ -104,8 +117,6 @@ class NanoPubServices:
         Realiza el registro de la nanopublicacion contenida en el NanopubRequest pasado
         """
         (protocol, nanopub) = self.__updateNanopubAndProtocol(request)
-        self.nanopubsRepo.save(nanopub=nanopub)
-        self.protocolsRepo.save(protocol=protocol)
         return {
             "protocol": protocol.to_json_map(),
             "nanopub": nanopub.to_json_map(),
@@ -155,7 +166,7 @@ class NanoPubServices:
         """
         realiza la actualizacion o creacion de la nanopublicacion y su protocolo realacionado, constuyendo esta a partir de
         los datos del Nanopubrequest\n
-        (ningun cambio se persistira en la base de datos este proceso debe ser controlado por usted mismo)\n
+        (los cambios realizados se persistiran)\n
 
         retorna una tupla donde el primer parametro es el protocolo(Protocol) seguido de la nanopublicacion(Nanopublication)
         """
@@ -181,12 +192,32 @@ class NanoPubServices:
         nanopublication.components = NanopublicationComponent.fromAnnotations(
             annotations=request.annotations, iterator=componentsIterator
         )
-        rdf_nanopub = DBNanopub(nanopublication, self.settings)
-        # remote fairflows remote registration
+        # previous nanopub uri if exist
+        previous_nanopub_uri = (
+            nanopublication.publication_info.nanopub_uri
+            if nanopublication.publication_info != None
+            else None
+        )
+        # nanopublication remote registration
+        rdf_nanopub = DBNanopub(dbnanopub=nanopublication, settings=self.settings)
         nanopublication.publication_info = self._publish_fairWorksFlowsNanopub(
             rdf_nanopub
         )
+        # fetch remote rdf for local mirror
+        if nanopublication.publication_info != None:
+            rdf_nanopub = DBNanopub(
+                dbnanopub=nanopublication,
+                settings=self.settings,
+                npClient=self.nanopubremote,
+            )
         nanopublication.rdf_raw = rdf_nanopub.serialize("trig")
+        # persist data
+        self.nanopubsRepo.save(nanopub=nanopublication)
+        self.protocolsRepo.save(protocol=protocol)
+        # retraction of previous remote nanopublication
+        if previous_nanopub_uri != None:
+            self._retract_fairWorksFlowsNanopub(nanopub_uri=previous_nanopub_uri)
+
         return (protocol, nanopublication)
 
     def _publish_fairWorksFlowsNanopub(
@@ -209,14 +240,41 @@ class NanoPubServices:
             print("have error on remote publish", e.__class__, e)
             return None
 
+    def _retract_fairWorksFlowsNanopub(
+        self, nanopublication: Nanopublication = None, nanopub_uri: str = None
+    ):
+        """
+        makes the process of retraction of nanopublication that was published remotely
+        """
+        try:
+            nanopub_uri = (
+                nanopublication.publication_info.nanopub_uri
+                if nanopublication != None and nanopublication.publication_info != None
+                else nanopub_uri
+            )
+
+            if nanopub_uri != None:
+                self.nanopubremote.retract(
+                    uri=nanopub_uri, force=True
+                )
+            else:
+                raise "empty nanopub_uri for retract"
+        except Exception as e:
+            print("have error on remote retracting", e.__class__, e)
+            return None
+
     def __exportNanopublication(
-        self, nanopub: Nanopublication, json: bool = False, rdf_format: str = None
+        self,
+        nanopub: Nanopublication,
+        json: bool = False,
+        rdf_format: str = None,
+        tempRdf: bool = False,
     ):
         if nanopub != None:
             if rdf_format != None and rdf_format != "trig":
-                nanopub.rdf_raw = DBNanopub(nanopub, self.settings).serialize(
-                    rdf_format
-                )
+                nanopub.rdf_raw = DBNanopub(
+                    dbnanopub=nanopub, settings=self.settings, fromDbrdf=(not tempRdf)
+                ).serialize(rdf_format)
             return nanopub.to_json_map() if json else nanopub
         else:
             return {"error": "not-found"}
