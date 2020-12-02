@@ -1,12 +1,19 @@
 from dependency_injector import providers, containers
-from src.services.bioportal_service import BioPortalService
-from src.services.nanopub_services import NanoPubServices
-from src.services.protocols_service import ProtocolsService
-from src.services.stats_service import StatsService
 from src.adapters.bioportal_api import BioPortalApi
 from src.adapters.assertion_strategy import BioportalAssertionStrategy
+from src.services import (
+    BioPortalService,
+    NanoPubServices,
+    ProtocolsService,
+    StatsService,
+    WorkflowsService,
+)
 from .db_mongo import MongoDb
-from .repositories import NanopublicationRepository, ProtocolsRepository
+from .repositories import (
+    NanopublicationRepository,
+    ProtocolsRepository,
+    WorkflowsRepository,
+)
 from nanopub import NanopubClient
 
 
@@ -31,6 +38,7 @@ class Injector(containers.DeclarativeContainer):
     # respos
     protocolsRepository = providers.Singleton(ProtocolsRepository)
     nanopubsRepository = providers.Singleton(NanopublicationRepository)
+    workflows_repository = providers.Singleton(WorkflowsRepository)
     # services
     bioportalService = providers.Factory(BioPortalService, bioportal_api=bioportalApi)
     nanopubsService = providers.Factory(
@@ -45,3 +53,10 @@ class Injector(containers.DeclarativeContainer):
         ProtocolsService, protocolsRepo=protocolsRepository
     )
     statsService = providers.Factory(StatsService, nanopubsRepo=nanopubsRepository)
+    workflows_service = providers.Factory(
+        WorkflowsService,
+        workflows_repository=workflows_repository,
+        nanopubs_repository=nanopubsRepository,
+        settings=env.settings,
+        nanopub_client=nanopubClient,
+    )

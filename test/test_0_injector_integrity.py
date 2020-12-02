@@ -2,12 +2,13 @@ from nanopub import NanopubClient
 from .mock_injector import mock_injector
 from src.adapters.bioportal_api import BioPortalApi
 from src.db_mongo import MongoDb
-from src.repositories import ProtocolsRepository, NanopublicationRepository
+from src.repositories import ProtocolsRepository, NanopublicationRepository, WorkflowsRepository
 from src.services import (
     BioPortalService,
     NanoPubServices,
     ProtocolsService,
     StatsService,
+    WorkflowsService
 )
 
 # checks each property provide by Injector has correct integrity
@@ -53,3 +54,7 @@ def test_injector_prop_protocols_service():
 def test_injector_prop_stats_service():
     assert isinstance(mock_injector.statsService(), StatsService)
     assert isinstance(mock_injector.statsService().nanopubsRepo, NanopublicationRepository)
+
+def test_injector_prop_workflows_service():
+    assert isinstance(mock_injector.workflows_service(), WorkflowsService)
+    assert isinstance(mock_injector.workflows_service().workflows_repository, WorkflowsRepository)

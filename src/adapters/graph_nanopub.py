@@ -8,6 +8,7 @@ import functools
 from rdflib.namespace import DC, XSD
 from datetime import datetime
 from nanopub import Publication
+from nanopub.definitions import DUMMY_NANOPUB_URI
 
 
 class GraphNanopub:
@@ -35,15 +36,15 @@ class GraphNanopub:
 
     def __init__(
         self,
-        url: str,
         author: str,
         derived_from: list,
+        url: str = DUMMY_NANOPUB_URI,
         settings: dict = None,
         nanopub: Publication = None,
     ):
         self.settings = settings
         self.url = rdflib.URIRef(url)
-        self.step = rdflib.term.URIRef(url + "#step")
+        self.step = rdflib.term.URIRef(DUMMY_NANOPUB_URI + "#step")
         self.author = self.AUT[author]
         if nanopub == None:
             # initial_triple added for skip validation for empty assertion graph for nanopub
