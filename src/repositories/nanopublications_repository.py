@@ -1,4 +1,5 @@
 from src.models import Nanopublication
+from .workflows_repository import WorkflowsRepository
 
 
 class NanopublicationRepository:
@@ -49,8 +50,9 @@ class NanopublicationRepository:
         {"$project": {"_id": 0, "term": "$_id", "uris": 1}},
     ]
 
-    def __init__(self):
+    def __init__(self, workflows_repository: WorkflowsRepository = None):
         super().__init__()
+        self.workflows_repository = workflows_repository
 
     def save(self, nanopub: Nanopublication) -> Nanopublication:
         """
@@ -60,7 +62,7 @@ class NanopublicationRepository:
             return nanopub.save()
         return None
 
-    def delete(self, nanopub: Nanopublication):
+    def delete(self, nanopub: Nanopublication) -> dict:
         """
         Realiza la eliminacion de la nanopublicacion pasada
         """
@@ -68,7 +70,7 @@ class NanopublicationRepository:
             nanopub.delete()
             return {"status": "ok"}
 
-        return None
+        return {"status": "error"}
 
     def getNanopub(
         self, id: str, protocol=None, default: Nanopublication = None
@@ -80,25 +82,33 @@ class NanopublicationRepository:
         query = {"id": id}
         if protocol != None:
             query["protocol"] = protocol
-        dbNanopub = Nanopublication.objects(**query).first()
-        dbNanopub = dbNanopub if dbNanopub != None else default
-        return dbNanopub
+        db_nanopub = Nanopublication.objects(**query).first()
+        if db_nanopub != None:
+            self.__load_workflows_of_nanopub(db_nanopub)
+            return db_nanopub
+
+        return default
 
     def getNanopubsByProtocol(self, protocol: str) -> list:
         """
         retorna la lista de nanopublicaciones asociadas a la uri del protocolo pasado
         """
-        return Nanopublication.objects(protocol=protocol)
+        return list(
+            map(
+                (lambda nanopub: self.__load_workflows_of_nanopub(nanopub=nanopub)),
+                Nanopublication.objects(protocol=protocol),
+            )
+        )
 
     def getNanopubByArtifactCode(self, artifact_code: str) -> Nanopublication:
         """
         retorna la primera Nanopublication relacionada al artifact_code pasado, este se relaciona
         con el PublicationInfo.artifact_code de la misma
         """
-        dbNanopub = Nanopublication.objects(
+        db_nanopub = Nanopublication.objects(
             publication_info__artifact_code=artifact_code
         ).first()
-        return dbNanopub
+        return self.__load_workflows_of_nanopub(nanopub=db_nanopub)
 
     def getEssentialStats(self, protocol: str = None):
         """
@@ -202,3 +212,15 @@ class NanopublicationRepository:
             else []
         ) + pipeline
         return final_pipeline
+
+    def __load_workflows_of_nanopub(self, nanopub: Nanopublication) -> list:
+        """
+        shortcut and validator to load associated workflows of passed nanopub
+        """
+        if self.workflows_repository != None and nanopub != None:
+            workflows = self.workflows_repository.get_workflows_of_nanopub(
+                nanopub_id=nanopub.id
+            )
+            nanopub.workflows = workflows
+
+        return nanopub

@@ -1,3 +1,4 @@
+from .workflows_service import WorkflowsService
 from src.models.annotation import Annotation
 from src.models.nanopub_request import NanopubRequest
 from src.adapters.annotation_nanopub import AnnotationNanopub
@@ -10,7 +11,10 @@ from src.models import (
     NanopublicationComponent,
     PublicationInfo,
 )
-from src.repositories import NanopublicationRepository, ProtocolsRepository
+from src.repositories import (
+    NanopublicationRepository,
+    ProtocolsRepository,
+)
 from nanopub import NanopubClient
 from urllib.parse import urlparse
 import json
@@ -27,6 +31,7 @@ class NanoPubServices:
         protocolsRepo: ProtocolsRepository,
         nanopubsRepo: NanopublicationRepository,
         nanopubremote: NanopubClient,
+        workflows_service: WorkflowsService,
         settings: dict,
     ):
         self.bioPortal_API = bioportal_api
@@ -35,6 +40,7 @@ class NanoPubServices:
         self.nanopubsRepo = nanopubsRepo
         self.nanopubremote = nanopubremote
         self.settings = settings
+        self.workflows_service = workflows_service
 
     def nanopubsByProtocol(
         self, protocol, json: bool = False, rdf_format: str = "trig"
@@ -102,12 +108,17 @@ class NanoPubServices:
         """
         realiza la eliminacion de la nanopublicacion relacionada al identificador pasado
         """
-        nanoPublication = self.nanopubsRepo.getNanopub(nanopublication_key)
-        if nanoPublication != None:
-            result = self.nanopubsRepo.delete(nanoPublication)
-            if result is dict and result["status"] == "ok":
-                self._retract_fairWorksFlowsNanopub(nanopublication=nanoPublication)
-
+        nanopub = self.nanopubsRepo.getNanopub(nanopublication_key)
+        if nanopub != None:
+            workflows = list(nanopub.workflows)
+            result = self.nanopubsRepo.delete(nanopub)
+            if result["status"] == "ok":
+                self._retract_fairWorksFlowsNanopub(nanopublication=nanopub)
+                # deleting related workflows
+                if len(workflows) > 0:
+                    for workflow in workflows:
+                        print("deleting workflow with id ", workflow.id)
+                        self.workflows_service.delete(workflow_key=workflow.id)
             return result
         else:
             return {"status": "error", "message": "Nanopublication not found"}
@@ -254,9 +265,7 @@ class NanoPubServices:
             )
 
             if nanopub_uri != None:
-                self.nanopubremote.retract(
-                    uri=nanopub_uri, force=True
-                )
+                self.nanopubremote.retract(uri=nanopub_uri, force=True)
             else:
                 raise "empty nanopub_uri for retract"
         except Exception as e:

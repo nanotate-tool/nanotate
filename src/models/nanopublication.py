@@ -89,6 +89,8 @@ class Nanopublication(EntityBase):
     generatedAtTime = StringField()
     # informacion de la publicacion remota de la nanopublicacion
     publication_info = EmbeddedDocumentField(PublicationInfo)
+    # associated workflows of this nanopublication (field must be manual loaded)
+    workflows = []
 
     def componentsByTag(self, tag: str) -> list:
         """
@@ -124,6 +126,22 @@ class Nanopublication(EntityBase):
 
     def to_json_map(self):
         base = super().to_json_map()
+        # workflows
+        if len(self.workflows) > 0:
+            base["workflows"] = list(
+                map(
+                    (
+                        lambda workflow: {
+                            "id": workflow.id,
+                            "label": workflow.label,
+                            "description": workflow.description,
+                        }
+                    ),
+                    self.workflows,
+                )
+            )
+            base["hasWorkflows"] = True
+
         base["title"] = self.title
         base["permissions"] = self.permissions
         return base

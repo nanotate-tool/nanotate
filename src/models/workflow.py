@@ -44,8 +44,12 @@ class Workflow(EntityBase):
 
     def to_json_map(self):
         base = super().to_json_map()
-        base["nanopubs"] = list(
-            map((lambda nanopub: nanopub.to_json_map()), self.nanopubs)
-        )
+        try:
+            base["nanopubs"] = list(
+                map((lambda nanopub: nanopub.to_json_map()), self.nanopubs)
+            )
+        except Exception as e:
+            base["nanopubs"] = []
+
         base["permissions"] = self.permissions
         return base

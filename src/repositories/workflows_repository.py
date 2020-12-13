@@ -1,4 +1,4 @@
-from src.models.workflow import Workflow
+from src.models.workflow import Workflow, Nanopublication
 
 
 class WorkflowsRepository:
@@ -43,3 +43,11 @@ class WorkflowsRepository:
             return {"status": "ok"}
 
         return None
+
+    def get_workflows_of_nanopub(self, nanopub_id: str) -> list:
+        """
+        returns the list of workflows associated to nanopub_id passed\n
+            params:
+                nanopub_id: nanopublication identifier
+        """
+        return Workflow.objects(nanopubs__in=Nanopublication.objects(id=nanopub_id))
