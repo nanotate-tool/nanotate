@@ -104,7 +104,7 @@ class WorkflowsService:
         """
         in_test_mode = not self.settings["production"]
         fair_workflow = FairWorkflow(
-            description=workflow.description, label=workflow.description
+            description=workflow.description, label=workflow.label
         )
         # steps insertion from workflow
         before_fair_step = None
