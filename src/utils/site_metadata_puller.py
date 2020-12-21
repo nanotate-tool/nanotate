@@ -1,6 +1,7 @@
 import metadata_parser
 import functools
 import json
+from urllib.parse import urldefrag, urlparse, urljoin
 
 
 class SiteMetada:
@@ -34,7 +35,7 @@ class SiteMetada:
         return self.__dict__
 
 
-def pull_site_metadata(url: str) -> SiteMetada:
+def pull_site_metadata(url: str, settings: dict = None) -> SiteMetada:
     """
     extrae la metadata del sitio asociado a la url pasada
     """
@@ -47,7 +48,7 @@ def pull_site_metadata(url: str) -> SiteMetada:
             authors = authors + page.get_metadatas("citation_author")
 
         site_metada = SiteMetada(
-            uri=url,
+            uri=clean_url_with_settings(url=url, settings=settings),
             title=joinArray_in_str(page.get_metadatas("title")),
             description=joinArray_in_str(page.get_metadatas("description")),
             image=get_first_appearance(page, "image"),
@@ -60,6 +61,7 @@ def pull_site_metadata(url: str) -> SiteMetada:
             ),
         )
         return site_metada
+
     except:
         return SiteMetada(uri=url, title="Site Meta data Not Found")
 
@@ -84,3 +86,47 @@ def joinArray_in_str(arr: list, base: str = ""):
         if arr != None
         else ""
     )
+
+
+def clean_url_with_settings(url: str, settings: dict = None):
+    """
+    same that clean_url but checks if base url have conditions for clean\n
+        params:
+            url: url to be cleared
+            settings: global app settings (optional)
+    """
+    ignore_query_params = False
+    if settings != None and settings["sites"] != None:
+        ignore_query_params = (
+            settings["sites"]["global"]["ig_query"]
+            if settings["sites"]["global"] != None
+            else False
+        )
+        url_parse = urlparse(url)
+        base_url = url_parse.netloc
+        for key in settings["sites"]:
+            if (
+                settings["sites"][key]["host"] == base_url
+                and settings["sites"][key]["ig_query"]
+            ):
+                ignore_query_params = True
+                break
+
+    return clean_url(url=url, ignore_query_params=ignore_query_params)
+
+
+def clean_url(url: str, ignore_query_params: bool = False) -> str:
+    """
+    parse passed url and returns url without his fragment (#fragment)\n
+        params:
+            url: url to be cleared
+            ignore_query_params: True if ignore query paramas of url , False otherwise
+    """
+    if ignore_query_params:
+        url_parse = urlparse(url)
+        print("ignoring query params")
+        print(url_parse)
+        return url_parse.scheme + "://" + url_parse.netloc + url_parse.path
+    else:
+        url_defrag = urldefrag(url)
+        return url_defrag.url

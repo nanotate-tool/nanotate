@@ -17,6 +17,7 @@ from src.repositories import (
 )
 from nanopub import NanopubClient
 from urllib.parse import urlparse
+from src.utils.site_metadata_puller import clean_url_with_settings
 import json
 
 
@@ -43,12 +44,17 @@ class NanoPubServices:
         self.workflows_service = workflows_service
 
     def nanopubsByProtocol(
-        self, protocol, json: bool = False, rdf_format: str = "trig"
+        self, protocol: str, json: bool = False, rdf_format: str = "trig"
     ) -> list:
         """
-        retorna las nanopublicaciones realacionadas al protocolo pasado
+        returns the nanopublications related to passed protocol\n
+            params:
+                protocol: url of protocol
+                json: true for return data in json format, false otherwise
+                rdf_format: valid format for nanopublication rdf
         """
-        nanopubs = self.nanopubsRepo.getNanopubsByProtocol(protocol=protocol)
+        clean_protocol = clean_url_with_settings(url=protocol, settings=self.settings)
+        nanopubs = self.nanopubsRepo.getNanopubsByProtocol(protocol=clean_protocol)
         return list(
             map(
                 lambda nanopub: self.__exportNanopublication(
@@ -181,8 +187,10 @@ class NanoPubServices:
 
         retorna una tupla donde el primer parametro es el protocolo(Protocol) seguido de la nanopublicacion(Nanopublication)
         """
+        clean_url = clean_url_with_settings(url=request.url, settings=self.settings)
         protocol = self.protocolsRepo.getProtocol(
-            uri=request.url, default=Protocol.fromAnnotation(request.step)
+            uri=clean_url,
+            default=Protocol.fromAnnotation(request.step, settings=self.settings),
         )
         nanopublication = self.nanopubsRepo.getNanopub(
             protocol=protocol,
@@ -249,7 +257,7 @@ class NanoPubServices:
             )
         except Exception as e:
             print("have error on remote publish", e.__class__, e)
-            return None
+            raise e
 
     def _retract_fairWorksFlowsNanopub(
         self, nanopublication: Nanopublication = None, nanopub_uri: str = None

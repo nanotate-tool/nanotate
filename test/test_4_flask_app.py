@@ -41,6 +41,21 @@ def test_settings(client: FlaskClient):
         and is_slice_in_list(["tags", "ontologies"], response.get_json())
     )
 
+
+def test_cleanurl(client: FlaskClient):
+    query = {"uri": protocol_uri + "#step"}
+    response: Response = client.get(
+        "/cleanurl", query_string=query, follow_redirects=True
+    )
+    assert (
+        response != None
+        and response.status_code == 200
+        and isinstance(response.get_json(), dict)
+        and is_slice_in_list(["uri"], response.get_json())
+        and response.get_json()['uri'] == protocol_uri
+    )
+
+
 def test_api_annotations_preview(client: FlaskClient, annotations_json):
     response: Response = client.post(
         "/api/nanopub/preview",
@@ -107,7 +122,7 @@ def test_api_get_nanopub(client: FlaskClient):
         uri, query_string={"rdf_format": "xml"}
     )
     response_to_compare: Response = client.get(
-        uri, query_string={"rdf_format": "xml", "fcompare" : "1"}
+        uri, query_string={"rdf_format": "xml", "fcompare": "1"}
     )
     response_not_found: Response = client.get("/api/nanopub/not-exist")
     assert (

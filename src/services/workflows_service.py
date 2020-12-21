@@ -5,6 +5,7 @@ from src.models.workflow_request import WorkflowRequest
 from src.repositories import WorkflowsRepository, NanopublicationRepository
 from src.adapters import WorkflowNanopub
 from bson.objectid import ObjectId
+from src.utils.site_metadata_puller import clean_url_with_settings
 
 
 class WorkflowsService:
@@ -27,8 +28,11 @@ class WorkflowsService:
     def workflows_of_protocol(
         self, protocol_uri: str, json: bool = False, rdf_format: str = "trig"
     ):
+        clean_protocol_uri = clean_url_with_settings(
+            url=protocol_uri, settings=self.settings
+        )
         workflows = self.workflows_repository.get_workflows_of_protocol(
-            protocol_uri=protocol_uri
+            protocol_uri=clean_protocol_uri
         )
         return list(
             map(
