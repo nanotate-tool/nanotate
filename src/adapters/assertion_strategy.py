@@ -75,7 +75,7 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
             else:
                 super().add(nanoPub, assertion, tagConfig, annotation)
 
-    def bioAnnotations(self, annotation: Annotation) -> list:
+    def bioAnnotations(self, annotation: Annotation, full: bool = False) -> list:
         """
         retorna una lista de las anotaciones relacionadas a la anotacion
         """
@@ -90,7 +90,9 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
         bio_annotations = self.api.annotator(annotation.exact, ontologies)
         bio_annotations = list(
             map(
-                lambda bio_annotation: bio_annotation["annotatedClass"]["@id"],
+                lambda bio_annotation: bio_annotation["annotatedClass"]["@id"]
+                if not full
+                else bio_annotation,
                 filter(
                     (
                         lambda bio_annotation: annotation.varIncludes(

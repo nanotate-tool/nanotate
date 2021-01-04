@@ -10,6 +10,7 @@ from src.models import (
     Nanopublication,
     NanopublicationComponent,
     PublicationInfo,
+    OntologyInfo,
 )
 from src.repositories import (
     NanopublicationRepository,
@@ -19,6 +20,7 @@ from nanopub import NanopubClient
 from urllib.parse import urlparse
 from src.utils.site_metadata_puller import clean_url_with_settings
 import json
+from .bioportal_service import BioPortalService
 
 
 class NanoPubServices:
@@ -204,7 +206,28 @@ class NanoPubServices:
         )
         # iterator for load bio_annotations
         def componentsIterator(component, annotation):
-            component.rel_uris = self.assertion_strategy.bioAnnotations(annotation)
+            bio_annotations = list(
+                map(
+                    lambda ontology: BioPortalService.annotationParse(ontology),
+                    self.assertion_strategy.bioAnnotations(
+                        annotation=annotation, full=True
+                    ),
+                )
+            )
+            component.rel_uris = list(
+                map(lambda ontology: ontology["id"], bio_annotations)
+            )
+            component.ontologies_info = list(
+                map(
+                    lambda ontology: OntologyInfo(
+                        label=ontology["ontologyLabel"],
+                        url=ontology["id"],
+                        term=ontology["prefLabel"],
+                        selector=ontology["selector"][0],
+                    ),
+                    bio_annotations,
+                )
+            )
             return component
 
         # aply new changes in nanopub

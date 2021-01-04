@@ -6,11 +6,21 @@ from mongoengine import (
     EmbeddedDocumentField,
     EmbeddedDocumentListField,
     EmbeddedDocument,
+    DictField,
 )
 from .entity_base import EntityBase
 from .annotation import Annotation
 from .annotation_tag import AnnotationTag
 import functools
+
+
+class OntologyInfo(EmbeddedDocument):
+    label = StringField()
+    url = StringField()
+    term = StringField()
+    selector = DictField()
+
+    meta = {"strict": False}
 
 
 class NanopublicationComponent(EmbeddedDocument):
@@ -27,6 +37,10 @@ class NanopublicationComponent(EmbeddedDocument):
     ontologies = ListField(StringField(max_length=25))
     # lista de annotaciones relacionadas a la ontologia
     rel_uris = ListField(StringField(max_length=350))
+    # list with info of selected ontologies
+    ontologies_info = EmbeddedDocumentListField(OntologyInfo)
+    # contains data of text position of annotation
+    text_position = DictField()
 
     @staticmethod
     def fromAnnotations(annotations: list, iterator=None) -> list:
@@ -48,6 +62,10 @@ class NanopublicationComponent(EmbeddedDocument):
                         term=annotation.exact,
                         tags=annotation.tags,
                         ontologies=annotation.ontologies,
+                        text_position={
+                            "start": annotation.start,
+                            "end": annotation.end,
+                        },
                     ),
                     annotation,
                 ),
