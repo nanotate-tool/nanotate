@@ -23,16 +23,16 @@ def api_stats_controller(
         "tags": service.forTags,
         "terms": service.forTerms,
         "ontologies": service.forOntologies,
+        "nanopubs-by-users": service.stats_of_nanopubs_by_user,
+        "nanopubs": service.stats_of_nanopubs,
     }
 
     @controller.route("/api/stats", methods=["GET"])
     def get_essentials_stats():
-        protocol = (
-            request.args["uri"]
-            if "uri" in request.args
-            else abort(400, "uri parameter is required")
-        )
-        data = service.essentials(protocol=protocol)
+        protocol = request.args["protocol"] if "protocol" in request.args else "global"
+        users = request.args.getlist("users") if "users" in request.args else []
+        tags = request.args.getlist("tags") if "tags" in request.args else []
+        data = service.essentials(protocol=protocol, users=users, tags=tags)
         return jsonify(data)
 
     @controller.route("/api/stats/<filter>", methods=["GET"])
@@ -40,12 +40,11 @@ def api_stats_controller(
         settings = (
             FILTERS[filter] if filter in FILTERS else abort(404, "not found filter")
         )
-        protocol = (
-            request.args["uri"]
-            if "uri" in request.args
-            else abort(400, "uri parameter is required")
-        )
-        data = settings(protocol=protocol)
+        protocol = request.args["protocol"] if "protocol" in request.args else "global"
+        users = request.args.getlist("users") if "users" in request.args else []
+        tags = request.args.getlist("tags") if "tags" in request.args else []
+        page = int(request.args["page"]) if "page" in request.args else 1
+        data = settings(protocol=protocol, tags=tags, users=users, page=page)
         return jsonify(data)
 
     return controller
