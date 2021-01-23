@@ -5,7 +5,7 @@ from src.utils.html_utils import format_text_to_html
 import rdflib
 import re
 import functools
-from rdflib.namespace import DC, XSD
+from rdflib.namespace import DC, XSD, RDF
 from datetime import datetime
 from nanopub import Publication
 from nanopub.definitions import DUMMY_NANOPUB_URI
@@ -18,8 +18,10 @@ class GraphNanopub:
 
     # inicial namespaces
     AUT = rdflib.Namespace("https://hypothes.is/a/")
+    AUTU = rdflib.Namespace("https://hypothes.is/users/")
     PAV = rdflib.Namespace("http://purl.org/pav/")
     SP = rdflib.Namespace("http://purl.org/net/SMARTprotocol#")
+    PPLAN = rdflib.Namespace("http://purl.org/net/p-plan#")
     BS = rdflib.Namespace(
         "https://bioschemas.org/profiles/LabProtocol/0.4-DRAFT-2020_07_23/#"
     )
@@ -45,19 +47,21 @@ class GraphNanopub:
         self.settings = settings
         self.url = rdflib.URIRef(url)
         self.step = rdflib.term.URIRef(DUMMY_NANOPUB_URI + "#step")
-        self.author = self.AUT[author]
+        self.author = self.AUTU[self.__clear_author_name(author)]
         if nanopub == None:
             # initial_triple added for skip validation for empty assertion graph for nanopub
             # this is made with purpose of remove identifier in BNodes added in assertion graph,
             # this only occurs when merge initial assertion graph in nanopub with sended assertion graph via 'from_assertion' method
             # so the assertion graph construction is let after of nanopub build
             initial_assertion = rdflib.Graph()
+            initial_assertion.add((self.step, RDF.type, GraphNanopub.PPLAN.Step))
             initial_triple = (self.step, DC.initial, rdflib.Literal("initial"))
             initial_assertion.add(initial_triple)
             self.nanopub = Publication.from_assertion(
                 assertion_rdf=initial_assertion,
                 assertion_attributed_to=self.author,
                 derived_from=derived_from,
+                introduces_concept=rdflib.term.BNode("step"),
             )
             # remove initial_triple added in assertion graph
             self.nanopub.rdf.remove(initial_triple)
@@ -103,6 +107,7 @@ class GraphNanopub:
         self.nanopub.rdf.bind("bs", GraphNanopub.BS)
         self.nanopub.rdf.bind("dc", DC)
         self.nanopub.rdf.bind("pav", GraphNanopub.PAV)
+        self.nanopub.rdf.bind("p-plan", GraphNanopub.PPLAN)
 
     def _computeProvenance(self):
         """
@@ -119,6 +124,17 @@ class GraphNanopub:
             assertion : graph base for assertion
         """
         raise NotImplementedError
+
+    def __clear_author_name(self, author):
+        """
+        clears a author name when this comes whit the format:
+            'acct:<username>@hypothes.is' -> acct:miguel.ruano@hypothes.is
+        """
+        if author != None:
+            au_regex = re.search("(?<=acct:)(.*)(?=@)", author)
+            if au_regex:
+                return au_regex.group(1)
+        return author
 
     def serialize(self, _format):
         """ realiza el proceso de serializacion de los datos de la nanopublicacion"""
