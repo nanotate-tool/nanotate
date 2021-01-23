@@ -221,15 +221,15 @@ def test_api_get_protocol(client: FlaskClient):
 def test_api_essential_stats(client: FlaskClient):
     response: Response = client.get(
         "/api/stats",
-        query_string={"uri": protocol_uri},
+        query_string={"protocol": protocol_uri},
         follow_redirects=True,
     )
     response_empty_protocol: Response = client.get(
         "/api/stats",
-        query_string={"uri": empty_protocol_uri},
+        query_string={"protocol": empty_protocol_uri},
         follow_redirects=True,
     )
-    response_bad: Response = client.get(
+    response_global: Response = client.get(
         "/api/stats",
         follow_redirects=True,
     )
@@ -245,18 +245,18 @@ def test_api_essential_stats(client: FlaskClient):
         and isinstance(response_empty_protocol.get_json(), list)
         and len(response_empty_protocol.get_json()) == 1
     )
-    assert response_bad != None and response_bad.status_code == 400
+    assert response_global != None and response_global.status_code == 200
 
 
 def test_api_generic_filter(client: FlaskClient):
     response: Response = client.get(
         "/api/stats/tags",
-        query_string={"uri": protocol_uri},
+        query_string={"protocol": protocol_uri},
         follow_redirects=True,
     )
     response_empty_protocol: Response = client.get(
         "/api/stats/terms",
-        query_string={"uri": empty_protocol_uri},
+        query_string={"protocol": empty_protocol_uri},
         follow_redirects=True,
     )
     response_bad: Response = client.get(
