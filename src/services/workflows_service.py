@@ -127,7 +127,10 @@ class WorkflowsService:
         fair_workflow.validate()
         # publish
         publication_info = fair_workflow.publish_as_nanopub(
-            use_test_server=in_test_mode
+            use_test_server=in_test_mode,
+            publication_attributed_to=WorkflowNanopub.AUTU[
+                WorkflowNanopub.clear_author_name(workflow.author)
+            ],
         )
         return publication_info
 

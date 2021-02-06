@@ -47,7 +47,7 @@ class GraphNanopub:
         self.settings = settings
         self.url = rdflib.URIRef(url)
         self.step = rdflib.term.URIRef(DUMMY_NANOPUB_URI + "#step")
-        self.author = self.AUTU[self.__clear_author_name(author)]
+        self.author = self.AUTU[GraphNanopub.clear_author_name(author)]
         if nanopub == None:
             # initial_triple added for skip validation for empty assertion graph for nanopub
             # this is made with purpose of remove identifier in BNodes added in assertion graph,
@@ -126,17 +126,6 @@ class GraphNanopub:
         """
         raise NotImplementedError
 
-    def __clear_author_name(self, author):
-        """
-        clears a author name when this comes whit the format:
-            'acct:<username>@hypothes.is' -> acct:miguel.ruano@hypothes.is
-        """
-        if author != None:
-            au_regex = re.search("(?<=acct:)(.*)(?=@)", author)
-            if au_regex:
-                return au_regex.group(1)
-        return author
-
     def serialize(self, _format):
         """ realiza el proceso de serializacion de los datos de la nanopublicacion"""
         if _format == "json-html":
@@ -175,3 +164,15 @@ class GraphNanopub:
             "@Head": format_text_to_html(Head.group(0)),
             "exact": nanopubTrig,
         }
+
+    @staticmethod
+    def clear_author_name(author: str) -> str:
+        """
+        clears a author name when this comes whit the format:
+            'acct:<username>@hypothes.is' -> acct:miguel.ruano@hypothes.is
+        """
+        if author != None:
+            au_regex = re.search("(?<=acct:)(.*)(?=@)", author)
+            if au_regex:
+                return au_regex.group(1)
+        return author
