@@ -60,6 +60,7 @@ class GraphNanopub:
             self.nanopub = Publication.from_assertion(
                 assertion_rdf=initial_assertion,
                 assertion_attributed_to=self.author,
+                publication_attributed_to=self.author,
                 derived_from=derived_from,
                 introduces_concept=rdflib.term.BNode("step"),
             )
