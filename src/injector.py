@@ -16,7 +16,7 @@ from .repositories import (
 )
 from nanopub import NanopubClient
 
-
+negator = lambda arg1: not arg1
 class Injector(containers.DeclarativeContainer):
     """
     Inyector de dependencias de la aplicacion
@@ -32,8 +32,9 @@ class Injector(containers.DeclarativeContainer):
         port=env.mongo.port,
         auth=env.mongo.auth,
     )
+    nanopubTest = providers.Callable(negator, env.settings.production)
     nanopubClient = providers.Singleton(
-        NanopubClient, use_test_server=(not env.settings.production())
+        NanopubClient, use_test_server=nanopubTest
     )
     # respos
     protocolsRepository = providers.Singleton(ProtocolsRepository)
