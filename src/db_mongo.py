@@ -30,5 +30,5 @@ class MongoDb:
             if self.auth != None and type(self.auth) is dict:
                 settings["username"] = self.auth["user"]
                 settings["password"] = self.auth["password"]
-                pass
+
             self.connection = connect(**settings)

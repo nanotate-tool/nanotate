@@ -20,9 +20,9 @@ def api_stats_controller(
     # enpoints def
 
     FILTERS = {
-        "tags": service.forTags,
-        "terms": service.forTerms,
-        "ontologies": service.forOntologies,
+        "tags": service.for_tags,
+        "terms": service.for_terms,
+        "ontologies": service.for_ontologies,
         "nanopubs-by-users": service.stats_of_nanopubs_by_user,
         "nanopubs": service.stats_of_nanopubs,
     }

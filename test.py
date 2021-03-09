@@ -32,7 +32,7 @@ def help():
 
 def main(argv):
     inputfile = "test/annotation_hypothesis.json"
-    outputFormat = "print"
+    outputformat = "print"
     outputdir = ""
     try:
         opts, args = getopt.getopt(argv, "hi:o:d:", ["ifile=", "output=", "odir="])
@@ -46,13 +46,13 @@ def main(argv):
         elif opt in ("-i", "--ifile"):
             inputfile = arg
         elif opt in ("-o", "--output"):
-            outputFormat = arg
+            outputformat = arg
         elif opt in ("-d", "--odir"):
             outputdir = arg
-    test(inputfile, outputFormat, "trig", outputdir)
+    test(inputfile, outputformat, "trig", outputdir)
 
 
-def test(inputfile, outputFormat="print", rdfFormat="trig", outputdir=None):
+def test(inputfile, outputformat="print", rdf_format="trig", outputdir=None):
     print("making test... from file", inputfile)
     with open(inputfile) as infile:
         # paso 1 parseo
@@ -72,11 +72,11 @@ def test(inputfile, outputFormat="print", rdfFormat="trig", outputdir=None):
         print(
             "pass 3) -> ",
             ("Almacenando anotaciones en " + outputdir)
-            if outputFormat == "file"
+            if outputformat == "file"
             else "Imprimiendo en pantalla anotaciones",
         )
         if (
-            outputFormat == "file"
+            outputformat == "file"
             and outputdir != None
             and not os.path.exists(outputdir)
         ):
@@ -85,14 +85,14 @@ def test(inputfile, outputFormat="print", rdfFormat="trig", outputdir=None):
         for request in requests:
             nanopublication = AnnotationNanopub(request, ASSERTION_STRATEGY)
             filename = "nanopublication-" + request.id + ".trig"
-            if outputFormat == "file":
+            if outputformat == "file":
                 filepath = outputdir + filename
                 text_file = open(filepath, "w")
                 print("\t-->", "Almacenando nanopublicacion en", "'" + filepath + "'")
-                n = text_file.write(nanopublication.serialize(rdfFormat))
+                text_file.write(nanopublication.serialize(rdf_format))
                 text_file.close()
             else:
-                print(nanopublication.serialize(rdfFormat))
+                print(nanopublication.serialize(rdf_format))
 
 
 if __name__ == "__main__":

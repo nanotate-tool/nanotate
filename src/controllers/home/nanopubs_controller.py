@@ -22,7 +22,7 @@ def home_nanopubs_controller(
     @controller.route("/np/<artifact>", methods=["GET"])
     def remote_nanopublication_forward(artifact):
         """redirige los artifacts de nanopublicaciones locales a su publicacion remota"""
-        nanopublication = service.nanopubByArtifactCode(artifact_code=artifact)
+        nanopublication = service.nanopub_by_artifact_code(artifact_code=artifact)
         if (
             type(nanopublication) is Nanopublication
             and nanopublication.publication_info != None

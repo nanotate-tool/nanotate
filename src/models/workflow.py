@@ -48,7 +48,7 @@ class Workflow(EntityBase):
             base["nanopubs"] = list(
                 map((lambda nanopub: nanopub.to_json_map()), self.nanopubs)
             )
-        except Exception as e:
+        except Exception as _:
             base["nanopubs"] = []
 
         base["permissions"] = self.permissions

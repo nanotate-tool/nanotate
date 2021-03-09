@@ -22,17 +22,17 @@ def api_nanopubs_controller(
     @controller.route("/api/nanopub/rgs", methods=["POST"])
     def annotations_register():
         """registro de anotaciones para su transformacion a nanopublicaciones"""
-        data = service.registerFromAnnotations(
-            Annotation.parseJsonArr(request.get_json())
+        data = service.register_from_annotations(
+            Annotation.parse_json_arr(request.get_json())
         )
         return jsonify(data)
 
     @controller.route("/api/nanopub/preview", methods=["POST"])
     def annotations_preview():
         """realiza la simulacion de las anotaciones enviadas a un formator trig de estas devueltas en un formato json"""
-        format = request.args["format"] if "format" in request.args else None
-        data = service.previewAnnotations(
-            Annotation.parseJsonArr(request.get_json()), format
+        rdf_format = request.args["format"] if "format" in request.args else None
+        data = service.preview_annotations(
+            Annotation.parse_json_arr(request.get_json()), rdf_format
         )
         return jsonify(data)
 
@@ -47,7 +47,7 @@ def api_nanopubs_controller(
             request.args["rdf_format"] if "rdf_format" in request.args else None
         )
         """ visualizacion de las nanopublicaciones para una uri"""
-        data = service.nanopubsByProtocol(
+        data = service.nanopubs_by_protocol(
             protocol=protocol, json=True, rdf_format=rdf_format
         )
         return jsonify(data)
@@ -58,14 +58,14 @@ def api_nanopubs_controller(
             request.args["rdf_format"] if "rdf_format" in request.args else None
         )
         for_comparator = "fcompare" in request.args
-        data = service.nanopubById(
+        data = service.nanopub_by_id(
             id=nanopub, json=True, rdf_format=rdf_format, for_compare=for_comparator
         )
         return jsonify(data)
 
     @controller.route("/api/nanopub/<nanopub>", methods=["DELETE"])
     def delete(nanopub: str):
-        data = service.deleteNanopublication(nanopublication_key=nanopub)
+        data = service.delete_nanopublication(nanopublication_key=nanopub)
         return jsonify(data)
 
     return controller

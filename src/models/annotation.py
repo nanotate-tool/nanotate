@@ -38,7 +38,7 @@ class Annotation(object):
         """ retorna el array de valores asociado a la variable pasada en el settings del annotation request """
         return self.settings[var_key] if self.settings else None
 
-    def varIncludes(self, var_key: str, value: str):
+    def var_includes(self, var_key: str, value: str):
         """ true si el valor buscado se encuentra en el array de valores del var_key en el settings del annotation request
             false de lo contrario
         """
@@ -46,14 +46,14 @@ class Annotation(object):
         return _var == None or value in _var
 
     @staticmethod
-    def parseJson(data) -> Annotation:
+    def parse_json(data) -> Annotation:
         """ parsea el contenido json pasado a una instancia de Annotation Valida"""
         return Annotation(**data)
 
     @staticmethod
-    def parseJsonArr(data) -> list:
+    def parse_json_arr(data) -> list:
         """ parsea el array con los json para construir una instancia valida de Annotation @see #parseJson"""
         annotations = []
         for entry in data:
-            annotations.append(Annotation.parseJson(entry))
+            annotations.append(Annotation.parse_json(entry))
         return annotations

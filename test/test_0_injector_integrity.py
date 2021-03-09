@@ -37,23 +37,23 @@ def test_injector_prop_nanopubs_repository():
 
 def test_injector_prop_bioportal_service():
     assert isinstance(mock_injector.bioportalService(), BioPortalService)
-    assert isinstance(mock_injector.bioportalService().bioPortal_API, BioPortalApi)
+    assert isinstance(mock_injector.bioportalService().bioportal_api, BioPortalApi)
 
 def test_injector_prop_nanopubs_service():
     assert isinstance(mock_injector.nanopubsService(), NanoPubServices)
-    assert isinstance(mock_injector.nanopubsService().bioPortal_API, BioPortalApi)
-    assert isinstance(mock_injector.nanopubsService().protocolsRepo, ProtocolsRepository)
-    assert isinstance(mock_injector.nanopubsService().nanopubsRepo, NanopublicationRepository)
+    assert isinstance(mock_injector.nanopubsService().bioportal_api, BioPortalApi)
+    assert isinstance(mock_injector.nanopubsService().protocols_repo, ProtocolsRepository)
+    assert isinstance(mock_injector.nanopubsService().nanopubs_repo, NanopublicationRepository)
     assert isinstance(mock_injector.nanopubsService().nanopubremote, NanopubClient)
     assert isinstance(mock_injector.nanopubsService().settings, dict)
 
 def test_injector_prop_protocols_service():
     assert isinstance(mock_injector.protocolsService(), ProtocolsService)
-    assert isinstance(mock_injector.protocolsService().protocolsRepo, ProtocolsRepository)
+    assert isinstance(mock_injector.protocolsService().protocols_repo, ProtocolsRepository)
 
 def test_injector_prop_stats_service():
     assert isinstance(mock_injector.statsService(), StatsService)
-    assert isinstance(mock_injector.statsService().nanopubsRepo, NanopublicationRepository)
+    assert isinstance(mock_injector.statsService().nanopubs_repo, NanopublicationRepository)
 
 def test_injector_prop_workflows_service():
     assert isinstance(mock_injector.workflows_service(), WorkflowsService)

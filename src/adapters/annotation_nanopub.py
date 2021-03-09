@@ -39,7 +39,7 @@ class AnnotationNanopub(GraphNanopub):
             )
         )
 
-    def _computeAssertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
+    def _compute_assertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
         assertion = assertion if assertion != None else rdflib.Graph()
         for tag_config in self.TAGS_CONFIG:
             # procesando todas las anotaciones configuradas

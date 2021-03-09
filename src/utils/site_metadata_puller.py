@@ -49,20 +49,20 @@ def pull_site_metadata(url: str, settings: dict = None) -> SiteMetada:
 
         site_metada = SiteMetada(
             uri=clean_url_with_settings(url=url, settings=settings),
-            title=joinArray_in_str(page.get_metadatas("title")),
-            description=joinArray_in_str(page.get_metadatas("description")),
+            title=join_array_in_str(page.get_metadatas("title")),
+            description=join_array_in_str(page.get_metadatas("description")),
             image=get_first_appearance(page, "image"),
-            _type=joinArray_in_str(page.get_metadatas("type")),
+            _type=join_array_in_str(page.get_metadatas("type")),
             authors=authors,
             pdf=get_first_appearance(page, "citation_pdf_url"),
             keywords=page.get_metadatas("keywords"),
-            creation_date=joinArray_in_str(
+            creation_date=join_array_in_str(
                 page.get_metadatas("citation_publication_date")
             ),
         )
         return site_metada
 
-    except:
+    except Exception:
         return SiteMetada(uri=url, title="Site Meta data Not Found")
 
 
@@ -77,7 +77,7 @@ def get_first_appearance(page: metadata_parser.MetadataParser, prop: str) -> str
         return None
 
 
-def joinArray_in_str(arr: list, base: str = ""):
+def join_array_in_str(arr: list, base: str = ""):
     """
     concatena los elementos de la lista en un string
     """

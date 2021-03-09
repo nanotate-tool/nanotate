@@ -59,14 +59,14 @@ class WorkflowsService:
         """
         nanopubs = list(
             map(
-                lambda nanopub_key: self.nanopubs_repository.getNanopub(id=nanopub_key),
+                lambda nanopub_key: self.nanopubs_repository.get_nanopub(id=nanopub_key),
                 workflow.nanopubs,
             )
         )
         if len(nanopubs) <= 0:
             return {"status": "error", "cause": "not steps found"}
         # save new workflow
-        dbWorflow = Workflow(
+        db_worflow = Workflow(
             id=str(ObjectId()),
             label=workflow.label,
             description=workflow.description,
@@ -75,14 +75,14 @@ class WorkflowsService:
             nanopubs=nanopubs,
         )
         # publication and rdf rescue
-        dbWorflow.publication_info = self.publish_to_fairworkflow(workflow=dbWorflow)
-        dbWorflow.rdf = WorkflowNanopub(
-            workflow=dbWorflow, settings=self.settings, npClient=self.nanopub_client
+        db_worflow.publication_info = self.publish_to_fairworkflow(workflow=db_worflow)
+        db_worflow.rdf = WorkflowNanopub(
+            workflow=db_worflow, settings=self.settings, np_client=self.nanopub_client
         ).serialize("trig")
         # saving
-        dbWorflow = self.workflows_repository.save(dbWorflow)
+        db_worflow = self.workflows_repository.save(db_worflow)
 
-        return {"status": "ok", "data": dbWorflow.to_json_map()}
+        return {"status": "ok", "data": db_worflow.to_json_map()}
 
     def delete(self, workflow_key: str):
         """
@@ -94,7 +94,7 @@ class WorkflowsService:
         if workflow != None:
             result = self.workflows_repository.delete(workflow)
             if result != None and result["status"] == "ok":
-                self.retract_in_fairworkFlow(workflow=workflow)
+                self.retract_in_fairworkflow(workflow=workflow)
 
             return result
         else:
@@ -134,7 +134,7 @@ class WorkflowsService:
         )
         return publication_info
 
-    def retract_in_fairworkFlow(self, workflow: Workflow = None):
+    def retract_in_fairworkflow(self, workflow: Workflow = None):
         """
         makes the process of retraction of Workflow passed that was published remotely\n
             params:\n
@@ -142,9 +142,10 @@ class WorkflowsService:
         """
         try:
             if workflow != None and workflow.publication_info != None:
-                delete = self.nanopub_client.retract(
+                delete_result = self.nanopub_client.retract(
                     uri=workflow.publication_info["nanopub_uri"], force=True
                 )
+                return delete_result
             else:
                 raise "empty nanopub_uri for retract in workflow passed"
         except Exception as e:
@@ -159,7 +160,7 @@ class WorkflowsService:
                 workflow.rdf = WorkflowNanopub(
                     workflow=workflow,
                     settings=self.settings,
-                    npClient=self.nanopub_client,
+                    np_client=self.nanopub_client,
                 ).serialize(rdf_format)
             return workflow.to_json_map() if json else workflow
         else:

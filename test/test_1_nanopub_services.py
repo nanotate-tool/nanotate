@@ -16,7 +16,7 @@ from .constants import (
 
 # check each operation available in nanopub service
 
-# global instance
+
 service_instance: NanoPubServices = mock_injector.nanopubsService()
 
 
@@ -24,14 +24,14 @@ service_instance: NanoPubServices = mock_injector.nanopubsService()
 def annotations():
     with open(test_annotations_json_path) as infile:
         data = json.load(infile)
-        annotations = Annotation.parseJsonArr(data)
+        annotations = Annotation.parse_json_arr(data)
     return annotations
 
 
 def test_preview_annotations(annotations):
-    empty_data = service_instance.previewAnnotations(annotations=[])
-    data = service_instance.previewAnnotations(annotations=annotations)
-    data_any_format = service_instance.previewAnnotations(
+    empty_data = service_instance.preview_annotations(annotations=[])
+    data = service_instance.preview_annotations(annotations=annotations)
+    data_any_format = service_instance.preview_annotations(
         annotations=annotations, format="json-html"
     )
     assert empty_data != None and isinstance(empty_data, list) and len(empty_data) == 0
@@ -54,7 +54,7 @@ def test_preview_annotations(annotations):
 
 
 def test_registration_nanopub(annotations):
-    data = service_instance.registerFromAnnotations(annotations=annotations)
+    data = service_instance.register_from_annotations(annotations=annotations)
     assert data["status"] == "ok"
     assert (
         data[nanopub_key]["status"] == "ok"
@@ -66,12 +66,12 @@ def test_registration_nanopub(annotations):
 
 
 def test_get_nanopub_by_id():
-    not_exist = service_instance.nanopubById(id="not-exists")
-    not_exist_json = service_instance.nanopubById(id="not-exists", json=True)
-    data = service_instance.nanopubById(id=nanopub_key)
-    data_json = service_instance.nanopubById(id=nanopub_key, json=True)
-    data_any_format = service_instance.nanopubById(id=nanopub_key, rdf_format="turtle")
-    data_for_compare = service_instance.nanopubById(id=nanopub_key, rdf_format="turtle", for_compare= True)
+    not_exist = service_instance.nanopub_by_id(id="not-exists")
+    not_exist_json = service_instance.nanopub_by_id(id="not-exists", json=True)
+    data = service_instance.nanopub_by_id(id=nanopub_key)
+    data_json = service_instance.nanopub_by_id(id=nanopub_key, json=True)
+    data_any_format = service_instance.nanopub_by_id(id=nanopub_key, rdf_format="turtle")
+    data_for_compare = service_instance.nanopub_by_id(id=nanopub_key, rdf_format="turtle", for_compare= True)
     assert data != None and isinstance(data, Nanopublication) and data.id == nanopub_key
     assert (
         data_json != None
@@ -95,12 +95,12 @@ def test_get_nanopub_by_id():
 
 
 def test_get_nanopubs_by_protocol():
-    data = service_instance.nanopubsByProtocol(protocol=protocol_uri)
-    data_json = service_instance.nanopubsByProtocol(protocol=protocol_uri, json=True)
-    data_any_format = service_instance.nanopubsByProtocol(
+    data = service_instance.nanopubs_by_protocol(protocol=protocol_uri)
+    data_json = service_instance.nanopubs_by_protocol(protocol=protocol_uri, json=True)
+    data_any_format = service_instance.nanopubs_by_protocol(
         protocol=protocol_uri, rdf_format="xml"
     )
-    data_empty = service_instance.nanopubsByProtocol(protocol=empty_protocol_uri)
+    data_empty = service_instance.nanopubs_by_protocol(protocol=empty_protocol_uri)
     assert (
         data != None
         and len(data) == expected_nanopubs

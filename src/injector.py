@@ -46,11 +46,11 @@ class Injector(containers.DeclarativeContainer):
     bioportalService = providers.Factory(BioPortalService, bioportal_api=bioportalApi)
     protocolsService = providers.Factory(
         ProtocolsService,
-        protocolsRepo=protocolsRepository,
+        protocols_repo=protocolsRepository,
         settings=env.settings,
     )
     statsService = providers.Factory(
-        StatsService, nanopubsRepo=nanopubsRepository, settings=env.settings
+        StatsService, nanopubs_repo=nanopubsRepository, settings=env.settings
     )
     workflows_service = providers.Factory(
         WorkflowsService,
@@ -62,8 +62,8 @@ class Injector(containers.DeclarativeContainer):
     nanopubsService = providers.Factory(
         NanoPubServices,
         bioportal_api=bioportalApi,
-        nanopubsRepo=nanopubsRepository,
-        protocolsRepo=protocolsRepository,
+        nanopubs_repo=nanopubsRepository,
+        protocols_repo=protocolsRepository,
         nanopubremote=nanopubClient,
         workflows_service=workflows_service,
         settings=env.settings,

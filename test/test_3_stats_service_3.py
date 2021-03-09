@@ -22,7 +22,7 @@ def test_stats_essentials():
 
 def test_stats_for_tags():
     expected_keys = ["label", "count"]
-    data = service_instance.forTags(protocol=protocol_uri)
+    data = service_instance.for_tags(protocol=protocol_uri)
     assert data != None and isinstance(data, list) and len(data) == 2
     assert (
         data[0] != None
@@ -33,7 +33,7 @@ def test_stats_for_tags():
 
 def test_stats_terms():
     expected_keys = ["used", "related"]
-    data = service_instance.forTerms(protocol=protocol_uri)
+    data = service_instance.for_terms(protocol=protocol_uri)
     assert data != None and isinstance(data, list) and len(data) == 1
     assert (
         data[0] != None
@@ -44,7 +44,7 @@ def test_stats_terms():
 
 def test_stats_ontologies():
     expected_keys = ["label", "count"]
-    data = service_instance.forOntologies(protocol=protocol_uri)
+    data = service_instance.for_ontologies(protocol=protocol_uri)
     assert data != None and isinstance(data, list) and len(data) == 1
     assert (
         data[0] != None

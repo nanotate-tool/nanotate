@@ -8,17 +8,17 @@ class BioPortalService:
     """
 
     def __init__(self, bioportal_api: BioPortalApi):
-        self.bioPortal_API = bioportal_api
+        self.bioportal_api = bioportal_api
 
     def annotations(self, ontologies: list, text: str):
         """retorna las anotaciones relacionadas al termino buscado en la api de bioportal con el siguiente formato
         de parseo determinado por ```BioPortalService.annotationParse```
         """
-        api_annotations = self.bioPortal_API.annotator(text, ontologies)
-        return list(map(BioPortalService.annotationParse, api_annotations))
+        api_annotations = self.bioportal_api.annotator(text, ontologies)
+        return list(map(BioPortalService.annotation_parse, api_annotations))
 
     @staticmethod
-    def annotationParse(annotation):
+    def annotation_parse(annotation):
         """realiza el parseo de las anotaciones rescatadas desde la api de bioportal a un formato comun para las aplicaciones\n
         {\n\t
             'ontologyLabel':str,// label de la ontologia
@@ -29,13 +29,13 @@ class BioPortalService:
             'selector': list, //datos del selector
         \n\t}
         """
-        annotatedClass = annotation["annotatedClass"]
-        ontologyLink = annotatedClass["links"]["ontology"]
+        annotated_class = annotation["annotatedClass"]
+        ontology_link = annotated_class["links"]["ontology"]
         return {
-            "ontologyLabel": re.sub(r".*\/", "", ontologyLink),
-            "prefLabel": annotatedClass["prefLabel"],
-            "id": annotatedClass["@id"],
-            "class": annotatedClass["links"]["ui"],
-            "ontology": ontologyLink,
+            "ontologyLabel": re.sub(r".*\/", "", ontology_link),
+            "prefLabel": annotated_class["prefLabel"],
+            "id": annotated_class["@id"],
+            "class": annotated_class["links"]["ui"],
+            "ontology": ontology_link,
             "selector": annotation["annotations"],
         }

@@ -67,9 +67,9 @@ class GraphNanopub:
             # remove initial_triple added in assertion graph
             self.nanopub.rdf.remove(initial_triple)
             # compute assertion graph after of nanopub build
-            self._computeAssertion(self.assertion)
-            self.__addNamespaces()
-            self._computeProvenance()
+            self._compute_assertion(self.assertion)
+            self.__add_namespaces()
+            self._compute_provenance()
         else:
             self.nanopub = nanopub
 
@@ -78,7 +78,7 @@ class GraphNanopub:
         return self.nanopub.assertion
 
     @property
-    def pubinfo(self):
+    def pub_info(self):
         return self.nanopub.pubinfo
 
     @property
@@ -92,14 +92,14 @@ class GraphNanopub:
                 return rdflib.Namespace(namespace[1])
 
     @property
-    def createdWhit(self):
+    def created_whit(self):
         return (
             rdflib.URIRef(self.settings["client-url"])
             if self.settings != None and "client-url" in self.settings
             else self.url
         )
 
-    def __addNamespaces(self):
+    def __add_namespaces(self):
         """
         add custom namespaces to Publication rdf
         """
@@ -110,14 +110,14 @@ class GraphNanopub:
         self.nanopub.rdf.bind("pav", GraphNanopub.PAV)
         self.nanopub.rdf.bind("p-plan", GraphNanopub.PPLAN)
 
-    def _computeProvenance(self):
+    def _compute_provenance(self):
         """
         compute custom properties for provenance subgraph
         """
         assertion_uri = self.np.assertion
-        self.provenance.add((assertion_uri, self.PAV.createdWith, self.createdWhit))
+        self.provenance.add((assertion_uri, self.PAV.createdWith, self.created_whit))
 
-    def _computeAssertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
+    def _compute_assertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
         """
         build the assertion subgraph
         \n
@@ -148,21 +148,21 @@ class GraphNanopub:
             \n
         }
         """
-        nanopubTrig = self.serialize("trig")
-        prefixs = re.findall(r"\@prefix(.*).", nanopubTrig)
-        assertion = re.search(r":assertion {.*?\}\n", nanopubTrig, re.DOTALL)
-        provenance = re.search(r":provenance {.*?\}\n", nanopubTrig, re.DOTALL)
-        pubInfo = re.search(r":pubInfo {.*?\}\n", nanopubTrig, re.DOTALL)
-        Head = re.search(r":Head {.*?\}\n", nanopubTrig, re.DOTALL)
+        nanopub_trig = self.serialize("trig")
+        prefixs = re.findall(r"\@prefix(.*).", nanopub_trig)
+        assertion = re.search(r":assertion {.*?\}\n", nanopub_trig, re.DOTALL)
+        provenance = re.search(r":provenance {.*?\}\n", nanopub_trig, re.DOTALL)
+        pub_info = re.search(r":pubInfo {.*?\}\n", nanopub_trig, re.DOTALL)
+        head = re.search(r":Head {.*?\}\n", nanopub_trig, re.DOTALL)
         return {
             "@prefixs": list(
                 map((lambda prefix: format_text_to_html(prefix)), prefixs)
             ),
             "@assertion": format_text_to_html(assertion.group(0)),
             "@provenance": format_text_to_html(provenance.group(0)),
-            "@pubInfo": format_text_to_html(pubInfo.group(0)),
-            "@Head": format_text_to_html(Head.group(0)),
-            "exact": nanopubTrig,
+            "@pubInfo": format_text_to_html(pub_info.group(0)),
+            "@Head": format_text_to_html(head.group(0)),
+            "exact": nanopub_trig,
         }
 
     @staticmethod

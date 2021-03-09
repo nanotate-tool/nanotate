@@ -13,7 +13,7 @@ class WorkflowNanopub(GraphNanopub):
         self,
         workflow: Workflow,
         settings: dict = None,
-        npClient: NanopubClient = None,
+        np_client: NanopubClient = None,
     ):
         self.workflow = workflow
         worflow_nanopub = None
@@ -21,8 +21,8 @@ class WorkflowNanopub(GraphNanopub):
             workflow_nanopub_rdf = rdflib.ConjunctiveGraph()
             workflow_nanopub_rdf.parse(data=self.workflow.rdf, format="trig")
             worflow_nanopub = Publication(rdf=workflow_nanopub_rdf)
-        elif npClient != None:
-            worflow_nanopub = npClient.fetch(
+        elif np_client != None:
+            worflow_nanopub = np_client.fetch(
                 uri=self.workflow.publication_info["nanopub_uri"]
             )
         else:

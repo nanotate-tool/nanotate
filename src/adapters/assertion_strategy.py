@@ -8,24 +8,24 @@ from rdflib.namespace import RDFS, RDF
 class AssertionStrategy:
     """define la estrategia que se tomara para determina el 'assertion' de una 'anotacion' en la 'nanopublication'"""
 
-    def add(self, nanoPub, assertion, tagConfig, annotation: Annotation):
+    def add(self, nano_pub, assertion, tag_config, annotation: Annotation):
         """realiza el 'assertion' en la nanopublication pasada"""
         raise NotImplementedError
 
     @staticmethod
-    def addLiteral(nanoPub, assertion, ref, exact: str, with_node: bool = False):
+    def add_literal(nano_pub, assertion, ref, exact: str, with_node: bool = False):
         if with_node:
             node = rdflib.BNode()
-            assertion.add((nanoPub.step, ref, node))
+            assertion.add((nano_pub.step, ref, node))
             assertion.add((node, RDFS.label, rdflib.Literal(exact)))
         else:
-            assertion.add((nanoPub.step, ref, rdflib.Literal(exact)))
+            assertion.add((nano_pub.step, ref, rdflib.Literal(exact)))
 
     @staticmethod
-    def addRelUris(nanoPub, assertion, ref, exact: str, uris: list):
+    def add_rel_uris(nano_pub, assertion, ref, exact: str, uris: list):
         for uri in uris:
             uri_iri = rdflib.URIRef(uri)
-            assertion.add((nanoPub.step, ref, uri_iri))
+            assertion.add((nano_pub.step, ref, uri_iri))
             assertion.add(
                 (
                     uri_iri,
@@ -38,13 +38,13 @@ class AssertionStrategy:
 class LiteralAssertionStrategy(AssertionStrategy):
     """ estrategia de 'assertion' en el cual la propiedad 'exact' de la 'anotacion' se inserta como literal """
 
-    def add(self, nanoPub, assertion, tagConfig, annotation: Annotation):
-        AssertionStrategy.addLiteral(
-            nanoPub,
+    def add(self, nano_pub, assertion, tag_config, annotation: Annotation):
+        AssertionStrategy.add_literal(
+            nano_pub,
             assertion,
-            tagConfig["ref"],
+            tag_config["ref"],
             annotation.exact,
-            not (tagConfig["tag"] == AnnotationTag.step),
+            not (tag_config["tag"] == AnnotationTag.step),
         )
 
 
@@ -59,23 +59,23 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
     def __init__(self, api: BioPortalApi):
         self.api = api
 
-    def add(self, nanoPub, assertion, tagConfig, annotation: Annotation):
-        if tagConfig["tag"] == AnnotationTag.step:
-            super().add(nanoPub, assertion, tagConfig, annotation)
+    def add(self, nano_pub, assertion, tag_config, annotation: Annotation):
+        if tag_config["tag"] == AnnotationTag.step:
+            super().add(nano_pub, assertion, tag_config, annotation)
         else:
-            bio_annotations = self.bioAnnotations(annotation)
+            bio_annotations = self.bio_annotations(annotation)
             if len(bio_annotations) > 0:
-                AssertionStrategy.addRelUris(
-                    nanoPub,
+                AssertionStrategy.add_rel_uris(
+                    nano_pub,
                     assertion,
-                    tagConfig["ref"],
+                    tag_config["ref"],
                     annotation.exact,
                     bio_annotations,
                 )
             else:
-                super().add(nanoPub, assertion, tagConfig, annotation)
+                super().add(nano_pub, assertion, tag_config, annotation)
 
-    def bioAnnotations(self, annotation: Annotation, full: bool = False) -> list:
+    def bio_annotations(self, annotation: Annotation, full: bool = False) -> list:
         """
         retorna una lista de las anotaciones relacionadas a la anotacion
         """
@@ -95,7 +95,7 @@ class BioportalAssertionStrategy(LiteralAssertionStrategy):
                 else bio_annotation,
                 filter(
                     (
-                        lambda bio_annotation: annotation.varIncludes(
+                        lambda bio_annotation: annotation.var_includes(
                             "bio_annotations", bio_annotation["annotatedClass"]["@id"]
                         )
                     ),

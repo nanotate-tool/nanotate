@@ -16,9 +16,9 @@ class BioPortalApi:
         query_ontologies = '&ontologies=' + \
             ','.join(map(urllib.parse.quote, ontologies)
                      ) if len(ontologies) > 0 else ''
-        return self.__getJson('/annotator?include=prefLabel&text=' + urllib.parse.quote(text)+query_ontologies)
+        return self.__get_json('/annotator?include=prefLabel&text=' + urllib.parse.quote(text)+query_ontologies)
 
-    def __getJson(self, url: str):
+    def __get_json(self, url: str):
         """lanza una peticion a la api insertando en esta la llave api de la instancia
             y parseando los resultados en jsons validos
         """

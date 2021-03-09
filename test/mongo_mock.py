@@ -10,4 +10,4 @@ class MockMongoDb(MongoDb):
 
     def connect(self):
         self.connection = connect('mongoenginetest', host='mongomock://localhost')
-        conn = get_connection()
+        return get_connection()

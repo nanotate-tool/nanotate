@@ -18,17 +18,17 @@ class DBNanopub(GraphNanopub):
 
     def __init__(
         self,
-        dbnanopub: Nanopublication,
+        db_nano_pub: Nanopublication,
         settings: dict = None,
-        npClient: NanopubClient = None,
-        fromDbrdf: bool = False,
+        np_client: NanopubClient = None,
+        from_db_rdf: bool = False,
     ):
-        self.dbnanopub = dbnanopub
+        self.dbnanopub = db_nano_pub
         # fetch Publication for published nanopub
         nanopub = None
-        if npClient != None and self.dbnanopub.publication_info != None:
-            nanopub = npClient.fetch(uri=dbnanopub.publication_info.nanopub_uri)
-        elif fromDbrdf and self.dbnanopub.rdf_raw != None:
+        if np_client != None and self.dbnanopub.publication_info != None:
+            nanopub = np_client.fetch(uri=db_nano_pub.publication_info.nanopub_uri)
+        elif from_db_rdf and self.dbnanopub.rdf_raw != None:
             nanopub_rdf = rdflib.ConjunctiveGraph()
             nanopub_rdf.parse(data=self.dbnanopub.rdf_raw, format="trig")
             nanopub = Publication(rdf=nanopub_rdf)
@@ -57,22 +57,22 @@ class DBNanopub(GraphNanopub):
             )
         )
 
-    def _computeAssertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
+    def _compute_assertion(self, assertion: rdflib.Graph = None) -> rdflib.Graph:
         assertion = assertion if assertion != None else rdflib.Graph()
         for tag_config in self.TAGS_CONFIG:
             components = self.dbnanopub.componentsByTag(tag_config["tag"].value)
             for component in components:
                 if len(component.rel_uris) > 0:
-                    AssertionStrategy.addRelUris(
-                        nanoPub=self,
+                    AssertionStrategy.add_rel_uris(
+                        nano_pub=self,
                         assertion=assertion,
                         ref=tag_config["ref"],
                         exact=component.term,
                         uris=component.rel_uris,
                     )
                 else:
-                    AssertionStrategy.addLiteral(
-                        nanoPub=self,
+                    AssertionStrategy.add_literal(
+                        nano_pub=self,
                         assertion=assertion,
                         ref=tag_config["ref"],
                         exact=component.term,

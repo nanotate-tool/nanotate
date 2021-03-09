@@ -27,7 +27,7 @@ def api_protocols_controller(
             if "uri" in request.args
             else abort(400, "uri parameter is required")
         )
-        data = service.getProtocol(protocol)
+        data = service.get_protocol(protocol)
         return jsonify(data)
 
     return controller

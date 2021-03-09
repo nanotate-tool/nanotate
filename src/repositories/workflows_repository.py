@@ -29,8 +29,8 @@ class WorkflowsRepository:
             params:
                 id: key of workflow
         """
-        dbWorkflow = Workflow.objects(id=id).first()
-        return dbWorkflow
+        db_workflow = Workflow.objects(id=id).first()
+        return db_workflow
 
     def delete(self, workflow: Workflow):
         """

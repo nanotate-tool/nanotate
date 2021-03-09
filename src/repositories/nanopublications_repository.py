@@ -85,7 +85,7 @@ class NanopublicationRepository:
 
         return {"status": "error"}
 
-    def getNanopub(
+    def get_nanopub(
         self, id: str, protocol=None, default: Nanopublication = None
     ) -> Nanopublication:
         """
@@ -102,7 +102,7 @@ class NanopublicationRepository:
 
         return default
 
-    def getNanopubsByProtocol(self, protocol: str) -> list:
+    def get_nanopubs_by_protocol(self, protocol: str) -> list:
         """
         retorna la lista de nanopublicaciones asociadas a la uri del protocolo pasado
         """
@@ -113,7 +113,7 @@ class NanopublicationRepository:
             )
         )
 
-    def getNanopubByArtifactCode(self, artifact_code: str) -> Nanopublication:
+    def get_nanopub_by_artifact_code(self, artifact_code: str) -> Nanopublication:
         """
         retorna la primera Nanopublication relacionada al artifact_code pasado, este se relaciona
         con el PublicationInfo.artifact_code de la misma
@@ -123,7 +123,7 @@ class NanopublicationRepository:
         ).first()
         return self.__load_workflows_of_nanopub(nanopub=db_nanopub)
 
-    def getEssentialStats(
+    def get_essential_stats(
         self, protocol: str = None, users: list = None, tags: list = None
     ):
         """
@@ -144,7 +144,7 @@ class NanopublicationRepository:
         \n]
         """
         not_step_tag_filter = [NanopublicationRepository.TAG_FILTER("step", False)]
-        pipeline = NanopublicationRepository._withProtocolFilter(
+        pipeline = NanopublicationRepository._with_protocol_filter(
             pipeline=[
                 {"$unwind": {"path": "$components"}},
                 {
@@ -169,7 +169,7 @@ class NanopublicationRepository:
         )
         return list(Nanopublication.objects().aggregate(pipeline))
 
-    def getTermStats(
+    def get_term_stats(
         self, protocol: str = None, users: list = None, tags: list = None
     ) -> list:
         """
@@ -183,7 +183,7 @@ class NanopublicationRepository:
         \n]
         """
         not_step_tag_filter = [NanopublicationRepository.TAG_FILTER("step", False)]
-        pipeline = NanopublicationRepository._withProtocolFilter(
+        pipeline = NanopublicationRepository._with_protocol_filter(
             pipeline=[
                 {"$unwind": "$components"},
                 {
@@ -199,7 +199,7 @@ class NanopublicationRepository:
         )
         return list(Nanopublication.objects().aggregate(pipeline))
 
-    def getTagsStats(
+    def get_tags_stats(
         self, protocol: str = None, users: list = None, tags: list = None
     ) -> list:
         """
@@ -209,7 +209,7 @@ class NanopublicationRepository:
             { "label":<tag>, "count":<number of use> }
         \n]
         """
-        pipeline = NanopublicationRepository._withProtocolFilter(
+        pipeline = NanopublicationRepository._with_protocol_filter(
             pipeline=[{"$unwind": "$components"}]
             + NanopublicationRepository.GROUP_BY_TAGS(tags),
             protocol=protocol,
@@ -218,7 +218,7 @@ class NanopublicationRepository:
         )
         return list(Nanopublication.objects().aggregate(pipeline))
 
-    def getOntologiesStats(
+    def get_ontologies_stats(
         self, protocol: str = None, users: list = None, tags: list = None
     ) -> list:
         """
@@ -228,7 +228,7 @@ class NanopublicationRepository:
             { "label":<tag>, "count":<number of use> }
         \n]
         """
-        pipeline = NanopublicationRepository._withProtocolFilter(
+        pipeline = NanopublicationRepository._with_protocol_filter(
             pipeline=[{"$unwind": "$components"}] + self.GROUP_BY_ONTOLOGIES,
             protocol=protocol,
             users=users,
@@ -244,7 +244,7 @@ class NanopublicationRepository:
             { "label":<author>, "count":<number of nano publications> }
         \n]
         """
-        pipeline = NanopublicationRepository._withProtocolFilter(
+        pipeline = NanopublicationRepository._with_protocol_filter(
             pipeline=[
                 {"$group": {"_id": "$author", "count": {"$sum": 1}}},
                 {"$project": {"_id": 0, "label": "$_id", "count": "$count"}},
@@ -256,7 +256,7 @@ class NanopublicationRepository:
     def nanopubs_stats(
         self, protocol: str = None, users: list = None, tags: list = None, page: int = 1
     ) -> list:
-        conditions = NanopublicationRepository._withProtocolFilter(
+        conditions = NanopublicationRepository._with_protocol_filter(
             pipeline=[{"$unwind": "$components"}],
             protocol=protocol,
             tags=tags,
@@ -295,7 +295,7 @@ class NanopublicationRepository:
         return data[0] if len(data) == 1 else empty
 
     @staticmethod
-    def _withProtocolFilter(
+    def _with_protocol_filter(
         pipeline: list, protocol: str = None, users: list = None, tags: list = None
     ):
         final_pipeline = (

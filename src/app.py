@@ -30,12 +30,12 @@ def application(
     controllers.register(app, injector)
 
     if dev:
-        runDev(app)
+        run_dev(app)
 
     return app
 
 
-def runDev(app: Flask):
+def run_dev(app: Flask):
     """Run Flask App in DEV settings."""
     try:
         # logging.basicConfig(filename='error.log',level=logging.DEBUG)
