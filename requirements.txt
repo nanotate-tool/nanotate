@@ -4,7 +4,7 @@ Flask-Compress==1.7.0
 rdflib==5.0.0
 rdflib-jsonld==0.5.0
 dependency-injector==4.0.0
-PyYAML==5.3.1
+PyYAML>=5.4
 mongoengine==0.20.0
 metadata-parser==0.10.0
 nanopub==1.2.3
