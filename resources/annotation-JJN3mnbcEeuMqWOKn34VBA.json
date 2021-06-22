@@ -1,0 +1,61 @@
+{
+	"id": "JJN3mnbcEeuMqWOKn34VBA",
+	"created": "2021-02-24T20:09:04.325073+00:00",
+	"updated": "2021-02-24T20:09:04.325073+00:00",
+	"user": "acct:zuluaga.lizzz@hypothes.is",
+	"uri": "https://protocolexchange.researchsquare.com/article/nprot-4599/v2",
+	"text": "===SETTINGS===\nbio_annotations:http%2//purl.obolibrary.org/obo/CHEBI_33696\n===END SETTINGS===\n",
+	"tags": [
+		"sample",
+		"output",
+		"_CHEBI_"
+	],
+	"group": "__world__",
+	"permissions": {
+		"read": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		],
+		"admin": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		],
+		"update": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		],
+		"delete": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		]
+	},
+	"target": [
+		{
+			"source": "https://protocolexchange.researchsquare.com/article/nprot-4599/v2",
+			"selector": [
+				{
+					"type": "TextQuoteSelector",
+					"exact": "nucleic acid",
+					"prefix": "w minutes, keep the solubilized ",
+					"suffix": ""
+				},
+				{
+					"end": 8827,
+					"type": "TextPositionSelector",
+					"start": 8815
+				}
+			]
+		}
+	],
+	"document": {
+		"title": [
+			"https://protocolexchange.researchsquare.com/article/nprot-4599/v2"
+		]
+	},
+	"links": {
+		"html": "https://hypothes.is/a/JJN3mnbcEeuMqWOKn34VBA",
+		"incontext": "https://hyp.is/JJN3mnbcEeuMqWOKn34VBA/protocolexchange.researchsquare.com/article/nprot-4599/v2",
+		"json": "https://hypothes.is/api/annotations/JJN3mnbcEeuMqWOKn34VBA"
+	},
+	"flagged": false,
+	"hidden": false,
+	"user_info": {
+		"display_name": null
+	}
+}

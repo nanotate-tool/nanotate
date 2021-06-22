@@ -1,0 +1,59 @@
+{
+	"id": "Bze17nbcEeualM-4shE_rg",
+	"created": "2021-02-24T20:08:15.071659+00:00",
+	"updated": "2021-02-24T20:08:15.071659+00:00",
+	"user": "acct:zuluaga.lizzz@hypothes.is",
+	"uri": "https://protocolexchange.researchsquare.com/article/nprot-4599/v2",
+	"text": "===SETTINGS===\nbio_annotations:http%2//purl.obolibrary.org/obo/PATO_0000146,http%2//www.ebi.ac.uk/efo/EFO_0001702,http%2//purl.obolibrary.org/obo/CHEBI_33696,http%2//purl.obolibrary.org/obo/CHEBI_33696,http%2//purl.obolibrary.org/obo/CHEBI_33696,http%2//www.bioassayontology.org/bao#BAO_0000011,http%2//www.ebi.ac.uk/efo/EFO_0004416,http%2//purl.obolibrary.org/obo/CHEBI_37527,http%2//purl.obolibrary.org/obo/CHEBI_37527,http%2//purl.obolibrary.org/obo/PATO_0000574,http%2//purl.obolibrary.org/obo/PATO_0000165,http%2//purl.obolibrary.org/obo/PATO_0000165,http%2//www.ebi.ac.uk/efo/EFO_0000721,http%2//purl.obolibrary.org/obo/OBI_0302893,http%2//purl.obolibrary.org/obo/IAO_0000308,http%2//purl.obolibrary.org/obo/CHEBI_16991,http%2//purl.obolibrary.org/obo/CHEBI_16991,http%2//www.bioassayontology.org/bao#BAO_0000269,http%2//www.bioassayontology.org/bao#BAO_0000270,http%2//purl.obolibrary.org/obo/CHEBI_33697,http%2//purl.obolibrary.org/obo/CHEBI_33697,http%2//www.ebi.ac.uk/efo/EFO_0002571,http%2//semanticscience.org/resource/SIO_000999\n===END SETTINGS===\n",
+	"tags": [
+		"step"
+	],
+	"group": "__world__",
+	"permissions": {
+		"read": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		],
+		"admin": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		],
+		"update": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		],
+		"delete": [
+			"acct:zuluaga.lizzz@hypothes.is"
+		]
+	},
+	"target": [
+		{
+			"source": "https://protocolexchange.researchsquare.com/article/nprot-4599/v2",
+			"selector": [
+				{
+					"type": "TextQuoteSelector",
+					"exact": "After incubating at room temperature for a few minutes, keep the solubilized nucleic acid in −20˚C for a short time storage or in −80˚C for a longtime storage. Figure 1 shows a schematic model of all the DNA and RNA isolation steps of this procedure.",
+					"prefix": "mercial) or autoclaved water.12 ",
+					"suffix": ""
+				},
+				{
+					"end": 8988,
+					"type": "TextPositionSelector",
+					"start": 8738
+				}
+			]
+		}
+	],
+	"document": {
+		"title": [
+			"https://protocolexchange.researchsquare.com/article/nprot-4599/v2"
+		]
+	},
+	"links": {
+		"html": "https://hypothes.is/a/Bze17nbcEeualM-4shE_rg",
+		"incontext": "https://hyp.is/Bze17nbcEeualM-4shE_rg/protocolexchange.researchsquare.com/article/nprot-4599/v2",
+		"json": "https://hypothes.is/api/annotations/Bze17nbcEeualM-4shE_rg"
+	},
+	"flagged": false,
+	"hidden": false,
+	"user_info": {
+		"display_name": null
+	}
+}
