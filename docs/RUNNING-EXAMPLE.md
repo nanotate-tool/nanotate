@@ -12,8 +12,8 @@ We start on the web page of the protocol to be annotated. Nanotate takes as inpu
 protocol documents in HTML. The HTML about the selection of
 a sample ``(nucleic acid)``, is available [here](../resources/protocol-resume.html).
 
-## ii) Nanotate
-bookmark: Nanotate does not use the hypothes.is client (‘annotator’ and ‘sidebar’);
+## ii) Nanotate bookmark:
+Nanotate does not use the hypothes.is client (‘annotator’ and ‘sidebar’);
 instead, it uses the bookmarklet approach in a similar way to [The HelloWorldAnnotated demo](https://github.com/judell/HelloWorldAnnotated). The ``“Nanotate bookmark”`` is used to redirect from an ``“Annotated Site”`` to the ``“Nanotate client”`` through a URL that contains data about the selected text to be annotated.
 
 ## iii) Nanotate client:
@@ -21,7 +21,7 @@ Our UI works as a template guiding users through the annotation process and post
 to hypothes.is. The UI includes a tag box to add one or multiple tags
 from the available options ``(“sample”, “equipment”, “reagent”, “input”, “output”,
 “step”)``. After labeling the selected text, a JSON file in which hypothes.is stores
-the annotation is generated.
+the annotation is generated. An example is available [here](https://git.io/JWiiL).
 
 ## iv) BioPortal API:
 The next step is adding context to the tagged text by using ontology terms. Nanotate facilitates the connection
@@ -45,9 +45,3 @@ Finally, the users select the nanopublications that are part of the
 workflow. The resulting nanopublications are then published as above. The published 
 nanopublications about workflows are also stored locally in a MongoDB
 data storage. A nanopublication about a workflow in RDF is available [here](http://purl.org/np/RA9fL5Ge98ru-fkf_C4b6yrC3HP5mq_s-pUCUMqxKjDMQ).
-
-Nanotate is a free and open source tool. The code behind the tool is available on [Github](https://github.com/nanotate-tool).
-End-users can install it by creating a bookmark.
-The documentation about how to install and use the
-Nanotate is available at http://doi.org/10.5281/zenodo.5101941 A running
-instance of the tool can be found https://nanotate.bitsfetch.com

@@ -1,6 +1,7 @@
 # Nanotate
 
-Herramienta para laa generacion de nanopublicaciones basada en annotaciones realizadas en la plataforma de [hypothesis](https://hypothes.is/).
+Nanotate is a free and open source tool. The code behind the tool is available on [Github](https://github.com/nanotate-tool).
+End-users can install it by creating a bookmark. The documentation about how to install and use the Nanotate is available at http://doi.org/10.5281/zenodo.5101941 A running instance of the tool can be found https://nanotate.bitsfetch.com
 
 # Instalacion
 
