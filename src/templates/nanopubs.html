@@ -1,0 +1,107 @@
+<!--html basic page-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Nanopublications: Page {{page}} of {{maxpages}}</title>
+    <style>
+        body {
+            color: #000;
+            background-color: white;
+            font-family: Verdana, Helvetica, sans-serif;
+            font-size: 10pt;
+            margin: 4mm;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: black;
+            background-color: inherit;
+            clear: both;
+            font-weight: bold;
+            margin-top: 7mm;
+        }
+        
+        table {
+            font-size: inherit;
+        }
+        
+        a {
+            color: #22b;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        
+        a:hover {
+            color: #66d;
+        }
+        
+        a:active {
+            color: #66d;
+        }
+        
+        td {
+            white-space: nowrap;
+            padding-right: 10px;
+            padding-bottom: 2px;
+            vertical-align: top;
+        }
+        
+        span.code {
+            font-family: "Lucida Console", Monaco, monospace;
+        }
+        
+        span.small {
+            font-size: 8pt;
+            margin-left: 5pt;
+        }
+        
+        ul {
+            padding-left: 15px;
+        }
+    </style>
+</html>
+
+<body>
+    <h1>Nanopublications: Page {{page}} of {{maxpages}}</h1>
+    <p>[
+        <a href="nanopubs.txt?page={{page}}" rel="alternate" type="text/plain">as plain text</a> |
+        <a href="nanopubs.html?page=1" rel="start">&lt;&lt; first page</a> |
+        {% if prevpage > 0 %}
+            <a href="nanopubs.html?page={{prevpage}}" rel="prev">&lt; previous page</a> |
+        {% else %}
+            <span>&lt; previous page</span> |
+        {% endif %}
+        {% if nextpage > 0 %}
+            <a href="nanopubs.html?page={{nextpage}}" rel="next">next page &gt;</a> |
+        {% else %}
+            <span>next page &gt;</span> |
+        {% endif %}
+        <a href="nanopubs.html?page={{maxpages}}">last page &gt;&gt;</a>
+        ]
+    </p>
+    <table>
+        <tbody>
+            {% for index,nanopub in data %}
+                <tr>
+                    <td>{{begun + index}}</td>
+                    <td>
+                        <a href="{{nanopub['publication_info']['nanopub_uri']}}">get</a>
+                        <span class="small">(
+                            {%for type,format in formats %}
+                                <a href="{{nanopub['publication_info']['nanopub_uri']}}.{{type}}" type="{{format}}">{{type}}</a>,
+                            {% endfor %}
+                            )
+                        </span>
+                    </td>
+                    <td>
+                        <span class="code">{{nanopub['publication_info']['nanopub_uri']}}</span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>

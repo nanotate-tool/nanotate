@@ -20,6 +20,7 @@ from nanopub import NanopubClient
 from urllib.parse import urlparse
 from src.utils.site_metadata_puller import clean_url_with_settings
 import json
+import math
 from .bioportal_service import BioPortalService
 
 
@@ -180,6 +181,24 @@ class NanoPubServices:
             "rdf": nanopub.serialize(rdf_format),
             "format": rdf_format,
         }
+
+    def all_nanopubs(self, page: int = 1, projection_mode: str = None):
+        data = self.nanopubs_repo.all_nanopubs(page, 100, projection_mode)
+        return data
+
+    def all_nanopubs_metadata(self, page: int =1):
+        metadata = self.nanopubs_repo.all_nanopubs_metadata(100)
+        max_pages = math.ceil(metadata['totalRecords'] / metadata['size'])
+        page = max_pages if page is None else page
+        args = {
+            'minpages': 1,
+            'nextpage': int(page) + 1 if page < max_pages else 0,
+            'prevpage': int(page) - 1 if page > 1 else 0,
+            'maxpages': max_pages,
+            'begun': (page - 1) * metadata['size'],
+            'page': page
+        }
+        return args
 
     def __update_nanopub_and_protocol(self, request: NanopubRequest) -> tuple:
         """
