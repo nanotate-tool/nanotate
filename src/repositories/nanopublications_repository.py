@@ -294,6 +294,48 @@ class NanopublicationRepository:
         data = list(Nanopublication.objects().aggregate(pipeline))
         return data[0] if len(data) == 1 else empty
 
+    def all_nanopubs(self, page: int = 1, size: int = 10, projection_mode:str = None) -> list:
+        """
+        returns all nanopubs with pagination
+        """
+        projection = []
+        if projection_mode == "publication":
+            projection = [
+                {
+                    "$project": {
+                        "_id": 0,
+                        "publication_info": "$publication_info"
+                    }
+                }
+            ]
+        (empty, pipeline) = NanopublicationRepository._with_pagination(
+            projection=projection,
+            conditions=[],
+            page=page,
+            size=size,
+        )
+        data = list(Nanopublication.objects().aggregate(pipeline))
+        return data[0] if len(data) == 1 else empty
+
+    def all_nanopubs_metadata(self, size: int = 10) -> list:
+        """
+        returns all nanopubs metadata
+        """
+        pipeline = [
+            { "$group": {"_id": "1", "count": {"$sum": 1}}},
+            {
+                "$project": {
+                    "_id": 0,
+                    "totalRecords": "$count",
+                    "page": {"$literal": 1},
+                    "size": {"$literal": size},
+                }
+            }
+        ]
+        empty = { "totalRecords": 0, "page": 1, "size": size }
+        data = list(Nanopublication.objects().aggregate(pipeline))
+        return data[0] if len(data) == 1 else empty
+
     @staticmethod
     def _with_protocol_filter(
         pipeline: list, protocol: str = None, users: list = None, tags: list = None
